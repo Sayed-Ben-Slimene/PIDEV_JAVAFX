@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="508.0" prefWidth="911.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="GUI.Register2.RegistrationController">
+   <children>
+      <JFXTextField fx:id="username" focusColor="#ababab" labelFloat="true" layoutX="22.0" layoutY="70.0" onKeyReleased="#verifusername" prefHeight="33.0" prefWidth="165.0" promptText="Nom d'utilisateur (*)" />
+      <JFXTextField fx:id="email" focusColor="#ababab" labelFloat="true" layoutX="22.0" layoutY="121.0" onKeyReleased="#verifEmail" prefHeight="33.0" prefWidth="165.0" promptText="Email (*)" />
+      <JFXTextField fx:id="ccnfirmation_email" focusColor="#ababab" labelFloat="true" layoutX="22.0" layoutY="218.0" onKeyReleased="#ConfirmEmail" prefHeight="33.0" prefWidth="165.0" promptText="Confirmation Email (*)" />
+      <JFXComboBox fx:id="genre" focusColor="#ababab" labelFloat="true" layoutX="271.0" layoutY="70.0" onMouseClicked="#typeuser" prefHeight="33.0" prefWidth="165.0" promptText="sexe(*)" />
+      <JFXPasswordField fx:id="password" focusColor="#ababab" labelFloat="true" layoutX="271.0" layoutY="121.0" onKeyReleased="#controlMdp" prefHeight="33.0" prefWidth="165.0" promptText="Mot de passe (*)" />
+      <JFXPasswordField fx:id="Confirmation_password" focusColor="#ababab" labelFloat="true" layoutX="647.0" layoutY="145.0" onKeyReleased="#ConfirmMDP" prefHeight="33.0" prefWidth="165.0" promptText="Confirmation mot de passe (*)" />
+      <Label fx:id="labelusername" layoutX="22.0" layoutY="104.0" prefHeight="25.0" prefWidth="165.0" textFill="RED" />
+      <Label fx:id="labelEmail" layoutX="22.0" layoutY="161.0" prefHeight="26.0" prefWidth="208.0" textFill="RED" />
+      <Label fx:id="labelconfEmail" layoutX="22.0" layoutY="252.0" prefHeight="26.0" prefWidth="246.0" textFill="LIME" />
+      <Label fx:id="labelpassword" layoutX="271.0" layoutY="161.0" prefHeight="26.0" prefWidth="208.0" text="ed" textFill="LIME" />
+      <Label fx:id="labelConfirmationMdp" layoutX="647.0" layoutY="183.0" prefHeight="34.0" prefWidth="190.0" text="zed" textFill="LIME" />
+      <JFXComboBox fx:id="roles" focusColor="#ababab" labelFloat="true" layoutX="647.0" layoutY="68.0" onMouseClicked="#typeuser" prefHeight="33.0" prefWidth="165.0" promptText="roles(*)" />
+      <ImageView fx:id="ImporterImage" fitHeight="128.0" fitWidth="136.0" layoutX="52.0" layoutY="364.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../ressources/img/img.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="inscrirLabel" layoutX="16.0" layoutY="12.0" prefHeight="54.0" prefWidth="179.0" text="Nouveaux Utilisateur" textAlignment="CENTER" textFill="LIGHTSKYBLUE">
+         <font>
+            <Font name="Bauhaus 93" size="14.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="login" buttonType="RAISED" layoutX="366.0" layoutY="26.0" onAction="#Pagelogin" prefHeight="27.0" prefWidth="128.0" ripplerFill="#eb3843" style="-fx-background-color: #87CEFA;" text="Login" textAlignment="CENTER" textFill="WHITE">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="Bauhaus 93" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="signup" buttonType="RAISED" layoutX="530.0" layoutY="27.0" onAction="#Pageregister" prefHeight="25.0" prefWidth="136.0" ripplerFill="#d76c2e" style="-fx-background-color: #87CEFA;" text="Register" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Bauhaus 93" size="12.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </JFXButton>
+      <JFXButton fx:id="addBtn" buttonType="RAISED" layoutX="646.0" layoutY="433.0" onAction="#handleButtonConfirmar" prefHeight="27.0" prefWidth="121.0" ripplerFill="#eb3843" style="-fx-background-color: #87CEFA;" text="Register" textAlignment="CENTER" textFill="WHITE">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="Bauhaus 93" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="nom" focusColor="#ababab" labelFloat="true" layoutX="14.0" layoutY="304.0" onKeyReleased="#verifNom" prefHeight="33.0" prefWidth="165.0" promptText="Nom (*)" />
+      <JFXDatePicker fx:id="date_inscrit" layoutX="646.0" layoutY="316.0" onAction="#verifiedate_inscrit" prefHeight="33.0" prefWidth="165.0" promptText="date_inscrit" />
+      <JFXDatePicker fx:id="date_naissance" layoutX="647.0" layoutY="233.0" onAction="#verifiedate_naissance" prefHeight="33.0" prefWidth="165.0" promptText="date_naissance" showWeekNumbers="true" />
+      <JFXButton fx:id="annulerBtn" buttonType="RAISED" layoutX="494.0" layoutY="433.0" onAction="#handleButtonCancelar" prefHeight="27.0" prefWidth="121.0" ripplerFill="#eb3843" style="-fx-background-color: #87CEFA;" text="Annuler" textAlignment="CENTER" textFill="WHITE">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="Bauhaus 93" size="12.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="38.0" fitWidth="66.0" layoutX="730.0" layoutY="8.0" onMouseClicked="#closeApplication" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../ressources/img/close.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="labelcontainsDigit" layoutX="447.0" layoutY="152.0" prefHeight="25.0" prefWidth="165.0" text="cc" textFill="LIME" />
+      <Label fx:id="labelcontainsLowerCaseLetter" layoutX="447.0" layoutY="176.0" prefHeight="25.0" prefWidth="165.0" text="cc" textFill="LIME" />
+      <Label fx:id="labelpasswordcontainsUpperCaseLetter" layoutX="447.0" layoutY="196.0" prefHeight="25.0" prefWidth="165.0" text="cc" textFill="LIME" />
+      <Label fx:id="labelpasswordcontainsSpecialCharacter" layoutX="447.0" layoutY="222.0" prefHeight="25.0" prefWidth="165.0" text="cc" textFill="LIME" />
+      <Label fx:id="labelpasswordlength" layoutX="271.0" layoutY="187.0" prefHeight="26.0" prefWidth="198.0" text="cc" textFill="LIME" />
+      <Label fx:id="labelPhone" layoutX="271.0" layoutY="280.0" prefHeight="25.0" prefWidth="165.0" textFill="LIME" />
+      <JFXTextField fx:id="prenom" focusColor="#ababab" labelFloat="true" layoutX="263.0" layoutY="329.0" onKeyReleased="#verifPrenom" prefHeight="33.0" prefWidth="165.0" promptText="Prenom (*)" />
+      <JFXTextField fx:id="phone" focusColor="#ababab" labelFloat="true" layoutX="271.0" layoutY="237.0" onKeyReleased="#controphone" prefHeight="33.0" prefWidth="165.0" promptText="phone(*)" />
+      <JFXButton fx:id="ImporterImagePath" buttonType="RAISED" layoutX="207.0" layoutY="420.0" onAction="#image" prefHeight="27.0" prefWidth="152.0" ripplerFill="#eb3843" style="-fx-background-color: #87CEFA;" text="Chager un image" textAlignment="CENTER" textFill="WHITE">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="Bauhaus 93" size="12.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="labelImage" layoutX="195.0" layoutY="457.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="267.0" text="labelImage" />
+      <ImageView fx:id="usernameCheck" fitHeight="34.0" fitWidth="38.0" layoutX="195.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="emailCheck" fitHeight="34.0" fitWidth="38.0" layoutX="195.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ccnfirmation_emailCheck" fitHeight="34.0" fitWidth="38.0" layoutX="195.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="nomCheck" fitHeight="34.0" fitWidth="38.0" layoutX="188.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="genreCheck" fitHeight="34.0" fitWidth="38.0" layoutX="460.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="passwordCheck" fitHeight="34.0" fitWidth="38.0" layoutX="460.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="phoneCheck" fitHeight="34.0" fitWidth="38.0" layoutX="441.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="prenomCheck" fitHeight="34.0" fitWidth="38.0" layoutX="437.0" layoutY="329.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="rolesCheck" fitHeight="34.0" fitWidth="38.0" layoutX="826.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Confirmation_passwordCheck" fitHeight="34.0" fitWidth="38.0" layoutX="818.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="date_naissanceCheck" fitHeight="34.0" fitWidth="38.0" layoutX="818.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="date_inscritCheck" fitHeight="34.0" fitWidth="38.0" layoutX="818.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ImporterImageCheck" fitHeight="34.0" fitWidth="38.0" layoutX="157.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="labelnom" layoutX="12.0" layoutY="348.0" prefHeight="26.0" prefWidth="190.0" textFill="RED" />
+      <Label fx:id="labelprenom" layoutX="262.0" layoutY="374.0" prefHeight="26.0" prefWidth="190.0" textFill="RED" />
+      <Label fx:id="labeldate_inscrit" layoutX="645.0" layoutY="352.0" prefHeight="26.0" prefWidth="208.0" textFill="RED" />
+      <Label fx:id="labeldate_naissance" layoutX="646.0" layoutY="269.0" prefHeight="26.0" prefWidth="208.0" textFill="RED" />
+   </children>
+</AnchorPane>

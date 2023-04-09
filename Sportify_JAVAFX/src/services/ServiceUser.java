@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import entities.User;
+import java.util.List;
 import utils.MyDB;
 
 /**
@@ -25,19 +26,38 @@ public class ServiceUser  implements IService<User>{
     Connection con ; 
     Statement ste;
      
-    
-    
-    
-    
+    public static User user;
     
     public ServiceUser() {
         
         con = MyDB.createorgetInstance().getCon();
+    }
+    
+    @Override
+    public boolean Ajouter(User t) {
         
+        try {
+        String querry = "INSERT INTO `sportify_pidev`.`user` (`nom`,`prenom`,`adress`,`email`,`password`,`roles`,`tel`) VALUES ('"+t.getNom()+"','"+t.getPrenom()+"','"+t.getAdress()+"','"+t.getEmail()+"','"+t.getPassword()+"','"+t.getRoles()+"','"+t.getTel()+"');";
+        Statement stm = con.createStatement();
+    
+        int x = stm.executeUpdate(querry);
+        if(x==0){
+            return false;
+        }else{
+            return true;
+        }
+    } catch (SQLException ex) {
+        System.out.println("service classe ajouter methode  ");
+        System.out.println(ex.getMessage());
+    
+    }
+     return false;   
     }
 
+    
+
     @Override
-    public void Ajouter(User t) {
+    public void Ajouter2(User t) {
         
         try {
             
@@ -55,7 +75,7 @@ public class ServiceUser  implements IService<User>{
         }
         
     }
-
+/*
     @Override
     public void Ajouter2(User t) {
         try {
@@ -74,47 +94,10 @@ public class ServiceUser  implements IService<User>{
             System.out.println(ex.getMessage());
         }
     }
+*/
 
     @Override
-    public void Modifier(User t) {
-     /*   try {
-            String querry= "UPDATE `user` SET `email`='"+t.getEmail()+"',`nom`='"+t.getNom()+"',`role`='"+t.getRoles()+"',`password`='"+t.getPassword()+"' WHERE email='"+t2+"'";
-            Statement stm = cnx.createStatement();
-
-            stm.executeUpdate(querry);
-            if(stm.executeUpdate(querry)==1){
-                System.out.print("user modifier");
-            }
-
-            } catch (SQLException ex) {
-                System.out.println("service classe modif methode  ");
-                System.out.println(ex.getMessage());
-
-            }*/
-    }
-
-    @Override
-    public void Supprimer(User t) {
-    /*try {
-            String querry= "DELETE FROM `User` WHERE email ='"+t+"'";
-            Statement stm = cnx.createStatement();
-
-            stm.executeUpdate(querry);
-            if(stm.executeUpdate(querry)==1){
-                System.out.print("user supprimer");
-            }
-            } catch (SQLException ex) {
-                System.out.println("service classe supprimer methode  ");
-                System.out.println(ex.getMessage());
-
-            }    
-    */
-    }
-    
-    
-
-    @Override
-    public ArrayList<User> Afficher() {
+    public List<User> afficher() {
         ArrayList<User> pers = new ArrayList<>();
         try {
             ste =con.createStatement();
@@ -141,5 +124,53 @@ public class ServiceUser  implements IService<User>{
         return  pers;
        
     }
-    
+
+    public boolean login(String email, String password) {
+try {
+           
+        String querry ="SELECT * FROM `User` where email ='"+email+"' and password ='"+password+"'";
+        Statement stm = con.createStatement();
+        ResultSet rs= stm.executeQuery(querry);
+
+        if(!rs.isBeforeFirst()){
+            System.out.println("user not found !!!!");
+            return false;
+        }
+        else{
+            System.out.println("user is logged");
+            while(rs.next()){
+                LoginSession.id=rs.getInt("id");
+                LoginSession.roles=rs.getString("roles");
+                LoginSession.nom=rs.getString("nom");
+                LoginSession.prenom=rs.getString("prenom");
+                LoginSession.adress=rs.getString("adress");
+                
+                LoginSession.email=rs.getString("email");
+                LoginSession.password=rs.getString("password"); 
+                LoginSession.image=rs.getString("image");
+            //    LoginSession.IsLogged=true;
+            }
+            System.out.println(LoginSession.nom+" "+LoginSession.prenom +" is connected" );
+            return true;
+        }
+        } catch (SQLException ex) {
+            //System.out.println(ex);
+        System.out.println("SQL Error !!!!!!!!!!!");
+
+        }
+        return false;
+    }
+
+
+    @Override
+    public void modifier(String t, User a) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void supprimer(User t) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+
 }

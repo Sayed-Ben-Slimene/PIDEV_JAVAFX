@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" stylesheets="@register.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="GUI.Register.RegisterController">
+   <left>
+      <AnchorPane prefHeight="500.0" prefWidth="314.0" style="-fx-background-color: #5e2c8a#5e2c8a;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="210.0" fitWidth="234.0" layoutX="33.0" layoutY="156.0" opacity="0.92" pickOnBounds="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);">
+               <image>
+                  <Image url="@../../Images/register.png22.png" /> 
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="500.0" prefWidth="387.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField id="txfemail" fx:id="nom" alignment="TOP_LEFT" layoutX="68.0" layoutY="65.0" prefHeight="31.0" prefWidth="270.0" promptText="Nom" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Button id="btnsignin" layoutX="111.0" layoutY="441.0" mnemonicParsing="false" onAction="#Login" prefHeight="39.0" prefWidth="182.0" style="-fx-background-color: #5e2c8a#5e2c8a #5e2c8a#5e2c8a; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);" text="Register" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Text layoutX="9.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register">
+               <font>
+                  <Font name="Cambria Bold Italic" size="25.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="23.0" fitWidth="22.0" layoutX="37.0" layoutY="309.0" opacity="0.89" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/icons8-key-64.png" />
+               </image>
+            </ImageView>
+            <PasswordField fx:id="password" layoutX="68.0" layoutY="304.0" prefHeight="31.0" prefWidth="270.0" promptText="Mot De Passe" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483 #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </PasswordField>
+            <TextField id="txfemail" fx:id="prenom" alignment="TOP_LEFT" layoutX="68.0" layoutY="112.0" prefHeight="31.0" prefWidth="270.0" promptText="Prénom" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField id="txfemail" fx:id="adress" alignment="TOP_LEFT" layoutX="68.0" layoutY="159.0" prefHeight="31.0" prefWidth="270.0" promptText="Adress" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField id="txfemail" fx:id="tel" alignment="TOP_LEFT" layoutX="68.0" layoutY="207.0" prefHeight="31.0" prefWidth="270.0" promptText="Numéro De Téléphone" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField id="txfemail" fx:id="email" alignment="TOP_LEFT" layoutX="68.0" layoutY="255.0" prefHeight="31.0" prefWidth="270.0" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="confirmpassword" layoutX="68.0" layoutY="352.0" prefHeight="31.0" prefWidth="270.0" promptText="Confirmer Mot De Passe" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483 #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </PasswordField>
+            <ImageView fitHeight="23.0" fitWidth="28.0" layoutX="35.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@../../Images/user.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="35.0" layoutY="258.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/icons8-email-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="23.0" fitWidth="28.0" layoutX="35.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@../../Images/user.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="23.0" fitWidth="28.0" layoutX="35.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@../../Images/marker.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="23.0" fitWidth="28.0" layoutX="35.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@../../Images/phone-call.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="23.0" fitWidth="22.0" layoutX="37.0" layoutY="357.0" opacity="0.89" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/icons8-key-64.png" />
+               </image>
+            </ImageView>
+            <Button id="gotoLogin" fx:id="gotoLogin" layoutX="-251.0" layoutY="440.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="39.0" prefWidth="182.0" style="-fx-background-color: #5e2c8a#5e2c8a #5e2c8a#5e2c8a; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Label fx:id="oncanceled" alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="400.0" prefHeight="18.0" prefWidth="331.0" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

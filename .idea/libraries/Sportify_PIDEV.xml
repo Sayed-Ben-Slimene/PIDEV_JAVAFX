@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Sportify_PIDEV">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Sportify_JAVAFX/dist/Sportify_PIDEV.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

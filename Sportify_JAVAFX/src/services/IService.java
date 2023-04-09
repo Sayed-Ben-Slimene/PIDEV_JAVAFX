@@ -5,17 +5,19 @@
  */
 package services;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
- * @author Andrew
+ * @author sayed
+ * @param <T>
  */
-public interface IService<T> {
-    public void Ajouter(T t );
-    public void Ajouter2(T t);
-    public void Modifier(T t);
-    public void Supprimer(T t);
-    public ArrayList<T> Afficher();
-  
+public interface IService <T> {
+    
+    public boolean  Ajouter(T t);
+    public void  Ajouter2(T t);
+    public List<T> afficher();
+    public void  modifier (String t,T a);
+    public void supprimer (T t);
+    //public void TruncateTable();
 }
