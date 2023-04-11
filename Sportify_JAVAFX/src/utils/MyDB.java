@@ -53,15 +53,20 @@ public class MyDB {
         
         return instance;
     }
-
-    
     
     public Connection getCon() {
         return con;
     }
-    
-    
-    
-    
-    
+
+    public static MyDB getInstance() {
+        if (instance == null) {
+            instance = new MyDB();
+
+        }
+
+        return instance;
+    }
+
+
+
 }

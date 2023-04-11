@@ -1,0 +1,12 @@
+.btnGreen{
+    -fx-background-color:  #3cbc53;
+}
+
+.background{
+    -fx-background-color: DODGERBLUE;
+}
+.wrong-credentials
+{
+    -jfx-unfocus-color: red;
+    -jfx-focus-color: red;
+}

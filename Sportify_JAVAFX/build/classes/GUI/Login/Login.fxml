@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" stylesheets="@login.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="GUI.Login.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" stylesheets="@login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Login.LoginController">
    <left>
       <AnchorPane prefHeight="500.0" prefWidth="314.0" style="-fx-background-color: #5e2c8a#5e2c8a;" BorderPane.alignment="CENTER">
          <children>
@@ -28,7 +28,7 @@
    <center>
       <AnchorPane prefHeight="500.0" prefWidth="387.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="logemail" alignment="TOP_LEFT" layoutX="60.0" layoutY="173.0" prefHeight="38.0" prefWidth="288.0" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
+            <TextField fx:id="logemail" alignment="TOP_LEFT" layoutX="60.0" layoutY="173.0" onKeyReleased="#verifEmail" prefHeight="38.0" prefWidth="288.0" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -40,7 +40,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Button>
-            <Hyperlink id="linkforget" fx:id="signuplink" layoutX="203.0" layoutY="285.0" onAction="#switchToSignUp" text="Mot De Passe Oublié?" textFill="#6c3483">
+            <Hyperlink id="linkforget" fx:id="signuplink" layoutX="203.0" layoutY="296.0" onAction="#switchToSignUp" text="Mot De Passe Oublié?" textFill="#6c3483">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font></Hyperlink>
@@ -59,7 +59,7 @@
                   <Image url="@../../Images/icons8-key-64.png" />
                </image>
             </ImageView>
-            <PasswordField fx:id="logpassword" layoutX="60.0" layoutY="230.0" prefHeight="43.0" prefWidth="287.0" promptText="Mot De Passe" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483 #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px;">
+            <PasswordField fx:id="logpassword" layoutX="60.0" layoutY="230.0" onKeyReleased="#verifMps" prefHeight="43.0" prefWidth="287.0" promptText="Mot De Passe" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483 #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px;">
                <font>
                   <Font size="14.0" />
                </font></PasswordField>
@@ -72,7 +72,7 @@
                <font>
                   <Font name="System Bold" size="14.0" />
                </font></Hyperlink>
-            <Label fx:id="oncanceled" alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="318.0" prefHeight="27.0" prefWidth="294.0" textFill="RED">
+            <Label fx:id="oncanceled" alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="331.0" prefHeight="27.0" prefWidth="294.0" textFill="RED">
                <font>
                   <Font name="Cambria Bold" size="16.0" />
                </font>
@@ -82,6 +82,18 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
+            <ImageView fx:id="emailcheck" fitHeight="29.0" fitWidth="29.0" layoutX="318.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="passwordCheck" fitHeight="29.0" fitWidth="29.0" layoutX="317.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="labelemail" layoutX="61.0" layoutY="211.0" prefHeight="20.0" prefWidth="288.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelpassword" layoutX="60.0" layoutY="273.0" prefHeight="20.0" prefWidth="288.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>

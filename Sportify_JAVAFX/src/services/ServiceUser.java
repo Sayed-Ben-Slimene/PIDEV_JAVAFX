@@ -7,6 +7,7 @@ package services;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -53,9 +54,6 @@ public class ServiceUser  implements IService<User>{
     }
      return false;   
     }
-
-    
-
     @Override
     public void Ajouter2(User t) {
         
@@ -128,7 +126,7 @@ public class ServiceUser  implements IService<User>{
     public boolean login(String email, String password) {
 try {
            
-        String querry ="SELECT * FROM `User` where email ='"+email+"' and password ='"+password+"'";
+        String querry ="SELECT * FROM `user` where email ='"+email+"' and password ='"+password+"'";
         Statement stm = con.createStatement();
         ResultSet rs= stm.executeQuery(querry);
 
@@ -172,5 +170,34 @@ try {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    public boolean chercherUtilisateurByEmail(String s) {
+        User user = null;
+        String req = "select * from `user` where email =?";
+        PreparedStatement preparedStatement;
+        try {
+            preparedStatement = MyDB.createorgetInstance().getCon().prepareStatement(req);
+            preparedStatement.setString(1, s);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                user = new User(
+                        resultSet.getInt("id"),
+                        resultSet.getString("nom"),
+                        resultSet.getString("prenom"),
+                        resultSet.getString("adress"),
+                        resultSet.getString("email"),
+                        resultSet.getString("password"),
+                        resultSet.getString("roles"),
+                        resultSet.getInt("tel")
+                        );
+
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        if (user == null) {
+            return false;
+        }
+        return true;
+    }
 
 }

@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,127 +13,213 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" stylesheets="@register.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="GUI.Register.RegisterController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="952.0" stylesheets="@register.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Register.RegisterController">
    <left>
-      <AnchorPane prefHeight="500.0" prefWidth="314.0" style="-fx-background-color: #5e2c8a#5e2c8a;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="610.0" prefWidth="371.0" style="-fx-background-color: #5e2c8a#5e2c8a;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="210.0" fitWidth="234.0" layoutX="33.0" layoutY="156.0" opacity="0.92" pickOnBounds="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);">
+            <ImageView fitHeight="229.0" fitWidth="264.0" layoutX="52.0" layoutY="168.0" opacity="0.92" pickOnBounds="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);">
                <image>
                   <Image url="@../../Images/register.png22.png" /> 
                </image>
             </ImageView>
+            <Button id="gotoLogin" fx:id="gotoLogin" layoutX="47.0" layoutY="520.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="50.0" prefWidth="270.0" style="-fx-background-color: #5e2c8a#5e2c8a #5e2c8a#5e2c8a; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane prefHeight="500.0" prefWidth="387.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="610.0" prefWidth="452.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField id="txfemail" fx:id="nom" alignment="TOP_LEFT" layoutX="68.0" layoutY="65.0" prefHeight="31.0" prefWidth="270.0" promptText="Nom" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
+            <TextField fx:id="nom" alignment="TOP_LEFT" layoutX="99.0" layoutY="84.0" onKeyReleased="#verifNom" prefHeight="32.0" prefWidth="330.0" promptText="Nom" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px; ">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <font>
                   <Font size="14.0" />
                </font>
+               <effect>
+                  <Blend mode="EXCLUSION" />
+               </effect>
             </TextField>
-            <Button id="btnsignin" layoutX="111.0" layoutY="441.0" mnemonicParsing="false" onAction="#Login" prefHeight="39.0" prefWidth="182.0" style="-fx-background-color: #5e2c8a#5e2c8a #5e2c8a#5e2c8a; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);" text="Register" textFill="WHITE">
+            <Button id="btnsignin" layoutX="160.0" layoutY="536.0" mnemonicParsing="false" onAction="#Login" prefHeight="50.0" prefWidth="270.0" style="-fx-background-color: #5e2c8a#5e2c8a #5e2c8a#5e2c8a; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);" text="Register" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="15.0" />
+                  <Font name="System Bold" size="22.0" />
                </font>
             </Button>
-            <Text layoutX="9.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register">
+            <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="#5f12a6" focusTraversable="true" layoutX="204.0" layoutY="37.0" stroke="#9c9696" strokeLineCap="BUTT" strokeType="OUTSIDE" strokeWidth="0.3" text="Register" textAlignment="CENTER" wrappingWidth="119.55755615234375" x="30.0" y="5.0">
                <font>
-                  <Font name="Cambria Bold Italic" size="25.0" />
+                  <Font name="Cambria Bold Italic" size="28.0" />
                </font>
+               <effect>
+                  <Blend />
+               </effect>
             </Text>
-            <ImageView fitHeight="23.0" fitWidth="22.0" layoutX="37.0" layoutY="309.0" opacity="0.89" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="64.0" layoutY="386.0" opacity="0.89" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Images/icons8-key-64.png" />
                </image>
             </ImageView>
-            <PasswordField fx:id="password" layoutX="68.0" layoutY="304.0" prefHeight="31.0" prefWidth="270.0" promptText="Mot De Passe" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483 #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px;">
+            <PasswordField fx:id="password" layoutX="99.0" layoutY="386.0" onKeyReleased="#verifMps" prefHeight="32.0" prefWidth="330.0" promptText="Mot De Passe" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483 #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px;">
                <font>
                   <Font size="14.0" />
                </font>
+               <effect>
+                  <Blend mode="EXCLUSION" />
+               </effect>
             </PasswordField>
-            <TextField id="txfemail" fx:id="prenom" alignment="TOP_LEFT" layoutX="68.0" layoutY="112.0" prefHeight="31.0" prefWidth="270.0" promptText="Prénom" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
+            <TextField id="prenom" fx:id="prenom" alignment="TOP_LEFT" layoutX="99.0" layoutY="144.0" onKeyReleased="#verifPrenom" prefHeight="32.0" prefWidth="330.0" promptText="Prénom" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <font>
                   <Font size="14.0" />
                </font>
+               <effect>
+                  <Blend mode="EXCLUSION" />
+               </effect>
             </TextField>
-            <TextField id="txfemail" fx:id="adress" alignment="TOP_LEFT" layoutX="68.0" layoutY="159.0" prefHeight="31.0" prefWidth="270.0" promptText="Adress" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
+            <TextField id="txfemail" fx:id="adress" alignment="TOP_LEFT" layoutX="99.0" layoutY="204.0" onKeyReleased="#verifAdress" prefHeight="32.0" prefWidth="330.0" promptText="Adress" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <font>
                   <Font size="14.0" />
                </font>
+               <effect>
+                  <Blend mode="EXCLUSION" />
+               </effect>
             </TextField>
-            <TextField id="txfemail" fx:id="tel" alignment="TOP_LEFT" layoutX="68.0" layoutY="207.0" prefHeight="31.0" prefWidth="270.0" promptText="Numéro De Téléphone" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
+            <TextField id="txfemail" fx:id="tel" alignment="TOP_LEFT" layoutX="99.0" layoutY="264.0" onKeyReleased="#veriftel" prefHeight="32.0" prefWidth="330.0" promptText="Numéro De Téléphone" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <font>
                   <Font size="14.0" />
                </font>
+               <effect>
+                  <Blend mode="EXCLUSION" />
+               </effect>
             </TextField>
-            <TextField id="txfemail" fx:id="email" alignment="TOP_LEFT" layoutX="68.0" layoutY="255.0" prefHeight="31.0" prefWidth="270.0" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
+            <TextField id="txfemail" fx:id="email" alignment="TOP_LEFT" layoutX="99.0" layoutY="324.0" onKeyReleased="#verifEmail" prefHeight="32.0" prefWidth="330.0" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <font>
                   <Font size="14.0" />
                </font>
+               <effect>
+                  <Blend mode="EXCLUSION" />
+               </effect>
             </TextField>
-            <PasswordField fx:id="confirmpassword" layoutX="68.0" layoutY="352.0" prefHeight="31.0" prefWidth="270.0" promptText="Confirmer Mot De Passe" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483 #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px;">
+            <PasswordField fx:id="confirmpassword" layoutX="99.0" layoutY="480.0" onKeyReleased="#ConfirmMDP" prefHeight="32.0" prefWidth="330.0" promptText="Confirmer Mot De Passe" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483 #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px;">
                <font>
                   <Font size="14.0" />
                </font>
+               <effect>
+                  <Blend mode="EXCLUSION" />
+               </effect>
             </PasswordField>
-            <ImageView fitHeight="23.0" fitWidth="28.0" layoutX="35.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="64.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                <image>
                   <Image url="@../../Images/user.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="35.0" layoutY="258.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="64.0" layoutY="324.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Images/icons8-email-64.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="23.0" fitWidth="28.0" layoutX="35.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="64.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                <image>
                   <Image url="@../../Images/user.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="23.0" fitWidth="28.0" layoutX="35.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="64.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                <image>
                   <Image url="@../../Images/marker.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="23.0" fitWidth="28.0" layoutX="35.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="64.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                <image>
                   <Image url="@../../Images/phone-call.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="23.0" fitWidth="22.0" layoutX="37.0" layoutY="357.0" opacity="0.89" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="64.0" layoutY="480.0" opacity="0.89" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Images/icons8-key-64.png" />
                </image>
             </ImageView>
-            <Button id="gotoLogin" fx:id="gotoLogin" layoutX="-251.0" layoutY="440.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="39.0" prefWidth="182.0" style="-fx-background-color: #5e2c8a#5e2c8a #5e2c8a#5e2c8a; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);" text="Login" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Button>
-            <Label fx:id="oncanceled" alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="400.0" prefHeight="18.0" prefWidth="331.0" textFill="RED">
+            <Label fx:id="oncanceled" alignment="CENTER" contentDisplay="CENTER" layoutX="128.0" layoutY="576.0" prefHeight="18.0" prefWidth="331.0" textFill="RED">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
+            <Label fx:id="labelnom" layoutX="99.0" layoutY="118.0" prefHeight="18.0" prefWidth="332.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelprenom" layoutX="100.0" layoutY="176.0" prefHeight="18.0" prefWidth="332.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labeladress" layoutX="100.0" layoutY="236.0" prefHeight="18.0" prefWidth="332.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labeltel" layoutX="100.0" layoutY="296.0" prefHeight="18.0" prefWidth="332.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelemail" layoutX="100.0" layoutY="356.0" prefHeight="18.0" prefWidth="332.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelpassword" layoutX="250.0" layoutY="419.0" prefHeight="20.0" prefWidth="160.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelconfirmpassword" layoutX="100.0" layoutY="512.0" prefHeight="18.0" prefWidth="332.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ImageView id="nomCheck" fx:id="nomCheck" fitHeight="27.0" fitWidth="27.0" layoutX="402.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView id="prenomcheck" fx:id="prenomCheck" fitHeight="27.0" fitWidth="27.0" layoutX="402.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="adresscheck" fitHeight="27.0" fitWidth="27.0" layoutX="402.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="telcheck" fitHeight="27.0" fitWidth="27.0" layoutX="402.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="emailcheck" fitHeight="27.0" fitWidth="27.0" layoutX="402.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="confirmpasswordcheck" fitHeight="27.0" fitWidth="27.0" layoutX="402.0" layoutY="483.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="passwordCheck" fitHeight="27.0" fitWidth="27.0" layoutX="402.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="labelpasswordvalide" layoutX="100.0" layoutY="418.0" prefHeight="20.0" prefWidth="160.0" textFill="#ac0ec4">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="99.0" layoutY="433.0" prefHeight="34.0" prefWidth="248.0" text="Utilisez au moins huit caractères  avec " textFill="#5e12a6">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="182.0" layoutY="454.0" prefHeight="34.0" prefWidth="317.0" text="des lettres, des chiffres et des symboles !" textFill="#5e12a6" underline="true">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+
+
          </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
       </AnchorPane>
    </center>
 </BorderPane>

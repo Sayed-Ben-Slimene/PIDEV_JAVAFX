@@ -34,8 +34,8 @@ public class User {
         this.prenom = prenom;
         this.adress = adress;
         this.email = email;
-        this.password = password;
-        this.roles = roles;
+        this.password = password;        
+        this.roles = "[\"" + roles.toUpperCase() + "\"]";
         this.tel = tel;
     }
 

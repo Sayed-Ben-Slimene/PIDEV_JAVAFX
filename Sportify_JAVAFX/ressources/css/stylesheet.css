@@ -1,0 +1,34 @@
+.parent{
+    -fx-background-color: #fff;
+}
+.sidebar{
+    -fx-background-image:url("../img/back.jpg");
+}
+.btns{
+    -fx-background-color: transparent;
+}
+.btns:hover{
+    -fx-background-color: #202332;
+}
+.box{
+    -fx-border-color: #3B3F4B;
+    -fx-border-width: 1px 0px 0px 0px;
+}
+.round-lbl{
+    -fx-background-color: #FE7A79;
+    -fx-background-radius: 100%;
+}
+.card-01{
+    -fx-background-color: rgba(0, 162, 211,0.3);
+}
+.card-02{
+    -fx-background-color: rgba(69, 183, 175,0.3);
+}
+.card-02{
+    -fx-background-color: rgba(255, 198, 108,0.3);
+}
+.round-box{
+    -fx-background-radius: 100%;
+    -fx-border-radius: 100%;
+    -fx-border-width: 5px;
+}

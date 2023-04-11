@@ -28,7 +28,7 @@ public class Sportify extends Application  {
     public void start(Stage primaryStage) throws IOException
     {
         this.stg = primaryStage;
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("../GUI/Register/Register.fxml"));
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("../GUI/ForgotPassword/ForgotPassword.fxml"));
         Parent root= loader.load();
         Scene scene= new Scene(root);
         
@@ -43,7 +43,6 @@ public class Sportify extends Application  {
     public static void main(String[] args)
     {
         System.out.println(System.getProperties());
-
         launch(args);
     }
     
