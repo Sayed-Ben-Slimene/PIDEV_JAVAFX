@@ -340,6 +340,7 @@ public class RegisterController implements Initializable {
     }
 
 
+    public static Stage stg;
 
 
 
@@ -351,7 +352,7 @@ public class RegisterController implements Initializable {
 
 
     @FXML
-    private void Login(ActionEvent event) {
+    private void Login(ActionEvent event) throws IOException {
                 if(nom.getText().isEmpty()){
                     oncanceled.setText("please enter your nom !");
                 }else if(prenom.getText().isEmpty()){
@@ -379,6 +380,13 @@ public class RegisterController implements Initializable {
         User user = new User(nom.getText(),prenom.getText(),adress.getText(),email2,password.getText(),"Role_USER",phoneNumber);
         sp.Ajouter2(user);
         System.out.print("user added with email : "+email.getText());
+
+         root = FXMLLoader.load(getClass().getResource("/GUI/Login/Login.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setTitle("Register");
+        stage.setScene(scene);
+        stage.show();
         
     }
     

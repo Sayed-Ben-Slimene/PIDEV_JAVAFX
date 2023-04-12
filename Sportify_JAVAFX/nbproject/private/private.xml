@@ -3,12 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/sayed/Desktop/PIDEV/JAVA%20FX%20PIDEV/Sportify_JAVAFX/Sportify_JAVAFX/src/GUI/ForgotPassword/ForgotPasswordController.java</file>
-            <file>file:/C:/Users/sayed/Desktop/PIDEV/JAVA%20FX%20PIDEV/Sportify_JAVAFX/Sportify_JAVAFX/src/GUI/ForgotPassword/forgotpassword.css</file>
-            <file>file:/C:/Users/sayed/Desktop/PIDEV/JAVA%20FX%20PIDEV/Sportify_JAVAFX/Sportify_JAVAFX/src/GUI/ForgotPassword/ForgotPassword.fxml</file>
-            <file>file:/C:/Users/sayed/Desktop/PIDEV/JAVA%20FX%20PIDEV/Sportify_JAVAFX/Sportify_JAVAFX/src/entities/User.java</file>
-            <file>file:/C:/Users/sayed/Desktop/PIDEV/JAVA%20FX%20PIDEV/Sportify_JAVAFX/Sportify_JAVAFX/src/services/ServiceUser.java</file>
-            <file>file:/C:/Users/sayed/Desktop/PIDEV/JAVA%20FX%20PIDEV/Sportify_JAVAFX/Sportify_JAVAFX/src/GUI/Register/RegisterController.java</file>
+            <file>file:/C:/Users/sayed/Desktop/PIDEV/JAVA%20FX%20PIDEV/Sportify_JAVAFX/Sportify_JAVAFX/src/GUI/Dashboard/Dashboard.fxml</file>
+            <file>file:/C:/Users/sayed/Desktop/PIDEV/JAVA%20FX%20PIDEV/Sportify_JAVAFX/Sportify_JAVAFX/src/GUI/Dashboard/Test/TestController.java</file>
+            <file>file:/C:/Users/sayed/Desktop/PIDEV/JAVA%20FX%20PIDEV/Sportify_JAVAFX/Sportify_JAVAFX/src/GUI/Dashboard/DashboardController.java</file>
+            <file>file:/C:/Users/sayed/Desktop/PIDEV/JAVA%20FX%20PIDEV/Sportify_JAVAFX/Sportify_JAVAFX/src/GUI/Dashboard/Test/Test.fxml</file>
+            <file>file:/C:/Users/sayed/Desktop/PIDEV/JAVA%20FX%20PIDEV/Sportify_JAVAFX/Sportify_JAVAFX/src/Sportify/Sportify.java</file>
+            <file>file:/C:/Users/sayed/Desktop/PIDEV/JAVA%20FX%20PIDEV/Sportify_JAVAFX/Sportify_JAVAFX/src/GUI/Dashboard/UsersDash/ShowUsers.fxml</file>
         </group>
     </open-files>
 </project-private>

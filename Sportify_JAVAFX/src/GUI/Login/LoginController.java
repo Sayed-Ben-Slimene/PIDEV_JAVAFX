@@ -144,10 +144,10 @@ public class LoginController implements Initializable {
               oncanceled.setText("Login Successful! ");
               oncanceled.setTextFill(Color.GREEN);
 
-            root = FXMLLoader.load(getClass().getResource("/GUI/Home/Home.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/GUI/Dashboard/Dashboard.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
-            stage.setTitle("Home");
+            stage.setTitle("Dashboard");
             stage.setScene(scene);
             stage.show();
 
@@ -213,7 +213,17 @@ public class LoginController implements Initializable {
     }  
   
     
-    
+        @FXML
+    public void switchToForgot(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("/GUI/ForgotPassword/ForgotPassword.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setTitle("ForgotPass");
+        stage.setScene(scene);
+        stage.show();
+                
+    }  
+  
     
 }
 

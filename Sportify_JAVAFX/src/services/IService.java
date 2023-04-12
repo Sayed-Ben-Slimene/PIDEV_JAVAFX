@@ -5,6 +5,7 @@
  */
 package services;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -17,7 +18,8 @@ public interface IService <T> {
     public boolean  Ajouter(T t);
     public void  Ajouter2(T t);
     public List<T> afficher();
-    public void  modifier (String t,T a);
-    public void supprimer (T t);
+
+    public void supprimer (int id);
+
     //public void TruncateTable();
 }

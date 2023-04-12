@@ -11,11 +11,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import entities.User;
-import java.util.List;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import utils.MyDB;
 
 /**
@@ -24,8 +24,8 @@ import utils.MyDB;
  */
 public class ServiceUser  implements IService<User>{
     
-    Connection con ; 
-    Statement ste;
+    static Connection con ;
+    static Statement ste;
      
     public static User user;
     
@@ -95,8 +95,10 @@ public class ServiceUser  implements IService<User>{
 */
 
     @Override
-    public List<User> afficher() {
-        ArrayList<User> pers = new ArrayList<>();
+    public ObservableList<User> afficher () {
+        ObservableList<User> users = FXCollections.observableArrayList();
+
+        //ArrayList<User> pers = new ArrayList<>();
         try {
             ste =con.createStatement();
             String req = "SELECT * FROM `user`";
@@ -113,13 +115,13 @@ public class ServiceUser  implements IService<User>{
                 String roles =res.getString("roles");
 
                 User p = new User(id, nom, prenom,adress, email,password,roles,tel);
-                pers.add(p);
+                users.add(p);
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
         
-        return  pers;
+        return  users;
        
     }
 
@@ -159,16 +161,19 @@ try {
         return false;
     }
 
-
     @Override
-    public void modifier(String t, User a) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void supprimer(int id) {
+          try {
+            String req = "DELETE FROM `user` WHERE id = " + id;
+            Statement st = con.createStatement();
+            st.executeUpdate(req);
+            System.out.println("Abonnement deleted !");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
+    
 
-    @Override
-    public void supprimer(User t) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     public boolean chercherUtilisateurByEmail(String s) {
         User user = null;
@@ -199,5 +204,10 @@ try {
         }
         return true;
     }
+    //            String querry= "UPDATE `user` SET `email`='"+t.getEmail()+"',`nom`='"+t.getNom()+"',`roles`='"+t.getRoles()+"',`password`='"+t.getPassword()+"',`tel`='"+t.getTel()+"',`adress`='"+t.getAdress()+"'  ";
 
+    
+    
+    
+    
 }

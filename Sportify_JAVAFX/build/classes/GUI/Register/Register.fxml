@@ -152,7 +152,7 @@
                   <Image url="@../../Images/icons8-key-64.png" />
                </image>
             </ImageView>
-            <Label fx:id="oncanceled" alignment="CENTER" contentDisplay="CENTER" layoutX="128.0" layoutY="576.0" prefHeight="18.0" prefWidth="331.0" textFill="RED">
+            <Label fx:id="oncanceled" alignment="CENTER" contentDisplay="CENTER" layoutX="128.0" layoutY="589.0" prefHeight="18.0" prefWidth="331.0" textFill="RED">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

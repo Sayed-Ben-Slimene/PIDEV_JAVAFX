@@ -40,7 +40,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Button>
-            <Hyperlink id="linkforget" fx:id="signuplink" layoutX="203.0" layoutY="296.0" onAction="#switchToSignUp" text="Mot De Passe Oublié?" textFill="#6c3483">
+            <Hyperlink id="linkforget" fx:id="forgotpass" layoutX="203.0" layoutY="296.0" onAction="#switchToForgot" text="Mot De Passe Oublié?" textFill="#6c3483">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font></Hyperlink>
