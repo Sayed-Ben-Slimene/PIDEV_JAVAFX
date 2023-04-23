@@ -1,4 +1,6 @@
 package GUI.ForgotPassword;
+import GUI.Login.LoginController;
+import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import services.LoginSession;
@@ -9,6 +11,9 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -20,6 +25,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -31,6 +37,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import services.ServiceUser;
+import services.UserMailing;
 
 /**
  * FXML Controller class
@@ -64,56 +71,118 @@ public class ForgotPasswordController implements Initializable {
     private ImageView passwordCheck;
     @FXML
     private Label labelpassword;
+    
+        public int code;
+    
+    
     private ServiceUser myServices = new ServiceUser();
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/GUI/Login/Login.fxml"));
+            LoginController ircc = loader.getController();
 
-    @FXML
-    private void verifEmail(KeyEvent event) {
+            code = ircc.codem;
 
-//        if (myServices.chercherUtilisateurByEmail(logemail.getText().trim()) == true) {
-//            labelemail.setText("Email Existe déja");
-//            // verificationUserEmail = false;
-//        }
-//        if (myServices.chercherUtilisateurByEmail(logemail.getText().trim()) == false) {//alphanumerique@alphanumerique.com
-        //{ici longeur  }
-        //debut ^
-        //fin $
-        String email_pattern = "^[a-zA-Z]+[a-zA-Z0-9\\._-]*[a-zA-Z0-9]@[a-zA-Z]+" + "[a-zA-Z0-9\\._-]*[a-zA-Z0-9]+\\.[a-zA-Z]{2,4}$";
-        Pattern pattern = Pattern.compile(email_pattern);
-        Matcher matcher = pattern.matcher(logemail.getText().trim());
-
-        if (((Matcher) matcher).matches()) {       //if   matcher ne contient pas la format
-            //Label labelemail = new Label("Email Format valide :)");
-            labelemail.setText("Email Format valide !");
-            labelemail.setTextFill(Color.GREEN);
-            emailcheck.setImage(new Image("@../../Images/checkMark.png"));
-            // verificationUserEmail = true;
-
-        } else {
-            labelemail.setVisible(true);
-            emailcheck.setImage(new Image("@../../Images/erreurCheckMark.png"));
-            labelemail.setText("Email Format invalide !");
-            labelemail.setTextFill(Color.RED);
-            // JOptionPane.showMessageDialog(null, "Email Format invalide");
-            //verificationUserEmail = false;
-
+        } catch (Exception ex) {
+            Logger.getLogger(ForgotPasswordController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
+    
+    
+    
+/*
+@FXML
+    private void verifCode(KeyEvent event) {
+    if (logemail.getText().trim().length() >= 5) {
+        int nbChar = 0;
+        for (int i = 1; i < logemail.getText().trim().length(); i++) {
+            char ch = logemail.getText().charAt(i);
+
+            if (Character.isLetter(ch)) {
+
+                nbChar++;
+
+            }
+            System.out.println("le nombre Code");
+        }
+
+        if (nbChar == 0) {
+            labelemail.setText("Code valide");
+             emailcheck.setImage(new Image("@../../Images/checkMark.png"));
+            labelemail.setTextFill(Color.GREEN);
+
+           //verificationUserPhone = true;
+        } else {
+            emailcheck.setImage(new Image("@../../Images/erreurCheckMark.png"));
+            labelemail.setText("invalide Code");
+            labelemail.setTextFill(Color.RED);
+           // verificationUserPhone = false;
+
+        }
+
+    } else {
+        labelemail.setText("Il faut 4 chiffres");
+        labelemail.setTextFill(Color.RED); 
+        emailcheck.setImage(new Image("@../../Images/erreurCheckMark.png"));
+
+       // verificationUserPhone = false;
+    }
+}*/
     @FXML
-    public void onForgot(ActionEvent event) throws Exception{
+    public void resetPasswordButtonAction(ActionEvent event) throws Exception{
 
         //  if(logemail.getText().isEmpty()==false || logpassword.getText().isEmpty()==false ) {
 
-        if(logemail.getText().isEmpty()){
-            labelemail.setText("please enter your Email !");
+             if(logemail.getText().isEmpty()){
+                    labelemail.setText("please enter your Email !");
+                     showAlert("please enter your email :( ");
+
             }else {
-            oncanceled.setText("You try to Login ! ");
+                    oncanceled.setText("You try to RSP ! ");
             // JOptionPane.showMessageDialog(null, "Enter your Email and Password !");
 
-        }
 
     }
-
+    }
+    
+    @FXML
+    private void Envoyer(ActionEvent event) throws IOException {
+        
+        int codex = Integer.parseInt(logemail.getText());
+        ServiceUser sc = new ServiceUser();
+        String x="x";
+        if (logemail.getText().toString().equals(x))
+        {Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Alerte");
+            alert.setHeaderText(null);
+            alert.setContentText("!!!Veuillez taper le code de Verification !!!");
+            alert.showAndWait();
+        }
+        
+        else if (code == codex) {
+            
+            FXMLLoader loader = new FXMLLoader();
+            labelemail.getScene().getWindow().hide();
+            Stage prStage = new Stage();
+            loader.setLocation(getClass().getResource("/GUI/ResetPassword/ResetPassword.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            prStage.setScene(scene);
+            prStage.setResizable(false);
+            prStage.show();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Alerte");
+            alert.setHeaderText(null);
+            alert.setContentText("!!! Code incorrecte !!!");
+            alert.showAndWait();
+        
+    }
+    }
 
     public void oncancelpress(ActionEvent e){
         Stage stage =(Stage) oncancel.getScene().getWindow();
@@ -121,15 +190,7 @@ public class ForgotPasswordController implements Initializable {
 
     }
 
-
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        //  BufferedImage i = captcha.getImage();
-        //     Image ii = SwingFXUtils.toFXImage(i, null);
-//        ImageView ll = new ImageView(ii);
-        //    icaptcha.setImage(ii);
-    }
+    
 
     private void test(String text, String text0) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -142,7 +203,20 @@ public class ForgotPasswordController implements Initializable {
         logpassword.setText(pass);
     }*/
 
+    
+    
+    
+     private void showAlert(String message) 
+    {
+                 Alert al = new Alert(Alert.AlertType.ERROR);
+                al.setTitle("Warning");
+                 al.setHeaderText(null);
+                 al.setContentText(message);
+                 al.showAndWait();
+            
 
+       
+    }
     @FXML
     public void switchToSignUp(ActionEvent event) throws IOException{
         root = FXMLLoader.load(getClass().getResource("/GUI/Login/Login.fxml"));

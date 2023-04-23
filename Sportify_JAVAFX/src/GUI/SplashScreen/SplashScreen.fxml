@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="901.0" stylesheets="@splashscreen.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.SplashScreen.SplashScreenController">
+    <fx:script>
+
+    </fx:script>
+   <right>
+        <AnchorPane prefHeight="564.0" prefWidth="885.0" BorderPane.alignment="CENTER">
+            <children>
+            
+            </children>
+               <children>
+            <ImageView fitHeight="645.0" fitWidth="916.0" layoutX="13.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/logohaha.png" />
+               </image>
+            </ImageView>
+                   
+             <ProgressIndicator layoutX="760.0" layoutY="480.0" prefHeight="120.0" prefWidth="170.0" rotate="5.0" />
+            <ImageView fitHeight="443.0" fitWidth="447.0" layoutX="50.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/ballon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="178.0" fitWidth="186.0" layoutX="13.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/logoapp.png" />
+               </image>
+            </ImageView>
+            </children>
+
+            
+        </AnchorPane>
+   </right>
+</BorderPane>

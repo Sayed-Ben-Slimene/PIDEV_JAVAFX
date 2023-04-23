@@ -27,8 +27,9 @@ public class Sportify extends Application  {
     @Override
     public void start(Stage primaryStage) throws IOException
     {
+        
         this.stg = primaryStage;
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("../GUI/Register/Register.fxml"));
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("../GUI/Login/Login.fxml"));
         Parent root= loader.load();
         Scene scene= new Scene(root);
         
@@ -44,6 +45,16 @@ public class Sportify extends Application  {
     {
         System.out.println(System.getProperties());
         launch(args);
+        
+        
+          
+        ServiceUser sp = new ServiceUser();
+        sp.getIdbymail("sayedbenslimane@gmail.com");
+        
+        System.out.println(sp.getIdbymail("sayedbenslimane@gmail.com"));
+
+
+        
     }
     
     
@@ -66,14 +77,14 @@ public class Sportify extends Application  {
         System.out.println("user ajouter");
         
         
-        ServiceUser sp = new ServiceUser();
+       
         
         
-        sp.Ajouter(p1);
-       // sp.Ajouter2(p2);
-        System.out.println(sp.Afficher());
-
-
-    }*/
+        sp.Ajouter(p1);*/
     
-}
+    
+       //  
+  
+    }
+    
+

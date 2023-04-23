@@ -125,7 +125,7 @@ public class ShowUsersController implements Initializable {
         emailuser.setText(culumnUserEmail.getCellData(index).toString());
 
     }
-
+/*
     @FXML
     public void supp(MouseEvent event){
 
@@ -151,5 +151,5 @@ public class ShowUsersController implements Initializable {
             usersTable.setItems(listUsers);
         }
     }
-
+*/
 }

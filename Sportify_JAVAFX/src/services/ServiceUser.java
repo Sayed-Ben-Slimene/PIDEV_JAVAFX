@@ -13,6 +13,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import entities.User;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -54,6 +56,33 @@ public class ServiceUser  implements IService<User>{
     }
      return false;   
     }
+    
+    public boolean ajouter(User t) {
+        
+        try {
+       
+            ste = con.createStatement();
+            
+            String req = "INSERT INTO `sportify_pidev`.`user` (`nom`,`prenom`,`adress`,`email`,`password`,`roles`,`tel`) VALUES ('"+t.getNom()+"','"+t.getPrenom()+"','"+t.getAdress()+"','"+t.getEmail()+"','"+t.getPassword()+"','"+t.getRoles()+"','"+t.getTel()+"');";
+            
+      //      ste.executeUpdate(req);
+            
+    
+        int x = ste.executeUpdate(req);
+        if(x==0){
+            return false;
+        }else{
+            return true;
+        }
+    } catch (SQLException ex) {
+        System.out.println("service classe ajouter methode  ");
+        System.out.println(ex.getMessage());
+    
+    }
+     return false;   
+    }
+
+    
     @Override
     public void Ajouter2(User t) {
         
@@ -69,7 +98,7 @@ public class ServiceUser  implements IService<User>{
             
         } catch (SQLException ex) {
             //System.out.println("service classe ajouter methode  ");
-            System.out.println(ex.getMessage());
+            System.out.println("erreur f ajout2");
         }
         
     }
@@ -173,7 +202,38 @@ try {
         }
     }
     
+public void setNewMotPass(int idUser ,String pass){
+       PreparedStatement st;
+        try {
+            String req = "UPDATE `user` SET `password` ='" + pass + "' WHERE `user`.`id` = "+idUser;
+            st = con.prepareStatement(req);
+            st.executeUpdate(req);
+             System.out.println(req);
+        } catch (SQLException ex) {
+            Logger.getLogger(ServiceUser.class.getName()).log(Level.SEVERE, null, ex);
+        }  
+        
+    }    
+    
+    
+    public int getIdbymail(String email) {
+    try {
+        PreparedStatement st = con.prepareStatement("SELECT id FROM user WHERE email=?",
+                ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        st.setString(1, email);
+        ResultSet rs = st.executeQuery();
 
+        if (rs.next()) {
+            return rs.getInt("id");
+        }
+    } catch (SQLException ex) {
+        Logger.getLogger(ServiceUser.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    return 0;
+}
+   
+    
+    
 
     public boolean chercherUtilisateurByEmail(String s) {
         User user = null;

@@ -1,11 +1,20 @@
 package GUI.Register;
 
+import GUI.Login.LoginController;
 import entities.User;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
+import java.util.Properties;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javafx.animation.FadeTransition;
+import javafx.animation.PauseTransition;
+import javafx.scene.Parent;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,14 +23,30 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.util.Duration;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import services.ServiceUser;
+
+import services.UserMailing;
 
 /**
  * FXML Controller class
@@ -96,7 +121,17 @@ public class RegisterController implements Initializable {
     boolean containsUpperCaseLetter = false;
     boolean containsSpecialCharacter = false;
     boolean length = false;
+
+    
+    private boolean verificationUserName;
+    private boolean verificationPrenom;
+    private boolean verificationAdress;
+    private boolean verificationUserPhone;
+
+    private boolean verificationUserEmail;
+    
     private boolean verificationUserpasword;
+    private boolean verificationUserConfirmPassword;
 
 
     private ServiceUser myServices = new ServiceUser();
@@ -108,8 +143,12 @@ public class RegisterController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
         // TODO
     }
+//            nomCheck.setImage(new Image ("@../../Images/checkMark.png"));
+    //            nomCheck.setImage(new Image("@../../Images/erreurCheckMark.png"));
+
 
     @FXML
     private void verifNom(KeyEvent event) {
@@ -121,18 +160,17 @@ public class RegisterController implements Initializable {
             }
         }
         if (nbNonChar == 0 && nom.getText().trim().length() >=3) {
-            nomCheck.setImage(new Image ("@../../Images/checkMark.png"));
             labelnom.setText ("nom valide ");
+            nomCheck.setImage(new Image("@../../Images/checkMark.png"));
             labelnom.setTextFill(Color.GREEN);
 
 
-            // verificationUserNom = true;
+            verificationUserName = true;
         } else {
-            nomCheck.setImage(new Image("@../../Images/erreurCheckMark.png"));
             labelnom.setText ("Check nom !!! ");
-
-//                erreur = erreur + ("Pas de caractere permit dans le telephone\n");
-           // verificationUserNom = false;
+            labelnom.setTextFill(Color.RED);
+            nomCheck.setImage(new Image("@../../Images/erreurCheckMark.png"));
+            verificationUserName = false;
 
         }
     }
@@ -152,11 +190,13 @@ public class RegisterController implements Initializable {
             labelprenom.setText ("prennom valide ");
             labelprenom.setTextFill(Color.GREEN);
 
-
+            verificationPrenom =true;
             // verificationUserPrenom = true;
         } else {
             prenomCheck.setImage(new Image("@../../Images/erreurCheckMark.png"));
             labelprenom.setText ("Check prenom !!! ");
+            labelprenom.setTextFill(Color.RED);
+            verificationPrenom =false;
 
 //                erreur = erreur + ("Pas de caractere permit dans le telephone\n");
            // verificationUserPrenom = false;
@@ -179,13 +219,13 @@ public class RegisterController implements Initializable {
             labeladress.setTextFill(Color.GREEN);
 
 
-            // verificationUserNom = true;
+             verificationAdress = true;
         } else {
             adresscheck.setImage(new Image("@../../Images/erreurCheckMark.png"));
             labeladress.setText ("Check your Adress !!! ");
+            labeladress.setTextFill(Color.RED);
 
-//                erreur = erreur + ("Pas de caractere permit dans le telephone\n");
-            // verificationUserNom = false;
+             verificationAdress = false;
 
         }
     }
@@ -202,24 +242,28 @@ public class RegisterController implements Initializable {
                 nbChar++;
 
             }
-            System.out.println(nbChar);
+            System.out.println("le nompre invalide");
         }
 
         if (nbChar == 0) {
             labeltel.setText("number valide");
+             telcheck.setImage(new Image("@../../Images/checkMark.png"));
             labeltel.setTextFill(Color.GREEN);
 
-            telcheck.setImage(new Image("@../../Images/checkMark.png"));
-          //  verificationUserPhone = true;
-        } else {telcheck.setImage(new Image("@../../Images/erreurCheckMark.png"));
-            labeltel.setText("invalide number \n"
-                    + " Il exist des char");
-           // verificationUserPhone = false;
+           verificationUserPhone = true;
+        } else {
+            telcheck.setImage(new Image("@../../Images/erreurCheckMark.png"));
+            labeltel.setText("invalide number");
+            labeltel.setTextFill(Color.RED);
+            verificationUserPhone = false;
 
         }
 
-    } else {telcheck.setImage(new Image("@../../Images/erreurCheckMark.png"));
+    } else {
         labeltel.setText("Il faut 8 chiffres");
+        labeltel.setTextFill(Color.RED); 
+        telcheck.setImage(new Image("@../../Images/erreurCheckMark.png"));
+
        // verificationUserPhone = false;
     }
 }
@@ -229,7 +273,7 @@ public class RegisterController implements Initializable {
 
     if (myServices.chercherUtilisateurByEmail(email.getText().trim()) == true) {
         labelemail.setText("Email Existe déja");
-       // verificationUserEmail = false;
+        verificationUserEmail = false;
     }
     if (myServices.chercherUtilisateurByEmail(email.getText().trim()) == false) {//alphanumerique@alphanumerique.com
         //{ici longeur  }
@@ -239,20 +283,24 @@ public class RegisterController implements Initializable {
         Pattern pattern = Pattern.compile(email_pattern);
         Matcher matcher = pattern.matcher(email.getText().trim());
 
-        if (((Matcher) matcher).matches()) {       //if   matcher ne contient pas la format
-            labelemail.setVisible(false);
-            labelemail.setText("Email valide !");
-            labelemail.setTextFill(Color.GREEN);
-
-            emailcheck.setImage(new Image("@../../Images/checkMark.png"));
-           // verificationUserEmail = true;
+        if (((Matcher) matcher).matches()) {       
+            
+                //if   matcher ne contient pas la format
+                labelemail.setVisible(false);
+                labelemail.setText("Email Format valide !");
+                labelemail.setTextFill(Color.GREEN);
+                emailcheck.setImage(new Image("@../../Images/checkMark.png"));
+         
+                verificationUserEmail = true;
 
         } else {
             labelemail.setVisible(true);
-            emailcheck.setImage(new Image("@../../Images/erreurCheckMark.png"));
+             emailcheck.setImage(new Image("@../../Images/erreurCheckMark.png"));
+
             labelemail.setText("Email Format invalide !");
-            // JOptionPane.showMessageDialog(null, "Email Format invalide");
-            //verificationUserEmail = false;
+             labelemail.setTextFill(Color.RED);
+
+             verificationUserEmail = false;
 
         }
     }
@@ -269,7 +317,7 @@ public class RegisterController implements Initializable {
         labelpassword.setText("Longeur juste");
         labelpassword.setTextFill(Color.GREEN);
 
-        //verificationUserConfirmpasword = true;
+        verificationUserpasword = true;
 
         for (int i = 0; i < PAS.length(); i++) {
             char ch = PAS.charAt(i);
@@ -313,6 +361,9 @@ public class RegisterController implements Initializable {
         passwordCheck.setImage(new Image("@../../Images/erreurCheckMark.png"));
         labelpassword.setText("Au moins 8 caractères");
         labelpasswordvalide.setText("Mot de passe invalide!");
+        labelpasswordvalide.setTextFill(Color.RED);
+
+        
         length = false;
         verificationUserpasword = false;
         containsSpecialCharacter = false;
@@ -328,12 +379,15 @@ public class RegisterController implements Initializable {
         if (password.getText().trim().equals(confirmpassword.getText().trim())) {
             labelconfirmpassword.setText("Mot de passe Conformer :) ");
             labelconfirmpassword.setTextFill(Color.GREEN);
-
-            labelpassword.setText("");
             confirmpasswordcheck.setImage(new Image("@../../Images/checkMark.png"));
             verificationUserConfirmpasword = true;
-        } else {  confirmpasswordcheck.setImage(new Image("@../../Images/erreurCheckMark.png"));
+        } else { 
+            
+            
+            confirmpasswordcheck.setImage(new Image("@../../Images/erreurCheckMark.png"));
             labelconfirmpassword.setText("Verifier votre mot de passe");
+            labelconfirmpassword.setTextFill(Color.RED);
+
             verificationUserConfirmpasword = false;
         }
 
@@ -342,53 +396,169 @@ public class RegisterController implements Initializable {
 
     public static Stage stg;
 
+    
+    
+    
+    //verification 1
+    private boolean Signup() {
+ 
 
+        if ( verificationUserName && verificationUserEmail  && verificationUserPhone
+                && verificationUserpasword && verificationUserConfirmpasword && verificationAdress
+                && verificationPrenom ) {
 
+               return true;
+        } else {
 
+            return false;
+        }
 
-
-
-
-
+    }
+ 
 
     @FXML
-    private void Login(ActionEvent event) throws IOException {
+    private void Register(ActionEvent event) throws Exception {
                 if(nom.getText().isEmpty()){
                     oncanceled.setText("please enter your nom !");
+                                    showAlert("please enter your nom :( ");
+
                 }else if(prenom.getText().isEmpty()){
                   oncanceled.setText("please enter your prenom !");
+                                                      showAlert("please enter your prenom  :( ");
+
                 }else if(adress.getText().isEmpty()){
                     oncanceled.setText("please enter your adress !");
+                                                        showAlert("please enter your adress :( ");
+
                 }else if(tel.getText().isEmpty()){
-                  oncanceled.setText("please enter your tel!");
+                  oncanceled.setText("please enter your telephone !");
+                                                      showAlert("please enter your telephone :( ");
+
                 }else if(email.getText().isEmpty()){
                   oncanceled.setText("please enter your email !");
+                                                      showAlert("please enter your email :( ");
+
                 }else if(password.getText().isEmpty()){
                   oncanceled.setText("please enter your password !");
+                                                      showAlert("please enter your password :( ");
+
                 }else if(confirmpassword.getText().isEmpty()){
                   oncanceled.setText("please enter your confirmpassword !");
+                                                      showAlert("please enter your confirmpassword :( ");
+
                 }else {
                     oncanceled.setText("You try to Login ! ");
           // JOptionPane.showMessageDialog(null, "Enter your Email and Password !");
 
         }
-        
-        String email2=email.getText();
-        int phoneNumber = Integer.parseInt(tel.getText());
-        
-        ServiceUser sp = new ServiceUser();
-        User user = new User(nom.getText(),prenom.getText(),adress.getText(),email2,password.getText(),"Role_USER",phoneNumber);
-        sp.Ajouter2(user);
-        System.out.print("user added with email : "+email.getText());
+                
 
-         root = FXMLLoader.load(getClass().getResource("/GUI/Login/Login.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setTitle("Register");
-        stage.setScene(scene);
-        stage.show();
+        if (Signup()) {
+                    ServiceUser sp = new ServiceUser();
+        //sp.Ajouter2(user);
+                    User user = new User(nom.getText(),prenom.getText(),adress.getText(),email.getText(),password.getText(),"Role_USER",Integer.parseInt(tel.getText()));
+
         
-    }
+        if(sp.ajouter(user)==true){
+                                // Get the primary stage of the application
+                     Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                     // Close the primary stage
+                     primaryStage.close();
+
+                     // Create the splash screen and show it
+                 
+                        // Load the Splash Screen FXML file
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUI/SplashScreen/SplashScreen.fxml"));
+                    Parent splashScreenRoot = loader.load();
+
+                    // Create a new Scene with the Splash Screen as its root
+                    Scene splashScreenScene = new Scene(splashScreenRoot);
+
+                    // Create a new Stage for the Splash Screen
+                    Stage splashScreenStage = new Stage();
+                    splashScreenStage.setScene(splashScreenScene);
+                    splashScreenStage.initStyle(StageStyle.TRANSPARENT); // Set the stage to be transparent
+
+                    // Show the Splash Screen
+                    splashScreenStage.show();
+
+                    // After 5 seconds, remove the Splash Screen and show the main content of the application
+                    PauseTransition delay = new PauseTransition(Duration.seconds(5));
+                    delay.setOnFinished(e -> {
+
+                        try {
+                                        // Remove the Splash Screen and show the main content of the application
+                                        splashScreenStage.close();
+                                        FXMLLoader loader2 = new FXMLLoader(getClass().getResource("/GUI/Login/Login.fxml"));
+                                        Parent otherPageRoot = loader2.load();
+                                        // Create a new Scene with the Other Page as its root
+                                        Scene otherPageScene = new Scene(otherPageRoot);
+                                        // Create a new Stage for the Other Page
+                                        Stage otherPageStage = new Stage();
+                                        otherPageStage.setScene(otherPageScene);
+
+                                        // Show the Other Page
+                                        otherPageStage.show();
+                                        // Code to show the main content of the application
+                        } catch (IOException ex) {
+                            Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    });
+                    delay.play();
+         System.out.print("user added with email : "+email.getText());
+/*
+               UserMailing.send(
+                "sportifyapp00@gmail.com",
+                "Sp123456789",
+                "sayedbenslimane@gmail.com",
+                "Bienvenu sur Sportify",
+                "Some text <b>bold part</b> ... continue");
+            
+                 */
+                Properties p = new Properties();
+                p.put("mail.smtp.host", "smtp.gmail.com");
+                p.put("mail.smtp.socketFactory.port", "465");
+                p.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+                p.put("mail.smtp.auth", "true");
+                p.put("mail.smtp.port", "465");
+                //Session
+                Session s = Session.getDefaultInstance(p,
+                  new javax.mail.Authenticator() {
+                  protected PasswordAuthentication getPasswordAuthentication() {
+                     return new PasswordAuthentication("sportifyapp00@gmail.com", "rulrljfrzqctiqcd");
+                  }
+                });
+                //composer le message
+                try {
+                  MimeMessage m = new MimeMessage(s);
+                  m.addRecipient(Message.RecipientType.TO,new InternetAddress("sayedbenslimane@gmail.com"));
+                  m.setSubject("Bienvenu sur Sportify");
+                  m.setText("mrigel jawek behy");
+                  //envoyer le message
+                  Transport.send(m);
+                  System.out.println("Email envoyé avec succès");
+                } catch (MessagingException e) {
+                  e.printStackTrace();
+                }
+        }
+                
+        }else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setHeaderText(null);
+            alert.setContentText("Veillez remplir tous les champs");
+            alert.show();
+            
+            
+            
+            
+            
+        }
+    
+ }
+    
+   
     
         @FXML
         public void switchToLogin(ActionEvent event) throws IOException{        
@@ -401,5 +571,41 @@ public class RegisterController implements Initializable {
                 
     }
 
+     private void showAlert(String message) 
+    {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Warning");
+            alert.setContentText(message);
+            alert.show();
+       
+    }
   
 }
+               // int n = rand.nextInt(50);
+                /*
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Test");
+                alert.setHeaderText("You are succefully sing up.Please verify you email");
+                alert.setResizable(false);
+                alert.setContentText("Select okay or cancel this alert.");
+                alert.showAndWait();
+                
+                Optional<ButtonType> result = alert.showAndWait();
+                if(result.get() == ButtonType.OK){
+                    FXMLLoader fxmlloader = new FXMLLoader (getClass().getResource("/GUI/Login/Login.fxml"));
+                    Parent root1= (Parent) fxmlloader.load();
+                    Stage stage = new Stage();
+                    stage.initStyle(StageStyle.DECORATED);
+                    stage.setTitle("Login");
+                    stage.setScene(new Scene(root1));
+                    stage.show();
+            }
+        }else{
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Account Doesn't Created");
+            alert.setHeaderText("Look, an Information Dialog");
+            alert.setContentText("make sur for information");
+            alert.show();
+        }
+*/

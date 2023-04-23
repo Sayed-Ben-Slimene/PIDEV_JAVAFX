@@ -198,6 +198,30 @@ public class DashboardController implements Initializable {
 //        }
 
 //   }
+    /*
+    private void update_button(ActionEvent event) throws IOException {
+        ServiceUser uc = new ServiceUser();
+        User u = uc.getByID(DashboardController.userc);
+        u.setFirstname(firstname_update.getText());
+        u.setLastname(lastname_update.getText());
+        u.setUsername(username_update.getText());
+        u.setEmail(u.getEmail());
+        uc.Modifier(u);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText(null);
+        alert.setContentText("Profil updated !");
+        alert.showAndWait();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("profile.fxml"));
+        Stage stage = new Stage();
+
+        stage.setScene(new Scene(loader.load()));
+        stage.show();
+        Stage currentStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+        currentStage.hide();
+    }
+    
+    
 /*
     @FXML
     private void Modifier() {
