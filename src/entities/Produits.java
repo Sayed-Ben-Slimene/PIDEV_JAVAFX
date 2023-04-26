@@ -4,6 +4,8 @@
  */
 package entities;
 
+import javafx.scene.image.Image;
+
 /**
  *
  * @author LENOVO
@@ -12,31 +14,53 @@ public class Produits {
      int id ;
      String title ,description;
      float prix;
-     int categorieId; // champ pour stocker l'ID de la catégorie sélectionnée
      String photo;
-     boolean published;
+     int published;
+     private Categorie categorie;
 
     public Produits() {
     }
 
-    public Produits(int id, String title, String description, float prix, int categorieId, String photo, boolean published) {
+    public Produits(int id, String title, String description, float prix, String photo, int published, Categorie categorie) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.prix = prix;
-        this.categorieId = categorieId;
         this.photo = photo;
         this.published = published;
+        this.categorie = categorie;
     }
 
-    public Produits(String title, String description, float prix, int categorieId, String photo, boolean published) {
+    public Produits(String title, String description, float prix, String photo, int published, Categorie categorie) {
         this.title = title;
         this.description = description;
         this.prix = prix;
-        this.categorieId = categorieId;
         this.photo = photo;
         this.published = published;
+        this.categorie = categorie;
     }
+
+    public Produits(int id, String title, String description, float prix, Image image, int published, Categorie categorie) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Produits(String produitTitle, float prix) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Produits(String produitTitle) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Produits(int produitId, String produitTitle, String produitDescription, Categorie categorie, boolean produitPublished, float produitPrix, String produitPhoto) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+  
+
+  
+
+   
 
     public int getId() {
         return id;
@@ -70,13 +94,7 @@ public class Produits {
         this.prix = prix;
     }
 
-    public int getCategorieId() {
-        return categorieId;
-    }
-
-    public void setCategorieId(int categorieId) {
-        this.categorieId = categorieId;
-    }
+  
 
     public String getPhoto() {
         return photo;
@@ -86,11 +104,19 @@ public class Produits {
         this.photo = photo;
     }
 
-    public boolean isPublished() {
+    public int getPublished() {
         return published;
     }
 
-    public void setPublished(boolean published) {
+    public void setPublished(int published) {
         this.published = published;
+    }
+
+   public Categorie getCategorie() {
+    return categorie;
+}
+
+    public ProduitPanier addToCart(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

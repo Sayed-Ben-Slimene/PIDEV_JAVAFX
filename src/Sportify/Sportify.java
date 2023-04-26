@@ -68,9 +68,9 @@ public class Sportify extends Application{
         //sc.Supprimer(c);
        // sc.Afficher();
        
-       //Produits p1 = new Produits("maillot","hihtniktnn tjk g",145,15,"hi ijt .",true);
-       // ServiceProduit sp = new ServiceProduit();
-        //sp.Ajouter(p1);
+     //  Produits p1 = new Produits("maillot","hihtniktnn tjk g",145,15,"hi ijt .",true);
+      //  ServiceProduit sp = new ServiceProduit();
+       // sp.Ajouter(p1);
         //sp.Supprimer(p1);
         //System.out.println(sc.Afficher());
         

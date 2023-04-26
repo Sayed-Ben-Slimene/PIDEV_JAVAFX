@@ -21,6 +21,7 @@ import utils.MyDB;
 public class ServiceProduit implements IService<Produits> {
     Connection con ; 
     Statement ste;
+    
      
     
     
@@ -32,23 +33,37 @@ public class ServiceProduit implements IService<Produits> {
         con = MyDB.createorgetInstance().getCon();
         
     }
-  
-   public void Ajouter(Produits t) {
-    try {
-        PreparedStatement pre = con.prepareStatement("INSERT INTO `sportify`.`produits` (`title`, `description`, `prix`, `category_id`, `photo`, `published`) VALUES (?, ?, ?, ?, ?, ?);");
+    public void Ajouter(Produits t) {
+         try {
+            
+            //1 creer le statement 
+            ste = con.createStatement();
+            
+          //  String req = "INSERT INTO `sportify`.`produits` (`category_id`,`title`,`description`,`published`,`prix`,`photo`) VALUES ('"+t.getCategorie().getId()+"','"+t.getTitle()+"','"+t.getDescription()+"','"+t.getPublished()+"','"+t.getPrix()+"','"+t.getPhoto()+"');";
+            
+          //  ste.executeUpdate(req);
+          String req = "INSERT INTO `sportify`.`produits` (`category_id`,`title`,`description`,`published`,`prix`,`photo`) VALUES (?,?,?,?,?,?)";
+PreparedStatement ps = con.prepareStatement(req);
+ps.setInt(1, t.getCategorie().getId());
+ps.setString(2, t.getTitle());
+ps.setString(3, t.getDescription());
+ps.setInt(4, t.getPublished());
+ps.setDouble(5, t.getPrix());
+ps.setString(6, t.getPhoto());
+ps.executeUpdate();
+
+           
+            
+        } catch (SQLException ex) {
+            //System.out.println("service classe ajouter methode  ");
+            System.out.println(ex.getMessage());
+        }
         
-        pre.setString(1, t.getTitle());
-        pre.setString(2, t.getDescription());
-        pre.setFloat(3, t.getPrix());
-        pre.setInt(4, t.getCategorieId()); // utiliser la catégorie sélectionnée pour initialiser le champ categorieId
-        pre.setString(5, t.getPhoto());
-        pre.setBoolean(6, t.isPublished());
-        
-        pre.executeUpdate();
-    } catch (SQLException ex) {
-        System.out.println(ex.getMessage());
+         ServiceProduit sp = new ServiceProduit();
+         //sp.Afficher();
     }
-   }
+  
+   
 
     @Override
     public void Ajouter2(Produits t) {
@@ -57,9 +72,24 @@ public class ServiceProduit implements IService<Produits> {
 
     @Override
     public void Modifier(Produits t) {
-        
+        try {
+            String querry= "UPDATE `produits` SET `title`='"+t.getTitle()+"',`description`='"+t.getDescription()+"',`published`='"+t.getPublished()+"',`prix`='"+t.getPrix()+"',`photo`='"+t.getPhoto()+"',`category_id`='"+t.getCategorie().getId()+"' where `title`='"+t.getTitle()+"'";
+            Statement ste = con.createStatement();
+
+            ste.executeUpdate(querry);
+            if(ste.executeUpdate(querry)==1){
+                System.out.print("categorie modifier");
+            }
+
+            } catch (SQLException ex) {
+                System.out.println("service classe modif methode  ");
+                System.out.println(ex.getMessage());
 
             }
+        
+        
+
+        }
 
     @Override
     public void Supprimer(Produits t) {
@@ -76,33 +106,65 @@ public class ServiceProduit implements IService<Produits> {
     }
 
     @Override
-    public ArrayList<Produits> Afficher() {
-        ArrayList<Produits> pro = new ArrayList<>();
-        try {
-            ste =con.createStatement();
-            String req = "SELECT * FROM `produits`";
-            ResultSet res =ste.executeQuery(req);
-            
-            while(res.next()){
-                int id = res.getInt("id");
-                String title = res.getString(2);
-                String description = res.getString(3);
-                float prix = res.getFloat(4);
-                int categorieId = res.getInt(5);
-                String photo =res.getString(6);
-                boolean published=res.getBoolean(7);
-                
+   public ArrayList<Produits> Afficher() {
+    ArrayList<Produits> pro = new ArrayList<>();
+    try {
+        ste = con.createStatement();
+        String req = "SELECT p.*, c.label FROM produits p JOIN category c ON p.category_id = c.id ORDER BY p.title ASC";
+        ResultSet res = ste.executeQuery(req);
 
-                Produits p = new Produits(id,title,description,prix,categorieId,photo,published);
-                pro.add(p);
-            }
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
+        while (res.next()) {
+            int id = res.getInt("p.id");
+            String title = res.getString("p.title");
+            String description = res.getString("p.description");
+            float prix = res.getFloat("p.prix");
+            String photo = res.getString("p.photo");
+            int published = res.getInt("p.published");
+            //int categorieId = res.getInt("c.id");
+            String categorieLabel = res.getString("c.label");
+
+            Categorie categorie = new Categorie( categorieLabel);
+            Produits p = new Produits(id, title, description, prix, photo, published, categorie);
+
+            pro.add(p);
         }
-        
-        return  pro;
-        
+    } catch (SQLException ex) {
+        System.out.println(ex.getMessage());
     }
+
+    return pro;
+}
+   public ArrayList<Produits> rechercherParCategorie(String categorie) {
+    ArrayList<Produits> produits = new ArrayList<>();
+    try {
+        String requete = "SELECT p.*, c.label FROM produits p JOIN category c ON p.category_id = c.id WHERE c.label=?";
+        PreparedStatement ps = con.prepareStatement(requete);
+        ps.setString(1, categorie);
+        ResultSet res = ps.executeQuery();
+
+        while (res.next()) {
+            int id = res.getInt("p.id");
+            String title = res.getString("p.title");
+            String description = res.getString("p.description");
+            float prix = res.getFloat("p.prix");
+            String photo = res.getString("p.photo");
+            int published = res.getInt("p.published");
+            String categorieLabel = res.getString("c.label");
+
+            Categorie c = new Categorie(categorieLabel);
+            Produits p = new Produits(id, title, description, prix, photo, published, c);
+
+            produits.add(p);
+        }
+    } catch (SQLException ex) {
+        System.out.println(ex.getMessage());
+    }
+
+    return produits;
+}
+
+
+
 }
   
     

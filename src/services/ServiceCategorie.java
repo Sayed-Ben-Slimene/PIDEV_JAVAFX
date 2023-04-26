@@ -89,7 +89,7 @@ public class ServiceCategorie implements IService<Categorie> {
     @Override
     public void Modifier(Categorie t) {
         try {
-            String querry= "UPDATE `category` SET `label`='"+t.getLabel()+"'";
+            String querry= "UPDATE `category` SET `label`='"+t.getLabel()+"' ";
             Statement ste = con.createStatement();
 
             ste.executeUpdate(querry);

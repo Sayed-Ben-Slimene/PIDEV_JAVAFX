@@ -1,11 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ProduitsController">
-    
+<AnchorPane id="AnchorPane" prefHeight="636.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ProduitsController">
+   <children>
+      <TextField fx:id="tftitle" layoutX="104.0" layoutY="111.0" prefHeight="26.0" prefWidth="186.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </TextField>
+      <CheckBox fx:id="ckpub" layoutX="125.0" layoutY="305.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="68.0" />
+      <TextField fx:id="tfprix" layoutX="101.0" layoutY="201.0" prefHeight="26.0" prefWidth="192.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </TextField>
+      <TextArea fx:id="tfdesc" layoutX="101.0" layoutY="242.0" prefHeight="38.0" prefWidth="192.0">
+         <effect>
+            <DropShadow />
+         </effect></TextArea>
+      <Label alignment="TOP_CENTER" layoutX="-6.0" layoutY="111.0" prefHeight="26.0" prefWidth="68.0" text="Title">
+         <font>
+            <Font name="Elephant Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_CENTER" layoutX="-1.0" layoutY="155.0" prefHeight="26.0" prefWidth="82.0" text="categorie">
+         <font>
+            <Font name="Elephant Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_CENTER" layoutX="-5.0" layoutY="248.0" prefHeight="26.0" prefWidth="91.0" text="description">
+         <font>
+            <Font name="Elephant Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_CENTER" layoutX="-13.0" layoutY="201.0" prefHeight="26.0" prefWidth="82.0" text="prix">
+         <font>
+            <Font name="Elephant Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_CENTER" layoutY="363.0" prefHeight="26.0" prefWidth="82.0" text="photo">
+         <font>
+            <Font name="Elephant Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_CENTER" layoutX="-6.0" layoutY="318.0" prefHeight="26.0" prefWidth="128.0" text="published">
+         <font>
+            <Font name="Elephant Italic" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="14.0" layoutY="500.0" mnemonicParsing="false" onAction="#ajouterAction" prefHeight="38.0" prefWidth="91.0" style="-fx-background-color: #FFD700;" text="Ajouter" />
+      <ImageView blendMode="ADD" fitHeight="51.0" fitWidth="200.0" layoutX="458.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="btn" layoutX="210.0" layoutY="363.0" mnemonicParsing="false" onAction="#uploadImage" prefHeight="26.0" prefWidth="68.0" text="import" />
+      <TextField fx:id="tafile" layoutX="95.0" layoutY="363.0" prefHeight="26.0" prefWidth="128.0" />
+      <ComboBox fx:id="cbCat" layoutX="100.0" layoutY="155.0" prefHeight="26.0" prefWidth="186.0" />
+      <Label fx:id="cs11" layoutX="244.0" layoutY="106.0" prefHeight="18.0" prefWidth="180.0" />
+      <TableView fx:id="tbProduit" layoutX="318.0" layoutY="116.0" prefHeight="466.0" prefWidth="549.0">
+        <columns>
+          <TableColumn fx:id="cTitle" prefWidth="87.20001220703125" text="title" />
+          <TableColumn fx:id="cdes" prefWidth="88.79998779296875" text="description" />
+            <TableColumn fx:id="cprix" prefWidth="69.59994506835938" text="prix" />
+            <TableColumn fx:id="cato" prefWidth="103.20001220703125" text="categorie" />
+            <TableColumn fx:id="pho" prefWidth="111.2000732421875" text="photo" />
+            <TableColumn fx:id="publ" prefWidth="84.0" text="published" />
+        </columns>
+      </TableView>
+      <Button layoutX="123.0" layoutY="500.0" mnemonicParsing="false" onAction="#modifierProduit" prefHeight="38.0" prefWidth="91.0" style="-fx-background-color: #FFD700;" text="modifier" />
+      <Button layoutX="223.0" layoutY="500.0" mnemonicParsing="false" onAction="#supprimerAction" prefHeight="38.0" prefWidth="91.0" style="-fx-background-color: #FFD700;" text="supprimer" />
+      <TextField fx:id="textFieldCategorie" alignment="BASELINE_CENTER" blendMode="DARKEN" cache="true" cacheHint="QUALITY" layoutX="375.0" layoutY="45.0" onAction="#rechercherProduit" prefHeight="26.0" prefWidth="395.0" text="Rechercher">
+         <effect>
+            <InnerShadow blurType="TWO_PASS_BOX" height="4.63" radius="11.755" width="44.39" />
+         </effect>
+         <font>
+            <Font name="Bell MT Bold" size="14.0" />
+         </font>
+      </TextField>
+   </children>
 </AnchorPane>
