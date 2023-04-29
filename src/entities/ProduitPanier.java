@@ -32,6 +32,14 @@ public class ProduitPanier {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    public ProduitPanier(float total, int quantite, Produits produit) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public ProduitPanier(String string, float aFloat, int aInt, float aFloat0) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     public int getId() {
         return id;
     }
@@ -64,7 +72,7 @@ public class ProduitPanier {
         this.total = total;
     }
 
-    public ProduitPanier(Produits produit, int quantite, float total) {
+    public ProduitPanier(String title, float total, Produits produit) {
         this.produit = produit;
         this.quantite = quantite;
         this.total = total;

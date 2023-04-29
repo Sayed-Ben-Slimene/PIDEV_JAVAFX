@@ -110,8 +110,8 @@ public class CategorieFXMLController implements Initializable {
     }
     }
     @FXML
-    public void GestionProduits(ActionEvent event) throws IOException{
-        root = FXMLLoader.load(getClass().getResource("/gui/Produits.fxml"));
+    public void Retour(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("/gui/dashbord.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setTitle("Produits");

@@ -34,7 +34,7 @@ public class Sportify extends Application{
      public void start(Stage primaryStage) throws IOException
     {
         this.stg = primaryStage;
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("../gui/CategorieFXML.fxml"));
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("../gui/List.fxml"));
         Parent root= loader.load();
         Scene scene= new Scene(root);
         

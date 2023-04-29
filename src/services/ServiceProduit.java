@@ -162,10 +162,69 @@ ps.executeUpdate();
 
     return produits;
 }
+   public ArrayList<Produits> filtrerMoinsChers(float prixMax) {
+    ArrayList<Produits> produits = new ArrayList<>();
+    try {
+        String requete = "SELECT p.*, c.label FROM produits p JOIN category c ON p.category_id = c.id WHERE p.prix <= ?";
+        PreparedStatement ps = con.prepareStatement(requete);
+        ps.setFloat(1, prixMax);
+        ResultSet res = ps.executeQuery();
+
+        while (res.next()) {
+            int id = res.getInt("p.id");
+            String title = res.getString("p.title");
+            String description = res.getString("p.description");
+            float prix = res.getFloat("p.prix");
+            String photo = res.getString("p.photo");
+            int published = res.getInt("p.published");
+            String categorieLabel = res.getString("c.label");
+
+            Categorie c = new Categorie(categorieLabel);
+            Produits p = new Produits(id, title, description, prix, photo, published, c);
+
+            produits.add(p);
+        }
+    } catch (SQLException ex) {
+        System.out.println(ex.getMessage());
+    }
+
+    return produits;
+}
+   public ArrayList<Produits> rechercherParCategorieEtPrix(String categorie) {
+    ArrayList<Produits> produits = new ArrayList<>();
+    try {
+        String requete = "SELECT p.*, c.label FROM produits p JOIN category c ON p.category_id = c.id WHERE c.label=?  ORDER BY p.prix ASC";
+        PreparedStatement ps = con.prepareStatement(requete);
+        ps.setString(1, categorie);
+       
+        ResultSet res = ps.executeQuery();
+
+        while (res.next()) {
+            int id = res.getInt("p.id");
+            String title = res.getString("p.title");
+            String description = res.getString("p.description");
+            float prix = res.getFloat("p.prix");
+            String photo = res.getString("p.photo");
+            int published = res.getInt("p.published");
+            String categorieLabel = res.getString("c.label");
+
+            Categorie c = new Categorie(categorieLabel);
+            Produits p = new Produits(id, title, description, prix, photo, published, c);
+
+            produits.add(p);
+        }
+    } catch (SQLException ex) {
+        System.out.println(ex.getMessage());
+    }
+    return produits;
+}
+
+
 
 
 
 }
+
   
     
    

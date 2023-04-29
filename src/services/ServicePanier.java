@@ -13,6 +13,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import utils.MyDB;
 
 /**
@@ -72,37 +74,62 @@ public class ServicePanier implements IService<ProduitPanier> {
     }
 
    @Override
+
 public ArrayList<ProduitPanier> Afficher() {
-    ArrayList<ProduitPanier> panier = new ArrayList<>();
+    ArrayList<ProduitPanier> pro = new ArrayList<>();
     try {
         ste = con.createStatement();
         String req = "SELECT p.*, c.title,c.prix FROM panier p JOIN produits c ON p.produit_id = c.id ";
         ResultSet res = ste.executeQuery(req);
 
         while (res.next()) {
-            int id = res.getInt("p.id");
-            int quantite = res.getInt("p.quantite");
-            float total = res.getFloat("p.total");
-
-            int produit_id = res.getInt("p.produit_id");
-            String produitTitle = res.getString("c.title");
-           
-            float produitPrix = res.getFloat("c.prix");
             
-
+            
+            float total= res.getFloat("p.total");
            
+            int quantite = res.getInt("p.quantite");
+            //int categorieId = res.getInt("c.id");
+            String title = res.getString("c.title");
+            float prix= res.getFloat("c.prix");
 
-            Produits produit = new Produits( produitTitle, produitPrix);
+            Produits produit = new Produits( title,prix);
+            ProduitPanier p = new ProduitPanier( total, quantite,produit);
 
-            ProduitPanier p = new ProduitPanier(id, quantite, total, produit);
-
-            panier.add(p);
+            pro.add(p);
         }
     } catch (SQLException ex) {
         System.out.println(ex.getMessage());
     }
 
+    return pro;
+}
+public ObservableList<ProduitPanier> getPanier() {
+    ObservableList<ProduitPanier> panier = FXCollections.observableArrayList();
+    
+    try {
+        ste = con.createStatement();
+        String query = "SELECT * FROM panier";
+        
+        ResultSet rs = ste.executeQuery(query);
+        
+        while (rs.next()) {
+            ProduitPanier produitPanier = new ProduitPanier(
+                rs.getString("tproduit"),
+                rs.getFloat("tprix"),
+                rs.getInt("tquantite"),
+                rs.getFloat("ttotal")
+            );
+            panier.add(produitPanier);
+        }
+        
+       
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    
     return panier;
 }
+
+
 
 }

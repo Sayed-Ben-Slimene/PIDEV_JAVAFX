@@ -192,8 +192,18 @@ cbCat.setConverter(new StringConverter<Categorie>() {
         stage.show();
                 
     }
+      @FXML
+    public void Retour(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("/gui/dashbord.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setTitle("Produits");
+        stage.setScene(scene);
+        stage.show();
+                
+    }
     
-    @FXML
+   /* @FXML
     private void ajouterAction(ActionEvent event) {
     Categorie categorie = cbCat.getValue();
     
@@ -202,7 +212,38 @@ cbCat.setConverter(new StringConverter<Categorie>() {
     Produits produit = new Produits(tftitle.getText(), tfdesc.getText(),Float.parseFloat(tfprix.getText()),tafile.getText(), publishedValue, categorie);
     sp.Ajouter(produit);
     Afficher();
+    }*/
+    
+    @FXML
+private void ajouterAction(ActionEvent event) {
+    // Vérifier que tous les champs sont remplis
+    if (tftitle.getText().isEmpty() || tfdesc.getText().isEmpty() || tfprix.getText().isEmpty() || tafile.getText().isEmpty() || cbCat.getValue() == null) {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText(null);
+        alert.setContentText("Veuillez remplir tous les champs");
+        alert.showAndWait();
+        return;
     }
+    
+    // Vérifier que le champ du prix est un nombre valide
+    String prix = tfprix.getText();
+    if (!prix.matches("\\d+(\\.\\d+)?")) {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText(null);
+        alert.setContentText("Le champ du prix doit être un nombre valide");
+        alert.showAndWait();
+        return;
+    }
+    
+    Categorie categorie = cbCat.getValue();
+    int publishedValue = ckpub.isSelected() ? 1 : 0;
+    Produits produit = new Produits(tftitle.getText(), tfdesc.getText(), Float.parseFloat(prix), tafile.getText(), publishedValue, categorie);
+    sp.Ajouter(produit);
+    Afficher();
+}
+
     @FXML
     private void Afficher(){
         ObservableList<Produits> list = FXCollections.observableArrayList(sp.Afficher());

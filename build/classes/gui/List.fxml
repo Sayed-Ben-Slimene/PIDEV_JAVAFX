@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -8,17 +8,21 @@
 
 <AnchorPane id="AnchorPane" prefHeight="730.0" prefWidth="949.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ListController">
    <children>
-      <GridPane fx:id="produitsContainer" layoutX="85.0" layoutY="143.0" prefHeight="308.0" prefWidth="626.0">
+      <GridPane fx:id="produitsContainer" layoutX="255.0" layoutY="257.0" prefHeight="293.0" prefWidth="398.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="242.2" minWidth="10.0" prefWidth="242.2" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.800048828125" minWidth="10.0" prefWidth="236.59999999999997" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
+         <children>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="522.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
       </GridPane>
-      <Button layoutX="161.0" layoutY="621.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="105.0" text="panier" />
+      <TextField fx:id="categorieField" layoutX="14.0" layoutY="128.0" onAction="#rechercher" prefHeight="26.0" prefWidth="222.0" />
    </children>
 </AnchorPane>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="838.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CommandeController">
+   <children>
+      <Label layoutX="345.0" layoutY="77.0" prefHeight="26.0" prefWidth="66.0" text="Nom">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="338.0" layoutY="126.0" prefHeight="34.0" prefWidth="66.0" text="Prenom">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+         </font>
+      </Label>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Pane prefHeight="586.0" prefWidth="327.0" style="-fx-background-color: #FFD700;">
+         <children>
+            <Text layoutX="26.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SPORTIFY SHOP" wrappingWidth="286.0422172546387">
+               <font>
+                  <Font name="Bodoni MT" size="50.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Label layoutX="342.0" layoutY="302.0" prefHeight="19.0" prefWidth="73.0" text="EMAIL">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="342.0" layoutY="188.0" prefHeight="19.0" prefWidth="97.0" text="NUM_TEL">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="439.0" layoutY="273.0">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="342.0" layoutY="252.0" prefHeight="19.0" prefWidth="97.0" text="ADRESSE">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tnom" layoutX="458.0" layoutY="78.0" promptText="nom" />
+      <TextField fx:id="tnum" layoutX="457.0" layoutY="194.0" promptText="numero" />
+      <TextField fx:id="temail" layoutX="458.0" layoutY="299.0" promptText="email" />
+      <TextField fx:id="tprenom" layoutX="458.0" layoutY="131.0" promptText="prenom" />
+      <TextField fx:id="tadresse" layoutX="458.0" layoutY="249.0" promptText="adresse" />
+      <Label layoutX="341.0" layoutY="420.0" prefHeight="19.0" prefWidth="126.0" text="Payer En Ligne">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="ckpub" layoutX="488.0" layoutY="404.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="204.0" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="463.0" layoutY="472.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="138.0" style="-fx-background-color: #FFD700;" text="payer">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="23.0" />
+         </font>
+      </Button>
+      <Label layoutX="342.0" layoutY="355.0" prefHeight="19.0" prefWidth="73.0" text="prix">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="25.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tprix" layoutX="457.0" layoutY="355.0" />
+      <Button layoutX="750.0" layoutY="546.0" mnemonicParsing="false" onAction="#List" prefHeight="26.0" prefWidth="66.0" text="retour" />
+   </children>
+</AnchorPane>

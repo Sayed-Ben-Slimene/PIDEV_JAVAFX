@@ -8,6 +8,7 @@ import entities.ProduitPanier;
 import entities.Produits;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -43,27 +44,14 @@ public class PanierController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-         tquantite.setCellValueFactory(new PropertyValueFactory<>("title"));
-    ttotal.setCellValueFactory(new PropertyValueFactory<>("description"));
-    tproduit.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getProduit().getTitle()));
-    tprix.setCellValueFactory(cellData -> {
-    Produits produit = cellData.getValue().getProduit();
-    Float prix = produit.getPrix();
-    return new SimpleFloatProperty(prix).asObject();
-     }
-    );
-    }
-
-    @FXML
-    private void Afficher(){
-         ServicePanier servicePanier = new ServicePanier();
+        
     
-
+    
    
-        ObservableList<ProduitPanier> list = FXCollections.observableArrayList(sp.Afficher());
+    };
 
-    panier.setItems(list);
-    }
+  
+
     @FXML
 private void ajouterAuPanier() {
     // récupérer le produit sélectionné dans la TableView
@@ -74,8 +62,10 @@ private void ajouterAuPanier() {
     
     // appeler la méthode Ajouter avec le produit sélectionné
     servicePanier.Ajouter(produitPanier);
-    Afficher();
+   
 }
+
+   
 
     
 }

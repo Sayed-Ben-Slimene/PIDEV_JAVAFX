@@ -40,21 +40,15 @@ public class Produits {
         this.categorie = categorie;
     }
 
-    public Produits(int id, String title, String description, float prix, Image image, int published, Categorie categorie) {
+    public Produits(String produitTitle, float produitPrix) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    public Produits(String produitTitle, float prix) {
+    public Produits(int id, String title, float prix, Produits produit) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    public Produits(String produitTitle) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public Produits(int produitId, String produitTitle, String produitDescription, Categorie categorie, boolean produitPublished, float produitPrix, String produitPhoto) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
 
   
 
