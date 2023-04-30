@@ -17,10 +17,13 @@ import java.util.List;
 public interface IService <T> {
     
     public boolean  Ajouter(T t);
-    public void  Ajouter2(T t);
+    public void  AjouterUser(T t);
     public List<T> afficher();
-
+    public void  modifier (String t,T a);
     public void supprimer (int id);
+        public void modifierUtilisateur(T t , int id);
+    public List<T> afficherUtilisateurs();
+
 
     //public void TruncateTable();
 }

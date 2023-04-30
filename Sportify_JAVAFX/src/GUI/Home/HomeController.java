@@ -4,9 +4,17 @@
  */
 package GUI.Home;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -14,7 +22,10 @@ import javafx.fxml.Initializable;
  * @author sayed
  */
 public class HomeController implements Initializable {
-
+    private Stage stage; 
+    private Scene scene;
+    private Parent root;
+    
     /**
      * Initializes the controller class.
      */
@@ -22,5 +33,27 @@ public class HomeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+        @FXML
+    public void switchToSignin(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("/GUI/Login/Login.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setTitle("Sign In");
+        stage.setScene(scene);
+        stage.show();
+
+    }
+            @FXML
+    public void switchToSignup(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("/GUI/Register/Register.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setTitle("Sign Up");
+        stage.setScene(scene);
+        stage.show();
+
+    }
+    
     
 }

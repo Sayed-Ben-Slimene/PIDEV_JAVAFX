@@ -21,11 +21,11 @@
 
             <children>
 
-                <AnchorPane fx:id="side_ankerpane" prefHeight="827.0" prefWidth="281.0" styleClass="side_ankerpane" stylesheets="@showusers.css">
+                <AnchorPane fx:id="side_ankerpane" prefHeight="827.0" prefWidth="281.0" styleClass="side_ankerpane" stylesheets="@dashboardDesign.css">
 
                     <children>
 
-                        <Pane fx:id="inner_pane" layoutX="17.0" layoutY="27.0" prefHeight="78.0" prefWidth="248.0" styleClass="inner_pane" stylesheets="@showusers.css">
+                        <Pane fx:id="inner_pane" layoutX="17.0" layoutY="27.0" prefHeight="78.0" prefWidth="248.0" styleClass="inner_pane" stylesheets="@dashboardDesign.css">
 
                             <children>
 
@@ -39,13 +39,13 @@
 
                                 </ImageView>
 
-                                <Pane fx:id="most_inner_pane" layoutX="199.0" layoutY="1.0" prefHeight="78.0" prefWidth="42.0" styleClass="most_inner_pane" stylesheets="@showusers.css" />
+                                <Pane fx:id="most_inner_pane" layoutX="199.0" layoutY="1.0" prefHeight="78.0" prefWidth="42.0" styleClass="most_inner_pane" stylesheets="@dashboardDesign.css" />
 
                             </children>
 
                         </Pane>
 
-                        <Button fx:id="btn_workbench" layoutX="3.0" layoutY="141.0" prefHeight="54.0" prefWidth="266.0" styleClass="btn_workbench" stylesheets="@showusers.css" text="     Home" textFill="WHITE">
+                        <Button fx:id="btn_workbench" layoutX="3.0" layoutY="141.0" prefHeight="54.0" prefWidth="266.0" styleClass="btn_workbench" stylesheets="@dashboardDesign.css" text="     Home" textFill="WHITE">
 
                             <font>
 
@@ -55,7 +55,7 @@
 
                         </Button>
 
-                        <Button fx:id="btn_workbench1" layoutX="6.0" layoutY="217.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@showusers.css" text="Users" textFill="#c6b6b6">
+                        <Button fx:id="btn_workbench1" layoutX="6.0" layoutY="217.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Users" textFill="#c6b6b6">
 
                             <font>
 
@@ -65,7 +65,7 @@
 
                         </Button>
 
-                        <Button fx:id="btn_workbench11" layoutX="6.0" layoutY="288.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@showusers.css" text="Shop" textFill="#c6b6b6">
+                        <Button fx:id="btn_workbench11" layoutX="6.0" layoutY="288.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Shop" textFill="#c6b6b6">
 
                             <font>
 
@@ -75,7 +75,7 @@
 
                         </Button>
 
-                        <Button fx:id="btn_workbench12" layoutX="6.0" layoutY="359.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@showusers.css" text="  Events" textFill="#c6b6b6">
+                        <Button fx:id="btn_workbench12" layoutX="6.0" layoutY="359.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="  Events" textFill="#c6b6b6">
 
                             <font>
 
@@ -85,7 +85,7 @@
 
                         </Button>
 
-                        <Button fx:id="btn_workbench111" layoutX="6.0" layoutY="429.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@showusers.css" text="   Matchs" textFill="#c6b6b6">
+                        <Button fx:id="btn_workbench111" layoutX="6.0" layoutY="429.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="   Matchs" textFill="#c6b6b6">
 
                             <font>
 
@@ -95,7 +95,7 @@
 
                         </Button>
 
-                        <Button fx:id="btn_workbench1111" layoutX="6.0" layoutY="500.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@showusers.css" text="      Actualité" textFill="#c6b6b6">
+                        <Button fx:id="btn_workbench1111" layoutX="6.0" layoutY="500.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="      Actualité" textFill="#c6b6b6">
 
                             <font>
 
@@ -187,7 +187,7 @@
 
             <children>
 
-                <Pane layoutY="7.0" prefHeight="70.0" prefWidth="1040.0" style="-fx-background-color: #EAEEF4;" styleClass="side_ankerpane" stylesheets="@showusers.css">
+                <Pane layoutY="7.0" prefHeight="70.0" prefWidth="1040.0" style="-fx-background-color: #EAEEF4;" styleClass="side_ankerpane" stylesheets="@dashboardDesign.css">
 
                     <children>
 
@@ -245,7 +245,7 @@
 
                 <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="474.0" layoutY="169.0" prefHeight="31.0" prefWidth="31.0" style="-fx-background-color: #EAEEF4;" />
 
-                <Pane fx:id="pane_132" layoutX="9.0" layoutY="104.0" prefHeight="423.0" prefWidth="1031.0" styleClass="root" stylesheets="@showusers.css">
+                <Pane fx:id="pane_132" layoutX="9.0" layoutY="104.0" prefHeight="423.0" prefWidth="1031.0" styleClass="root" stylesheets="@dashboardDesign.css">
 
                     <children>
 
@@ -258,7 +258,7 @@
                             </font>
 
                         </Label>
-                  <TableView fx:id="usersTable" layoutX="7.0" layoutY="6.0"  prefHeight="469.0" prefWidth="1016.0">
+                  <TableView fx:id="usersTable" layoutX="7.0" layoutY="6.0" prefHeight="469.0" prefWidth="1016.0">
                     <columns>
                       <TableColumn fx:id="culumnUserId" prefWidth="31.46661376953125" text="Id" />
                       <TableColumn fx:id="culumnUsernom" prefWidth="101.86660385131836" text="Nom" />
@@ -284,26 +284,24 @@
                     </font>
 
                 </Label>
-
-                        <Button fx:id="btn_workbench11111" layoutX="751.0" layoutY="634.0" prefHeight="52.0" prefWidth="218.0" styleClass="btn_workbench11" stylesheets="@showusers.css" text="Ajouter" textFill="WHITE">
-
-                            <font>
-
-                                <Font name="System Bold" size="19.0" />
-
-                            </font>
-
-                        </Button>
-            <Button fx:id="btn_workbench111111" layoutX="752.0" layoutY="695.0" prefHeight="52.0" prefWidth="217.0" styleClass="btn_workbench11" stylesheets="@showusers.css" text="Modifier" textFill="WHITE">
+            <Button fx:id="btn_workbench111111" layoutX="752.0" layoutY="695.0" prefHeight="52.0" prefWidth="217.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Modifier" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="btn_workbench111112" layoutX="752.0" layoutY="755.0" prefHeight="52.0" prefWidth="217.0" styleClass="btn_workbench11" stylesheets="@showusers.css" text="Supprimer" textFill="WHITE">
+            <Button fx:id="btn_workbench111112" layoutX="752.0" layoutY="755.0" prefHeight="52.0" prefWidth="217.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Supprimer" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
+            <TextField fx:id="iduser" layoutX="87.0" layoutY="603.0" prefHeight="32.0" prefWidth="245.0" promptText="id" />
+            <TextField fx:id="nomuser" layoutX="86.0" layoutY="657.0" prefHeight="32.0" prefWidth="245.0" promptText="nom" />
+            <TextField fx:id="prenomuser" layoutX="87.0" layoutY="714.0" prefHeight="32.0" prefWidth="245.0" promptText="prenom" />
+            <TextField fx:id="roleuser" layoutX="87.0" layoutY="772.0" prefHeight="32.0" prefWidth="245.0" promptText="roles" />
+            <TextField fx:id="emailuser" layoutX="444.0" layoutY="600.0" prefHeight="32.0" prefWidth="245.0" promptText="Email" />
+            <TextField fx:id="passworduser" layoutX="446.0" layoutY="653.0" prefHeight="32.0" prefWidth="245.0" promptText="Password" />
+            <TextField fx:id="adressuser" layoutX="447.0" layoutY="714.0" prefHeight="32.0" prefWidth="245.0" promptText="Adress" />
+            <TextField fx:id="teluser" layoutX="443.0" layoutY="769.0" prefHeight="32.0" prefWidth="245.0" promptText="Tel" />
             </children>
 
         </Pane>

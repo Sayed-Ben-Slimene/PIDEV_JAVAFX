@@ -29,7 +29,8 @@ public class Sportify extends Application  {
     {
         
         this.stg = primaryStage;
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("../GUI/Login/Login.fxml"));
+        
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("../GUI/SplashScreen/SplashScreen.fxml"));
         Parent root= loader.load();
         Scene scene= new Scene(root);
         
@@ -48,10 +49,10 @@ public class Sportify extends Application  {
         
         
           
-        ServiceUser sp = new ServiceUser();
-        sp.getIdbymail("sayedbenslimane@gmail.com");
+       // ServiceUser sp = new ServiceUser();
+        //sp.getIdbymail("sayedbenslimane@gmail.com");
         
-        System.out.println(sp.getIdbymail("sayedbenslimane@gmail.com"));
+       // System.out.println(sp.getIdbymail("sayedbenslimane@gmail.com"));
 
 
         
@@ -86,5 +87,5 @@ public class Sportify extends Application  {
        //  
   
     }
-    
 
+    

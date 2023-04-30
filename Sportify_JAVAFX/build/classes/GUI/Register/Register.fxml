@@ -17,7 +17,7 @@
    <left>
       <AnchorPane prefHeight="820.0" prefWidth="385.0" style="-fx-background-color: #2A303D;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="426.0" fitWidth="388.0" layoutX="13.0" layoutY="183.0" opacity="0.92" pickOnBounds="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);">
+            <ImageView fitHeight="356.0" fitWidth="325.0" layoutX="35.0" layoutY="247.0" opacity="0.92" pickOnBounds="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);">
                <image>
                   <Image url="@../../Images/6310507-removebg-preview.png" /> 
                </image>
@@ -54,7 +54,7 @@
                   <Blend mode="EXCLUSION" />
                </effect>
             </TextField>
-            <Button id="btnsignin" layoutX="246.0" layoutY="720.0" mnemonicParsing="false" onAction="#Register" prefHeight="55.0" prefWidth="300.0" style="-fx-background-color: #fcba01; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);" text="Inscrivez-vous" textFill="#2a303d">
+            <Button id="btnsignin" layoutX="246.0" layoutY="703.0" mnemonicParsing="false" onAction="#Register" prefHeight="55.0" prefWidth="300.0" style="-fx-background-color: #fcba01; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);" text="Inscrivez-vous" textFill="#2a303d">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -162,9 +162,9 @@
                   <Image url="@../../Images/icons8-key-64.png" />
                </image>
             </ImageView>
-            <Label fx:id="oncanceled" alignment="CENTER" contentDisplay="CENTER" layoutX="227.0" layoutY="760.0" prefHeight="30.0" prefWidth="331.0" textFill="RED">
+            <Label fx:id="oncanceled" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="764.0" prefHeight="42.0" prefWidth="478.0" textFill="RED">
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font name="System Bold" size="16.0" />
                </font>
             </Label>
             <Label fx:id="labelnom" layoutX="117.0" layoutY="164.0" prefHeight="30.0" prefWidth="238.0" textFill="RED">
@@ -219,7 +219,7 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="204.0" layoutY="447.0" prefHeight="34.0" prefWidth="403.0" text="des lettres, des chiffres et des symboles !" textFill="#2a303d" underline="true">
+            <Label layoutX="162.0" layoutY="447.0" prefHeight="34.0" prefWidth="403.0" text="des lettres, des chiffres et des symboles !" textFill="#2a303d" underline="true">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

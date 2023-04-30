@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="parent" prefHeight="600" prefWidth="1024.0" styleClass="parent" stylesheets="@../ressources/css/stylesheet.css" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Test.TestController">
+    <children>
+        <VBox fx:id="vbox" alignment="TOP_CENTER" prefHeight="700.0" prefWidth="300.0" style="-fx-background-size: 900 600;" styleClass="sidebar">
+            <children>
+                <Label prefHeight="75.0" prefWidth="300.0" style="-fx-background-color: linear-gradient(to top, #ff3356, #ff3653, #ff3950, #ff3c4e, #ff3f4b);" text="TUNISIA BON PLAN" textFill="WHITE">
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                    <font>
+                        <Font name="Ebrima" size="18.0" />
+                    </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+                </Label>
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="95.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" styleClass="btns">
+                    <children>
+                  <ImageView fitHeight="32.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/img/home.png" />
+                     </image>
+                  </ImageView>
+                        
+                        <Label text="Accueil" textFill="WHITE">
+                            <font>
+                                <Font name="Calibri Light" size="15.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                    <cursor>
+                      
+                    </cursor>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="132.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" styleClass="btns">
+                    <children>
+                  <ImageView fitHeight="32.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/img/money.png" />
+                     </image>
+                  </ImageView>
+                        
+                        <Label fx:id="categorie" text="Catégories" textFill="WHITE">
+                            <font>
+                                <Font name="Calibri Light" size="15.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                    <cursor>
+                        
+                    </cursor>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="132.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" styleClass="btns">
+                    <children>
+                  <ImageView fitHeight="32.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/img/share.png" />
+                     </image>
+                  </ImageView>
+                   
+                        <Label  text="Partager Votre Experience" textFill="WHITE">
+                            <font>
+                                <Font name="Calibri Light" size="15.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                    <cursor>
+                       
+                    </cursor>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="172.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" styleClass="btns">
+                    <children>
+                  <ImageView fitHeight="32.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/img/search.png" />
+                     </image>
+                  </ImageView>
+                       
+                        <Label prefWidth="237.0" text="Demander une recommandation" textFill="WHITE">
+                            <font>
+                                <Font name="Calibri Light" size="15.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                    <cursor>
+                      
+                    </cursor>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="252.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"  prefHeight="40.0" prefWidth="300.0" styleClass="btns">
+                    <children>
+
+                        
+                        <Label  text="Réclamation" textFill="WHITE">
+                            <font>
+                                <Font name="Calibri Light" size="15.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                    <cursor>
+                     
+                    </cursor>
+                </HBox>
+            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" styleClass="btns">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/img/contacts.png" />
+                     </image>
+                  </ImageView>
+                  
+                  <Label fx:id="partenaire"  text="Espace Partenaire" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Light" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <cursor>
+                 
+               </cursor>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="295.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" styleClass="btns">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/img/shopping-cart.png" />
+                     </image>
+                  </ImageView>
+                 
+                  <Label text="Deals" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Light" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <cursor>
+                
+               </cursor>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/img/shopping-cart.png" />
+                     </image>
+                  </ImageView>
+
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/img/shopping-cart.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="cadeauxBtn"  text="Demander cadeaux" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Light" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+                <VBox prefHeight="200.0" prefWidth="100.0" styleClass="box" visible="false" VBox.vgrow="ALWAYS">
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <padding>
+                        <Insets left="10.0" top="10.0" />
+                    </padding>
+                </VBox>
+                <JFXButton fx:id="btnclose" buttonType="RAISED" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"  prefHeight="45.0" prefWidth="200.0" ripplerFill="WHITE" style="-fx-background-color: linear-gradient(to top, #ff3356, #ff3653, #ff3950, #ff3c4e, #ff3f4b);" text="Quitter" textFill="WHITE">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font name="Calibri Light" size="14.0" />
+                    </font>
+                    <graphic>
+                        
+                    </graphic>
+                    <cursor>
+                        
+                    </cursor>
+                </JFXButton>
+            </children>
+        </VBox>
+        <VBox layoutX="300.0" prefHeight="700.0" prefWidth="724.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="61.0" prefWidth="724.0" style="-fx-background-color: #fff;">
+                    <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" color="#e8e4e4" height="10.0" radius="4.5" width="10.0" />
+                    </effect>
+                    <children>
+                        <Label layoutX="14.0" layoutY="24.0" text="Accueil" textFill="#7c8184">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        
+                        <Label alignment="CENTER" layoutX="659.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="20.0" styleClass="round-lbl" text="8" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                  <ImageView fitHeight="37.0" fitWidth="21.0" layoutX="418.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/img/admin.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="loggeduser" layoutX="459.0" layoutY="10.0" prefHeight="42.0" prefWidth="200.0" text="Foulen">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                    </children>
+                </Pane>
+            <AnchorPane fx:id="AdneneGadourAnchorPane" prefHeight="653.0" prefWidth="724.0" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

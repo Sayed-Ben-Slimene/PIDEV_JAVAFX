@@ -1,6 +1,7 @@
 package GUI.ForgotPassword;
 import GUI.Login.LoginController;
 import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
+import entities.User;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import services.LoginSession;
@@ -10,6 +11,7 @@ import javafx.fxml.Initializable;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.UUID;
 import java.util.logging.Level;
@@ -92,46 +94,53 @@ public class ForgotPasswordController implements Initializable {
     }
 
     
+  public Boolean CheckLogin() {
+        Boolean verif = true;
+        List<User> list_user = myServices.afficherUtilisateurs();
+        
+        
+        for (int i = 0; i < list_user.size(); i++) {
+            if (list_user.get(i).getEmail().equals(logemail.getText())) {
+                verif = false;
+                
+            }
+            
+        }
+        if (verif == false) {
+            Alert al = new Alert(Alert.AlertType.ERROR);
+            al.setTitle("Alert");
+            al.setContentText("User login existe déja");
+            al.setHeaderText(null);
+            al.show();
+        }
+        
+        return verif;
+    }
     
-    
-/*
-@FXML
+    @FXML
     private void verifCode(KeyEvent event) {
-    if (logemail.getText().trim().length() >= 5) {
-        int nbChar = 0;
+        int nbNonChar = 0;
         for (int i = 1; i < logemail.getText().trim().length(); i++) {
             char ch = logemail.getText().charAt(i);
-
             if (Character.isLetter(ch)) {
-
-                nbChar++;
-
+                nbNonChar++;
             }
-            System.out.println("le nombre Code");
         }
-
-        if (nbChar == 0) {
+        if (nbNonChar == 0 && logemail.getText().trim().length() >=2) {
             labelemail.setText("Code valide");
-             emailcheck.setImage(new Image("@../../Images/checkMark.png"));
+            emailcheck.setImage(new Image("@../../Images/checkMark.png"));
             labelemail.setTextFill(Color.GREEN);
 
-           //verificationUserPhone = true;
+
+            //verificationUserName = true;
         } else {
             emailcheck.setImage(new Image("@../../Images/erreurCheckMark.png"));
             labelemail.setText("invalide Code");
             labelemail.setTextFill(Color.RED);
-           // verificationUserPhone = false;
+            //verificationUserName = false;
 
         }
-
-    } else {
-        labelemail.setText("Il faut 4 chiffres");
-        labelemail.setTextFill(Color.RED); 
-        emailcheck.setImage(new Image("@../../Images/erreurCheckMark.png"));
-
-       // verificationUserPhone = false;
     }
-}*/
     @FXML
     public void resetPasswordButtonAction(ActionEvent event) throws Exception{
 
@@ -151,8 +160,19 @@ public class ForgotPasswordController implements Initializable {
     
     @FXML
     private void Envoyer(ActionEvent event) throws IOException {
-        
-        int codex = Integer.parseInt(logemail.getText());
+        if(logemail.getText().isEmpty()){
+                    oncanceled.setText("Please enter the Verification Code !");
+                     showAlert("Please enter the Verification Code ");
+
+            }else if (CheckLogin()){
+            
+                                oncanceled.setText("Email nexiste pas cree un compte !");
+                     showAlert("Email nexiste pas cree un compte ");
+            
+            }else  {
+                    oncanceled.setText("You try to FRPass ! ");
+            // JOptionPane.showMessageDialog(null, "Enter your Email and Password !");
+ int codex = Integer.parseInt(logemail.getText());
         ServiceUser sc = new ServiceUser();
         String x="x";
         if (logemail.getText().toString().equals(x))
@@ -182,6 +202,9 @@ public class ForgotPasswordController implements Initializable {
             alert.showAndWait();
         
     }
+
+    }
+       
     }
 
     public void oncancelpress(ActionEvent e){

@@ -13,205 +13,215 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="952.0" stylesheets="@register.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Register.RegisterController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820.0" prefWidth="1200.0" stylesheets="@register.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Register.RegisterController">
    <left>
-      <AnchorPane prefHeight="610.0" prefWidth="371.0" style="-fx-background-color: #5e2c8a#5e2c8a;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="820.0" prefWidth="385.0" style="-fx-background-color: #2A303D;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="229.0" fitWidth="264.0" layoutX="52.0" layoutY="168.0" opacity="0.92" pickOnBounds="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);">
+            <ImageView fitHeight="426.0" fitWidth="388.0" layoutX="13.0" layoutY="183.0" opacity="0.92" pickOnBounds="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);">
                <image>
-                  <Image url="@../../Images/register.png22.png" /> 
+                  <Image url="@../../Images/6310507-removebg-preview.png" /> 
                </image>
             </ImageView>
-            <Button id="gotoLogin" fx:id="gotoLogin" layoutX="47.0" layoutY="520.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="50.0" prefWidth="270.0" style="-fx-background-color: #5e2c8a#5e2c8a #5e2c8a#5e2c8a; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);" text="Login" textFill="WHITE">
+            <Button id="gotoLogin" fx:id="gotoLogin" layoutX="52.0" layoutY="720.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="55.0" prefWidth="300.0" style="-fx-background-color: #fcba01; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);" text="Connexion" textFill="#2a303d">
                <font>
-                  <Font name="System Bold" size="22.0" />
+                  <Font name="System Bold" size="24.0" />
                </font>
             </Button>
+            <Label alignment="BOTTOM_LEFT" layoutX="66.0" layoutY="656.0" prefHeight="34.0" prefWidth="274.0" text="Vous utilisez déjà Sportify ?" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="79.0" fitWidth="124.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/sportifyLogo.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane prefHeight="610.0" prefWidth="452.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="800.0" prefWidth="758.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="nom" alignment="TOP_LEFT" layoutX="99.0" layoutY="84.0" onKeyReleased="#verifNom" prefHeight="32.0" prefWidth="330.0" promptText="Nom" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px; ">
+            <TextField fx:id="nom" alignment="TOP_LEFT" layoutX="116.0" layoutY="115.0" onKeyReleased="#verifNom" prefHeight="10.0" prefWidth="240.0" promptText="Nom" style="-fx-background-color: transparent; -fx-border-color: #2A303D; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <font>
-                  <Font size="14.0" />
+                  <Font size="22.0" />
                </font>
                <effect>
                   <Blend mode="EXCLUSION" />
                </effect>
             </TextField>
-            <Button id="btnsignin" layoutX="160.0" layoutY="536.0" mnemonicParsing="false" onAction="#Login" prefHeight="50.0" prefWidth="270.0" style="-fx-background-color: #5e2c8a#5e2c8a #5e2c8a#5e2c8a; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);" text="Register" textFill="WHITE">
+            <Button id="btnsignin" layoutX="246.0" layoutY="720.0" mnemonicParsing="false" onAction="#Register" prefHeight="55.0" prefWidth="300.0" style="-fx-background-color: #fcba01; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);" text="Inscrivez-vous" textFill="#2a303d">
                <font>
-                  <Font name="System Bold" size="22.0" />
+                  <Font name="System Bold" size="24.0" />
                </font>
             </Button>
-            <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="#5f12a6" focusTraversable="true" layoutX="204.0" layoutY="37.0" stroke="#9c9696" strokeLineCap="BUTT" strokeType="OUTSIDE" strokeWidth="0.3" text="Register" textAlignment="CENTER" wrappingWidth="119.55755615234375" x="30.0" y="5.0">
+            <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="#2a303d" focusTraversable="true" layoutX="277.0" layoutY="58.0" stroke="#9c9696" strokeLineCap="BUTT" strokeType="OUTSIDE" strokeWidth="0.3" text="S'inscrire" textAlignment="CENTER" wrappingWidth="178.22433471679688" x="30.0" y="5.0">
                <font>
-                  <Font name="Cambria Bold Italic" size="28.0" />
+                  <Font name="Cambria Bold Italic" size="40.0" />
                </font>
                <effect>
                   <Blend />
                </effect>
             </Text>
-            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="64.0" layoutY="386.0" opacity="0.89" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="68.0" layoutY="496.0" opacity="0.89" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Images/icons8-key-64.png" />
                </image>
             </ImageView>
-            <PasswordField fx:id="password" layoutX="99.0" layoutY="386.0" onKeyReleased="#verifMps" prefHeight="32.0" prefWidth="330.0" promptText="Mot De Passe" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483 #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px;">
+            <PasswordField fx:id="password" layoutX="116.0" layoutY="482.0" onKeyReleased="#verifMps" prefHeight="10.0" prefWidth="392.0" promptText="Mot De Passe" style="-fx-background-color: transparent; -fx-border-color: #2A303D; -fx-border-width: 0px 0px 2px 0px;">
                <font>
-                  <Font size="14.0" />
+                  <Font size="22.0" />
                </font>
                <effect>
                   <Blend mode="EXCLUSION" />
                </effect>
             </PasswordField>
-            <TextField id="prenom" fx:id="prenom" alignment="TOP_LEFT" layoutX="99.0" layoutY="144.0" onKeyReleased="#verifPrenom" prefHeight="32.0" prefWidth="330.0" promptText="Prénom" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
+            <TextField id="prenom" fx:id="prenom" alignment="TOP_LEFT" layoutX="452.0" layoutY="115.0" onKeyReleased="#verifPrenom" prefHeight="10.0" prefWidth="240.0" promptText="Prénom" style="-fx-background-color: transparent; -fx-border-color: #2A303D; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <font>
-                  <Font size="14.0" />
+                  <Font size="22.0" />
                </font>
                <effect>
                   <Blend mode="EXCLUSION" />
                </effect>
             </TextField>
-            <TextField id="txfemail" fx:id="adress" alignment="TOP_LEFT" layoutX="99.0" layoutY="204.0" onKeyReleased="#verifAdress" prefHeight="32.0" prefWidth="330.0" promptText="Adress" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
+            <TextField id="txfemail" fx:id="adress" alignment="TOP_LEFT" layoutX="116.0" layoutY="223.0" onKeyReleased="#verifAdress" prefHeight="10.0" prefWidth="240.0" promptText="Adress" style="-fx-background-color: transparent; -fx-border-color: #2A303D; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <font>
-                  <Font size="14.0" />
+                  <Font size="22.0" />
                </font>
                <effect>
                   <Blend mode="EXCLUSION" />
                </effect>
             </TextField>
-            <TextField id="txfemail" fx:id="tel" alignment="TOP_LEFT" layoutX="99.0" layoutY="264.0" onKeyReleased="#veriftel" prefHeight="32.0" prefWidth="330.0" promptText="Numéro De Téléphone" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
+            <TextField id="txfemail" fx:id="tel" alignment="TOP_LEFT" layoutX="452.0" layoutY="223.0" onKeyReleased="#veriftel" prefHeight="10.0" prefWidth="240.0" promptText="Num Téléphone" style="-fx-background-color: transparent; -fx-border-color: #2A303D; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <font>
-                  <Font size="14.0" />
+                  <Font size="22.0" />
                </font>
                <effect>
                   <Blend mode="EXCLUSION" />
                </effect>
             </TextField>
-            <TextField id="txfemail" fx:id="email" alignment="TOP_LEFT" layoutX="99.0" layoutY="324.0" onKeyReleased="#verifEmail" prefHeight="32.0" prefWidth="330.0" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
+            <TextField id="txfemail" fx:id="email" alignment="TOP_LEFT" layoutX="116.0" layoutY="328.0" onKeyReleased="#verifEmail" prefHeight="10.0" prefWidth="392.0" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: #2A303D; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px;">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <font>
-                  <Font size="14.0" />
+                  <Font size="22.0" />
                </font>
                <effect>
                   <Blend mode="EXCLUSION" />
                </effect>
             </TextField>
-            <PasswordField fx:id="confirmpassword" layoutX="99.0" layoutY="480.0" onKeyReleased="#ConfirmMDP" prefHeight="32.0" prefWidth="330.0" promptText="Confirmer Mot De Passe" style="-fx-background-color: transparent; -fx-border-color: #6C3483#6C3483 #6C3483#6C3483; -fx-border-width: 0px 0px 2px 0px;">
+            <PasswordField fx:id="confirmpassword" layoutX="116.0" layoutY="583.0" onKeyReleased="#ConfirmMDP" prefHeight="10.0" prefWidth="392.0" promptText="Confirmer Mot De Passe" style="-fx-background-color: transparent; -fx-border-color: #2A303D; -fx-border-width: 0px 0px 2px 0px;">
                <font>
-                  <Font size="14.0" />
+                  <Font size="22.0" />
                </font>
                <effect>
                   <Blend mode="EXCLUSION" />
                </effect>
             </PasswordField>
-            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="64.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+            <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="68.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                <image>
                   <Image url="@../../Images/user.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="64.0" layoutY="324.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="68.0" layoutY="341.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Images/icons8-email-64.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="64.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+            <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="407.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                <image>
                   <Image url="@../../Images/user.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="64.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+            <ImageView fitHeight="36.0" fitWidth="34.0" layoutX="68.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                <image>
                   <Image url="@../../Images/marker.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="64.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+            <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="407.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                <image>
                   <Image url="@../../Images/phone-call.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="64.0" layoutY="480.0" opacity="0.89" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="68.0" layoutY="597.0" opacity="0.89" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Images/icons8-key-64.png" />
                </image>
             </ImageView>
-            <Label fx:id="oncanceled" alignment="CENTER" contentDisplay="CENTER" layoutX="128.0" layoutY="576.0" prefHeight="18.0" prefWidth="331.0" textFill="RED">
+            <Label fx:id="oncanceled" alignment="CENTER" contentDisplay="CENTER" layoutX="227.0" layoutY="760.0" prefHeight="30.0" prefWidth="331.0" textFill="RED">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="labelnom" layoutX="99.0" layoutY="118.0" prefHeight="18.0" prefWidth="332.0" textFill="RED">
+            <Label fx:id="labelnom" layoutX="117.0" layoutY="164.0" prefHeight="30.0" prefWidth="238.0" textFill="RED">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="labelprenom" layoutX="100.0" layoutY="176.0" prefHeight="18.0" prefWidth="332.0" textFill="RED">
+            <Label fx:id="labelprenom" layoutX="452.0" layoutY="164.0" prefHeight="30.0" prefWidth="241.0" textFill="RED">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="labeladress" layoutX="100.0" layoutY="236.0" prefHeight="18.0" prefWidth="332.0" textFill="RED">
+            <Label fx:id="labeladress" layoutX="116.0" layoutY="272.0" prefHeight="30.0" prefWidth="240.0" textFill="RED">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="labeltel" layoutX="100.0" layoutY="296.0" prefHeight="18.0" prefWidth="332.0" textFill="RED">
+            <Label fx:id="labeltel" layoutX="452.0" layoutY="272.0" prefHeight="30.0" prefWidth="241.0" textFill="RED">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="labelemail" layoutX="100.0" layoutY="356.0" prefHeight="18.0" prefWidth="332.0" textFill="RED">
+            <Label fx:id="labelemail" layoutX="117.0" layoutY="377.0" prefHeight="30.0" prefWidth="392.0" textFill="RED">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="labelpassword" layoutX="250.0" layoutY="419.0" prefHeight="20.0" prefWidth="160.0" textFill="RED">
+            <Label fx:id="labelpassword" layoutX="296.0" layoutY="531.0" prefHeight="30.0" prefWidth="211.0" textFill="RED">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="labelconfirmpassword" layoutX="100.0" layoutY="512.0" prefHeight="18.0" prefWidth="332.0" textFill="RED">
+            <Label fx:id="labelconfirmpassword" layoutX="117.0" layoutY="632.0" prefHeight="30.0" prefWidth="392.0" textFill="RED">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <ImageView id="nomCheck" fx:id="nomCheck" fitHeight="27.0" fitWidth="27.0" layoutX="402.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView id="prenomcheck" fx:id="prenomCheck" fitHeight="27.0" fitWidth="27.0" layoutX="402.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="adresscheck" fitHeight="27.0" fitWidth="27.0" layoutX="402.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="telcheck" fitHeight="27.0" fitWidth="27.0" layoutX="402.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="emailcheck" fitHeight="27.0" fitWidth="27.0" layoutX="402.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="confirmpasswordcheck" fitHeight="27.0" fitWidth="27.0" layoutX="402.0" layoutY="483.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="passwordCheck" fitHeight="27.0" fitWidth="27.0" layoutX="402.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="labelpasswordvalide" layoutX="100.0" layoutY="418.0" prefHeight="20.0" prefWidth="160.0" textFill="#ac0ec4">
+            <ImageView id="nomCheck" fx:id="nomCheck" fitHeight="40.0" fitWidth="40.0" layoutX="314.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView id="prenomcheck" fx:id="prenomCheck" fitHeight="40.0" fitWidth="40.0" layoutX="650.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="adresscheck" fitHeight="40.0" fitWidth="40.0" layoutX="314.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="telcheck" fitHeight="40.0" fitWidth="40.0" layoutX="650.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="emailcheck" fitHeight="40.0" fitWidth="40.0" layoutX="467.0" layoutY="336.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="confirmpasswordcheck" fitHeight="40.0" fitWidth="40.0" layoutX="467.0" layoutY="589.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="passwordCheck" fitHeight="40.0" fitWidth="40.0" layoutX="467.0" layoutY="489.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="labelpasswordvalide" layoutX="117.0" layoutY="531.0" prefHeight="30.0" prefWidth="177.0" textFill="#ac0ec4">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="99.0" layoutY="433.0" prefHeight="34.0" prefWidth="248.0" text="Utilisez au moins huit caractères  avec " textFill="#5e12a6">
+            <Label alignment="BOTTOM_LEFT" layoutX="110.0" layoutY="408.0" prefHeight="34.0" prefWidth="392.0" text="Utilisez au moins huit caractères  avec " textAlignment="CENTER" textFill="#2a303d">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="182.0" layoutY="454.0" prefHeight="34.0" prefWidth="317.0" text="des lettres, des chiffres et des symboles !" textFill="#5e12a6" underline="true">
+            <Label layoutX="204.0" layoutY="447.0" prefHeight="34.0" prefWidth="403.0" text="des lettres, des chiffres et des symboles !" textFill="#2a303d" underline="true">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
 

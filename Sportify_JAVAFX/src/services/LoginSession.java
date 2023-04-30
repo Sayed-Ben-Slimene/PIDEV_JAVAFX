@@ -17,10 +17,15 @@ public class LoginSession {
     public static String password;
     public static String email;
     public static String adress;
+    public static int tel;
+    public static boolean IsLogged=false;
+
+
   
 
 //    public static String url;
     public static String image;
+        public static String isactive;
+
   //  public static boolean IsLogged=false;
-    public static int tel;
 }

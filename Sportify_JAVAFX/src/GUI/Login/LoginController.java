@@ -1,5 +1,6 @@
 package GUI.Login;
 import GUI.ResetPassword.ResetPasswordController;
+import entities.User;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import services.LoginSession;
@@ -9,6 +10,7 @@ import javafx.fxml.Initializable;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -39,6 +41,9 @@ import javax.mail.internet.InternetAddress;
 import javax.swing.JOptionPane;
 import services.ServiceUser;
 import nl.captcha.Captcha;
+import static services.LoginSession.password;
+import services.ServiceNotification;
+import static services.ServiceUser.user;
 import services.UserMailing;
 
 /**
@@ -69,8 +74,7 @@ public class LoginController implements Initializable {
     @FXML
     private TextField logemail;
     @FXML
-    private PasswordField logpassword;
-    
+    private PasswordField logpassword;   
     @FXML
     private Label oncanceled;
     
@@ -94,11 +98,16 @@ public class LoginController implements Initializable {
     public static String motpass;
     
     public static int  codem;
-    
+      //  public static User userc;
     private ServiceUser myServices = new ServiceUser();
 
+                ServiceUser ps = new ServiceUser();
+//            User userc = ps.findUserByLogin(logemail.getText(),logpassword.getText());
+            
         @Override
     public void initialize(URL url, ResourceBundle rb) {
+
+        
        BufferedImage i = captcha.getImage();
         Image ii = SwingFXUtils.toFXImage(i, null);
         ImageView ll = new ImageView(ii);
@@ -192,10 +201,86 @@ public class LoginController implements Initializable {
         }
 
     }
- 
     
     
+ @FXML
+    public void onLogin(ActionEvent event) throws Exception {
+        
+    if (logemail.getText().isEmpty()) {
+        oncanceled.setText("Please enter your Email!");
+                    oncanceled.setTextFill(Color.RED);
+
+        showAlert("Please enter your email :(");
+    } else if (logpassword.getText().isEmpty()) {
+        oncanceled.setText("Please enter your Password!");
+                            oncanceled.setTextFill(Color.RED);
+
+        showAlert("Please enter your password :(");
+    } else if (!captcha.isCorrect(tcaptcha.getText()) || tcaptcha.getText().isEmpty()) {
+        oncanceled.setText("Please enter the CAPTCHA code!");
+                            oncanceled.setTextFill(Color.RED);
+
+        showAlert("Please enter the CAPTCHA code :(");
+    } else {
+
+        String email = logemail.getText();
+        String password = logpassword.getText();
+        ServiceUser sp = new ServiceUser();
+        String encPass = sp.encrypt(password);
+        if (sp.login(email, encPass) &&(captcha.isCorrect(tcaptcha.getText()))) {
+
+            System.out.println(encPass);
+                if (LoginSession.isactive.equals("desactive")) {
+                            oncanceled.setText("Votre compte est suspendu !");
+                            oncanceled.setTextFill(Color.RED);
+                Alert al = new Alert(Alert.AlertType.ERROR);
+                al.setTitle("Alert");
+                al.setContentText("Votre compte est suspendu. Veuillez contacter l'administrateur.");
+                al.setHeaderText(null);
+                al.show();
+            } else {
+                    
+            
+            ServiceNotification.showNotif("Felicitaion ", "Vous Avez Login  avec sucées");
+            oncanceled.setText("Login Successful!");
+            oncanceled.setTextFill(Color.GREEN);
+                 System.out.println(LoginSession.roles);
     
+                switch (LoginSession.roles) {
+                    case "[\"ROLE_USER\"]":
+                        // go to user
+                        root = FXMLLoader.load(getClass().getResource("/GUI/AcceuilFront/AcceuilFront.fxml"));
+                        break;
+                    case "[\"ROLE_ORGANISATEUR\"]":
+                        // go to admin
+                        root = FXMLLoader.load(getClass().getResource("/GUI/Dashboard/Dashboard.fxml"));
+                        break;
+                     case "[\"ROLE_ADMIN\"]":
+                        // go to admin
+                        root = FXMLLoader.load(getClass().getResource("/GUI/Dashboard/Dashboard.fxml"));
+                        break;
+                }
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setTitle("Welcome");
+                stage.setScene(scene);
+                stage.show();
+            }
+        } else {
+            oncanceled.setText("Failed to Login!");
+                                oncanceled.setTextFill(Color.RED);
+
+            Alert al = new Alert(Alert.AlertType.ERROR);
+            al.setTitle("Alert");
+            al.setContentText("Invalid email or password.");
+            al.setHeaderText(null);
+            al.show();
+        }
+    }
+}
+
+    
+    /*
     @FXML
     public void onLogin(ActionEvent event) throws Exception{
         
@@ -207,54 +292,81 @@ public class LoginController implements Initializable {
                 }else if(logpassword.getText().isEmpty()){
                         oncanceled.setText("please enter your Password !");
                         showAlert("please enter your password :( ");
+                } else if((!captcha.isCorrect(tcaptcha.getText())) || tcaptcha.getText().isEmpty() ){
+                          oncanceled.setText("Please enter Verif the CAPTCHA  !");
+                        showAlert("¨Please enter Verif the CAPTCHA :( ");
                 } else if (login()){
                     
                         oncanceled.setText("You try to Login ! ");
                         String email=logemail.getText();
                         String password=logpassword.getText();
                         ServiceUser sp = new ServiceUser();
+                        
+                         String encPass = sp.encrypt(logpassword.getText());
 
-                        if((sp.login(email, password)==true)&&(email!="")&&(password!="")&&(captcha.isCorrect(tcaptcha.getText())))
+                        if((sp.login(email, encPass)==true)&&(email!="")&&(password!="")&&(captcha.isCorrect(tcaptcha.getText())))
                         {
-                              oncanceled.setText("Login Successful! ");
-                              oncanceled.setTextFill(Color.GREEN);
+                        ServiceNotification.showNotif("Felicitaion ", "Vous Avez Login  avec sucées");
+                                    oncanceled.setText("Login Successful! ");
+                                    oncanceled.setTextFill(Color.GREEN);
+System.out.println(encPass);
+                        if (null != user.getRoles()) {
+                                        if (user.getIsactive().equals("desactive")) {
+                                            Alert al = new Alert(Alert.AlertType.ERROR);
+                                            al.setTitle("Alert");
+                                            al.setContentText("Votre account est suspendue, Veuillez contacter l admininstrateur");
+                                            al.setHeaderText(null);
+                                            al.show();
+                                        } else {
+                                            switch (user.getRoles()) {
+                                                case "[\"ROLE_USER\"]":
+                                                    // go to user
+                                root = FXMLLoader.load(getClass().getResource("/GUI/AcceuilFront/AcceuilFrontController/AcceuilFrontController.fxml"));
+                                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                                scene = new Scene(root);
+                                stage.setTitle("Sign Up");
+                                stage.setScene(scene);
+                                stage.show();                            
+                                System.out.println("user");
+                                                    break;
+                                                     case "[\"ROLE_ADMIN\"]":
+                                                    // go to admin
+                                root = FXMLLoader.load(getClass().getResource("/GUI/Dashboard/Dashboard.fxml"));
+                                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                                scene = new Scene(root);
+                                stage.setTitle("Sign Up");
+                                stage.setScene(scene);
+                                stage.show(); 
+                                                    System.out.println("admin");
+                                                    break;
 
-                            root = FXMLLoader.load(getClass().getResource("/GUI/Dashboard/Dashboard.fxml"));
-                            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                            scene = new Scene(root);
-                            stage.setTitle("Dashboard");
-                            stage.setScene(scene);
-                            stage.show();
+                                                default:
+                                                    break;
+                                            }
+                                        }
+                                    }
 
-                        }else{
-                            try{
-                                oncanceled.setText("Failed to Login ! ");
-                                FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUI/Login/Login.fxml"));             
-                                Parent root = loader.load();
-                                LoginController mdc = loader.getController();
-                                mdc.test(logemail.getText(),logpassword.getText());
-                                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                                 Scene scene = new Scene(root);
-                                 stage.setScene(scene);
-                                 stage.show();
+                                    } else {
+                                        oncanceled.setText("Failed to Login ! ");
 
-                                 JOptionPane.showMessageDialog(null, "Connection Failed");
+                                        Alert al = new Alert(Alert.AlertType.ERROR);
+                                        al.setTitle("Alert");
+                                        al.setContentText("invalid login or mot de passe");
+                                        al.setHeaderText(null);
+                                        al.show();
 
-                        }catch(IOException ex){
-                            System.out.println("problem !");
+                                    }
 
-                        }
-                 }
-        
-    }else {         
-            Alert al = new Alert(Alert.AlertType.ERROR);
-            al.setHeaderText(null);
-            al.setContentText("Veuillez remplir les champs vides ! ");
-            al.showAndWait();
+                                            }else {         
+                                        Alert al = new Alert(Alert.AlertType.ERROR);
+                                        al.setHeaderText(null);
+                                        al.setContentText("Veuillez remplir les champs vides ! ");
+                                        al.showAndWait();
 
-        }
+                                    }
+    
     }  
-
+*/
         @FXML
     private void refCaptcha(MouseEvent event) {
         try{
@@ -385,7 +497,28 @@ public class LoginController implements Initializable {
        
     }
    
-    
+        // check if the user is banned
+   public Boolean Active_account() {
+        Boolean verif = true;
+        List<User> list_user = myServices.afficherUtilisateurs();
+        for (int i = 0; i < list_user.size(); i++) {
+            if (list_user.get(i).getEmail().equals(logemail.getText())) {
+                verif = false;
+
+            }
+
+        }
+        if (verif == false) {
+            Alert al = new Alert(Alert.AlertType.ERROR);
+            al.setTitle("Alert");
+            al.setContentText("User login existe déja");
+            al.setHeaderText(null);
+            al.show();
+        }
+
+        return verif;
+    }
+
     
 }
 

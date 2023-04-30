@@ -1,10 +1,12 @@
 package GUI.Register;
 
 import GUI.Login.LoginController;
+import static GUI.Login.LoginController.loadWindow;
 import entities.User;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.Optional;
 import java.util.Properties;
 import java.util.ResourceBundle;
@@ -44,6 +46,7 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import services.ServiceNotification;
 import services.ServiceUser;
 
 import services.UserMailing;
@@ -134,13 +137,15 @@ public class RegisterController implements Initializable {
     private boolean verificationUserConfirmPassword;
 
 
-    private ServiceUser myServices = new ServiceUser();
+     ServiceUser serviceUser = new ServiceUser();
 
     /**
      * Initializes the controller class.
      * @param url
      * @param rb
      */
+     
+     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -271,11 +276,11 @@ public class RegisterController implements Initializable {
     @FXML
     private void verifEmail(KeyEvent event) {
 
-    if (myServices.chercherUtilisateurByEmail(email.getText().trim()) == true) {
+    if (serviceUser.chercherUtilisateurByEmail(email.getText().trim()) == true) {
         labelemail.setText("Email Existe déja");
         verificationUserEmail = false;
     }
-    if (myServices.chercherUtilisateurByEmail(email.getText().trim()) == false) {//alphanumerique@alphanumerique.com
+    if (serviceUser.chercherUtilisateurByEmail(email.getText().trim()) == false) {//alphanumerique@alphanumerique.com
         //{ici longeur  }
         //debut ^
         //fin $
@@ -298,7 +303,7 @@ public class RegisterController implements Initializable {
              emailcheck.setImage(new Image("@../../Images/erreurCheckMark.png"));
 
             labelemail.setText("Email Format invalide !");
-             labelemail.setTextFill(Color.RED);
+            labelemail.setTextFill(Color.RED);
 
              verificationUserEmail = false;
 
@@ -414,17 +419,39 @@ public class RegisterController implements Initializable {
         }
 
     }
- 
+     // tester si l email est unique 
+    public Boolean CheckLogin() {
+        Boolean verif = true;
+        List<User> list_user = serviceUser.afficherUtilisateurs();
+        
+        
+        for (int i = 0; i < list_user.size(); i++) {
+            if (list_user.get(i).getEmail().equals(email.getText())) {
+                verif = false;
+                
+            }
+            
+        }
+        if (verif == false) {
+            Alert al = new Alert(Alert.AlertType.ERROR);
+            al.setTitle("Alert");
+            al.setContentText("User login existe déja");
+            al.setHeaderText(null);
+            al.show();
+        }
+        
+        return verif;
+    }
 
     @FXML
     private void Register(ActionEvent event) throws Exception {
                 if(nom.getText().isEmpty()){
                     oncanceled.setText("please enter your nom !");
-                                    showAlert("please enter your nom :( ");
+                    showAlert("please enter your nom :( ");
 
                 }else if(prenom.getText().isEmpty()){
                   oncanceled.setText("please enter your prenom !");
-                                                      showAlert("please enter your prenom  :( ");
+                  showAlert("please enter your prenom  :( ");
 
                 }else if(adress.getText().isEmpty()){
                     oncanceled.setText("please enter your adress !");
@@ -438,6 +465,12 @@ public class RegisterController implements Initializable {
                   oncanceled.setText("please enter your email !");
                                                       showAlert("please enter your email :( ");
 
+                }else if ( !CheckLogin() ){
+                
+                         oncanceled.setText("Email existe deja !");
+                                                      showAlert("Email existe deja ! :( ");
+                
+                
                 }else if(password.getText().isEmpty()){
                   oncanceled.setText("please enter your password !");
                                                       showAlert("please enter your password :( ");
@@ -453,59 +486,38 @@ public class RegisterController implements Initializable {
         }
                 
 
-        if (Signup()) {
-                    ServiceUser sp = new ServiceUser();
+        if (Signup() && CheckLogin() ) {
+                   ServiceUser sp = new ServiceUser();
         //sp.Ajouter2(user);
-                    User user = new User(nom.getText(),prenom.getText(),adress.getText(),email.getText(),password.getText(),"Role_USER",Integer.parseInt(tel.getText()));
+       //  User user = new User(nom.getText(),prenom.getText(),adress.getText(),email.getText(),password.getText(),"[\"ROLE_USER\"]",Integer.parseInt(tel.getText()),"active");
 
+           User user = new User();
         
-        if(sp.ajouter(user)==true){
-                                // Get the primary stage of the application
-                     Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                   
+            user.setEmail(email.getText());
+            user.setPassword(serviceUser.encrypt(password.getText()));
+            user.setRoles("[\"ROLE_USER\"]");
+            user.setNom(nom.getText());          
+            user.setPrenom(prenom.getText());
+            
+            user.setTel(Integer.parseInt(tel.getText()));
+           // user.setPhoto(tf_photo.getText());           
+            user.setAdress(adress.getText());                         
+            user.setIsactive("active");
+          
+            sp.AjouterUser(user);
+                  oncanceled.setText(" login Successful ");
 
-                     // Close the primary stage
-                     primaryStage.close();
+         //   if(sp.ajouter(user)==true){
+                            root = FXMLLoader.load(getClass().getResource("/GUI/Login/Login.fxml"));
+                            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                            scene = new Scene(root);
+                            stage.setTitle("Login");
+                            stage.setScene(scene);
+                            stage.show();
+                          ServiceNotification.showNotif("Bienvenu", "Bienvenu dans Sportify Vous Pouvez login maintenant");
 
-                     // Create the splash screen and show it
-                 
-                        // Load the Splash Screen FXML file
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUI/SplashScreen/SplashScreen.fxml"));
-                    Parent splashScreenRoot = loader.load();
-
-                    // Create a new Scene with the Splash Screen as its root
-                    Scene splashScreenScene = new Scene(splashScreenRoot);
-
-                    // Create a new Stage for the Splash Screen
-                    Stage splashScreenStage = new Stage();
-                    splashScreenStage.setScene(splashScreenScene);
-                    splashScreenStage.initStyle(StageStyle.TRANSPARENT); // Set the stage to be transparent
-
-                    // Show the Splash Screen
-                    splashScreenStage.show();
-
-                    // After 5 seconds, remove the Splash Screen and show the main content of the application
-                    PauseTransition delay = new PauseTransition(Duration.seconds(5));
-                    delay.setOnFinished(e -> {
-
-                        try {
-                                        // Remove the Splash Screen and show the main content of the application
-                                        splashScreenStage.close();
-                                        FXMLLoader loader2 = new FXMLLoader(getClass().getResource("/GUI/Login/Login.fxml"));
-                                        Parent otherPageRoot = loader2.load();
-                                        // Create a new Scene with the Other Page as its root
-                                        Scene otherPageScene = new Scene(otherPageRoot);
-                                        // Create a new Stage for the Other Page
-                                        Stage otherPageStage = new Stage();
-                                        otherPageStage.setScene(otherPageScene);
-
-                                        // Show the Other Page
-                                        otherPageStage.show();
-                                        // Code to show the main content of the application
-                        } catch (IOException ex) {
-                            Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    });
-                    delay.play();
+                            
          System.out.print("user added with email : "+email.getText());
 /*
                UserMailing.send(
@@ -541,15 +553,10 @@ public class RegisterController implements Initializable {
                 } catch (MessagingException e) {
                   e.printStackTrace();
                 }
-        }
-                
+         
         }else {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Warning");
-            alert.setHeaderText(null);
-            alert.setContentText("Veillez remplir tous les champs");
-            alert.show();
-            
+           oncanceled.setText("Veillez remplir tous les champs ! ");
+
             
             
             
@@ -558,6 +565,7 @@ public class RegisterController implements Initializable {
     
  }
     
+       // tester si l email est unique 
    
     
         @FXML

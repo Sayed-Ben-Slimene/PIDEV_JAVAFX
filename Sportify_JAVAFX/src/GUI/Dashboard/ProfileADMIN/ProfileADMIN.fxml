@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox id="AnchorPane" fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" styleClass="root" stylesheets="@../dashboardDesign.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Dashboard.ProfileADMIN.ProfileADMINController">
+
+    <children>
+
+        <VBox prefHeight="900.0" prefWidth="291.0" stylesheets="@../dashboardDesign.css">
+
+            <children>
+
+                <AnchorPane fx:id="side_ankerpane" prefHeight="900.0" prefWidth="298.0" styleClass="side_ankerpane" stylesheets="@dashboardDesign.css">
+
+                    <children>
+
+                        <Pane fx:id="inner_pane" layoutX="15.0" layoutY="27.0" prefHeight="78.0" prefWidth="257.0" styleClass="inner_pane" stylesheets="@dashboardDesign.css">
+
+                            <children>
+
+                                <ImageView fitHeight="78.0" fitWidth="96.0" layoutX="72.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+
+                                    <image>
+
+                                        <Image url="@../../Images/dashboard.png" />
+
+                                    </image>
+
+                                </ImageView>
+
+                                <Pane fx:id="most_inner_pane" layoutX="199.0" layoutY="1.0" prefHeight="78.0" prefWidth="42.0" styleClass="most_inner_pane" stylesheets="@dashboardDesign.css" />
+
+                            </children>
+
+                        </Pane>
+
+                        <Button fx:id="btn_workbench" layoutX="12.0" layoutY="141.0" prefHeight="54.0" prefWidth="266.0" styleClass="btn_workbench" stylesheets="@dashboardDesign.css" text="     Home" textFill="WHITE">
+
+                            <font>
+
+                                <Font name="System Bold" size="18.0" />
+
+                            </font>
+
+                        </Button>
+
+                        <Button fx:id="btn_workbench1" layoutX="12.0" layoutY="217.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Users" textFill="#c6b6b6">
+
+                            <font>
+
+                                <Font name="System Bold" size="18.0" />
+
+                            </font>
+
+                        </Button>
+
+                        <Button fx:id="btn_workbench11" layoutX="6.0" layoutY="288.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Shop" textFill="#c6b6b6">
+
+                            <font>
+
+                                <Font name="System Bold" size="18.0" />
+
+                            </font>
+
+                        </Button>
+
+                        <Button fx:id="btn_workbench12" layoutX="6.0" layoutY="359.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="  Events" textFill="#c6b6b6">
+
+                            <font>
+
+                                <Font name="System Bold" size="18.0" />
+
+                            </font>
+
+                        </Button>
+
+                        <Button fx:id="btn_workbench111" layoutX="6.0" layoutY="429.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="   Matchs" textFill="#c6b6b6">
+
+                            <font>
+
+                                <Font name="System Bold" size="18.0" />
+
+                            </font>
+
+                        </Button>
+
+                        <Button fx:id="btn_workbench1111" layoutX="6.0" layoutY="500.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="      Actualité" textFill="#c6b6b6">
+
+                            <font>
+
+                                <Font name="System Bold" size="18.0" />
+
+                            </font>
+
+                        </Button>
+
+                        <ImageView fitHeight="262.0" fitWidth="260.0" layoutX="15.0" layoutY="601.0" pickOnBounds="true" preserveRatio="true">
+
+                            <image>
+
+                                <Image url="@../../Images/register.png" />
+
+                            </image>
+
+                        </ImageView>
+
+                        <ImageView fitHeight="40.0" fitWidth="32.0" layoutX="70.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+
+                            <image>
+
+                                <Image url="@../../Images/icons8-add-user-64.png" />
+
+                            </image>
+
+                        </ImageView>
+
+                        <ImageView fitHeight="40.0" fitWidth="32.0" layoutX="70.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+
+                            <image>
+
+                                <Image url="@../../Images/icons8-add-user-64.png" />
+
+                            </image>
+
+                        </ImageView>
+
+                        <ImageView fitHeight="40.0" fitWidth="32.0" layoutX="70.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
+
+                            <image>
+
+                                <Image url="@../../Images/icons8-add-user-64.png" />
+
+                            </image>
+
+                        </ImageView>
+
+                        <ImageView fitHeight="40.0" fitWidth="32.0" layoutX="70.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+
+                            <image>
+
+                                <Image url="@../../Images/icons8-add-user-64.png" />
+
+                            </image>
+
+                        </ImageView>
+
+                        <ImageView fitHeight="40.0" fitWidth="32.0" layoutX="70.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true">
+
+                            <image>
+
+                                <Image url="@../../Images/icons8-add-user-64.png" />
+
+                            </image>
+
+                        </ImageView>
+
+                          <ImageView fitHeight="40.0" fitWidth="32.0" layoutX="87.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+
+                              <image>
+
+                                  <Image url="@../../Images/Dashboard2.png" />
+
+                              </image>
+
+                          </ImageView>
+
+                    </children>
+
+                </AnchorPane>
+
+            </children>
+
+        </VBox>
+
+        <Pane prefHeight="900.0" prefWidth="1301.0" stylesheets="@dashboardDesign.css">
+
+            <children>
+
+                <Pane layoutY="7.0" prefHeight="59.0" prefWidth="1302.0" style="-fx-background-color: #EAEEF4;" styleClass="side_ankerpane" stylesheets="@dashboardDesign.css">
+
+                    <children>
+
+                        <TextField fx:id="setPromptText" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="555.0" layoutY="8.0" maxWidth="327.0" minWidth="194.0" prefHeight="41.0" prefWidth="267.0" promptText="Search :" scaleShape="false">
+
+                            <font>
+
+                                <Font name="Century Gothic" size="13.0" />
+
+                            </font>
+
+                        </TextField>
+
+                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1109.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+
+                            <image>
+
+                                <Image url="@../../../Images/icons8-administrator-male-100.png" />
+
+                            </image>
+
+                        </ImageView>
+
+                          <ImageView fitHeight="35.0" fitWidth="36.0" layoutX="832.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+
+                              <image>
+
+                                  <Image url="@../../../Images/icons8-admin-64.png" />
+
+                              </image>
+
+                          </ImageView>
+      
+                      <Label layoutX="21.0" layoutY="4.0" text="Hello  ! ">
+      
+                          <font>
+      
+                              <Font name="Century Gothic Bold" size="34.0" />
+      
+                          </font>
+      
+                      </Label>
+                  <Label fx:id="prenom" contentDisplay="RIGHT" layoutX="917.0" layoutY="10.0" prefHeight="35.0" prefWidth="193.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="1183.0" layoutY="9.0" prefHeight="0.0" prefWidth="42.0" style="-fx-background-color: #211e69;" stylesheets="@dashboardDesign.css" text="O" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="oncancel" layoutX="1241.0" layoutY="9.0" prefHeight="0.0" prefWidth="42.0" style="-fx-background-color: red;" stylesheets="@dashboardDesign.css" text="X" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+
+                    </children>
+
+                </Pane>
+
+                <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="474.0" layoutY="169.0" prefHeight="31.0" prefWidth="31.0" style="-fx-background-color: #EAEEF4;" />
+
+                <Pane layoutX="21.0" layoutY="94.0" prefHeight="488.0" prefWidth="1274.0" styleClass="root" stylesheets="@dashboardDesign.css">
+
+                    <children>
+
+                        <Label layoutX="60.0" layoutY="106.0" textFill="#323131">
+
+                            <font>
+
+                                <Font name="Century Gothic Bold" size="20.0" />
+
+                            </font>
+
+                        </Label>
+                  <TextField fx:id="labelprenom" layoutX="838.0" layoutY="92.0" prefHeight="41.0" prefWidth="276.0" promptText="prenom" />
+                  <TextField fx:id="labeladress" layoutX="507.0" layoutY="198.0" prefHeight="41.0" prefWidth="276.0" promptText="adress" />
+                  <TextField fx:id="labelemail" layoutX="509.0" layoutY="305.0" prefHeight="41.0" prefWidth="411.0" promptText="email" />
+                  <TextField fx:id="labelnom" layoutX="506.0" layoutY="92.0" prefHeight="41.0" prefWidth="276.0" promptText="nom" />
+                  <TextField fx:id="labeltel" layoutX="840.0" layoutY="196.0" prefHeight="41.0" prefWidth="276.0" promptText="tel" />
+      
+                  <Label layoutX="507.0" layoutY="67.0" text="NOM:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="839.0" layoutY="68.0" text="PRENOM:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="506.0" layoutY="174.0" text="ADRESSE:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="840.0" layoutY="172.0" text="TELEPHONE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="514.0" layoutY="280.0" text="EMAIL">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="selectedImage" fitHeight="230.0" fitWidth="248.0" layoutX="154.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button fx:id="selectionnerimagebutton" layoutX="142.0" layoutY="296.0" onAction="#ImportBtn" prefHeight="52.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Update Image " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="142.0" layoutY="373.0" onAction="#modifiermenu" prefHeight="52.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Modifier" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+
+                    </children>
+
+                </Pane>
+
+            </children>
+
+        </Pane>
+    </children>
+</HBox>

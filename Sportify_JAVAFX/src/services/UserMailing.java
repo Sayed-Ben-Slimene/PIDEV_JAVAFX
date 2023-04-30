@@ -56,8 +56,9 @@ public class UserMailing {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(myAccountEmail));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
-            message.setSubject("Mot de passe");
-            message.setText(mot+" Est Votre code de verification du compte S4S");
+            message.setSubject("Réinitialiser le Mot de passe de votre compte Sportify"+recepient);
+            message.setText("La Réinitialisation de votre Mot De Passe nécessite une vérification supplémentaire, car nous ne reconnaissons pas votre identité. Pour terminer la connexion, entrez le code de vérification suivant. \nCode de vérification : "+mot);
+
             return message;
     }
     

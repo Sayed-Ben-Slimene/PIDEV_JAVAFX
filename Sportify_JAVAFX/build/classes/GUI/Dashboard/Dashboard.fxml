@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -13,19 +14,19 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="827.0" prefWidth="1320.0" styleClass="root" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Dashboard.DashboardController">
+<HBox id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" styleClass="root" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Dashboard.DashboardController">
 
     <children>
 
-        <VBox prefHeight="781.0" prefWidth="281.0">
+        <VBox prefHeight="900.0" prefWidth="291.0">
 
             <children>
 
-                <AnchorPane fx:id="side_ankerpane" prefHeight="827.0" prefWidth="281.0" styleClass="side_ankerpane" stylesheets="@dashboardDesign.css">
+                <AnchorPane fx:id="side_ankerpane" prefHeight="900.0" prefWidth="298.0" styleClass="side_ankerpane" stylesheets="@dashboardDesign.css">
 
                     <children>
 
-                        <Pane fx:id="inner_pane" layoutX="17.0" layoutY="27.0" prefHeight="78.0" prefWidth="248.0" styleClass="inner_pane" stylesheets="@dashboardDesign.css">
+                        <Pane fx:id="inner_pane" layoutX="15.0" layoutY="27.0" prefHeight="78.0" prefWidth="257.0" styleClass="inner_pane" stylesheets="@dashboardDesign.css">
 
                             <children>
 
@@ -45,7 +46,7 @@
 
                         </Pane>
 
-                        <Button fx:id="btn_workbench" layoutX="3.0" layoutY="141.0" prefHeight="54.0" prefWidth="266.0" styleClass="btn_workbench" stylesheets="@dashboardDesign.css" text="     Home" textFill="WHITE">
+                        <Button fx:id="btn_workbench" layoutX="12.0" layoutY="141.0" onAction="#GoToHome" prefHeight="54.0" prefWidth="266.0" styleClass="btn_workbench" stylesheets="@dashboardDesign.css" text="     Home" textFill="WHITE">
 
                             <font>
 
@@ -55,7 +56,7 @@
 
                         </Button>
 
-                        <Button fx:id="btn_workbench1" layoutX="6.0" layoutY="217.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Users" textFill="#c6b6b6">
+                        <Button fx:id="btn_workbench1" layoutX="12.0" layoutY="217.0" onAction="#GoToProfile" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Profile" textFill="#c6b6b6">
 
                             <font>
 
@@ -105,7 +106,7 @@
 
                         </Button>
 
-                        <ImageView fitHeight="229.0" fitWidth="225.0" layoutX="32.0" layoutY="588.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="262.0" fitWidth="260.0" layoutX="15.0" layoutY="601.0" pickOnBounds="true" preserveRatio="true">
 
                             <image>
 
@@ -165,7 +166,7 @@
 
                         </ImageView>
 
-                          <ImageView fitHeight="40.0" fitWidth="32.0" layoutX="86.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+                          <ImageView fitHeight="40.0" fitWidth="32.0" layoutX="87.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
 
                               <image>
 
@@ -174,6 +175,11 @@
                               </image>
 
                           </ImageView>
+                  <Button layoutX="7.0" layoutY="218.0" onAction="#GoToProfile" prefHeight="52.0" prefWidth="270.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Profile" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
 
                     </children>
 
@@ -183,15 +189,15 @@
 
         </VBox>
 
-        <Pane prefHeight="781.0" prefWidth="1040.0" stylesheets="@dashboardDesign.css">
+        <Pane prefHeight="900.0" prefWidth="1301.0" stylesheets="@dashboardDesign.css">
 
             <children>
 
-                <Pane layoutY="7.0" prefHeight="70.0" prefWidth="1040.0" style="-fx-background-color: #EAEEF4;" styleClass="side_ankerpane" stylesheets="@dashboardDesign.css">
+                <Pane layoutY="7.0" prefHeight="59.0" prefWidth="1302.0" style="-fx-background-color: #EAEEF4;" styleClass="side_ankerpane" stylesheets="@dashboardDesign.css">
 
                     <children>
 
-                        <TextField fx:id="txt_serach" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="573.0" layoutY="15.0" maxWidth="327.0" minWidth="194.0" prefHeight="42.0" prefWidth="327.0" promptText="Search :" scaleShape="false">
+                        <TextField fx:id="setPromptText" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="555.0" layoutY="8.0" maxWidth="327.0" minWidth="194.0" prefHeight="41.0" prefWidth="267.0" promptText="Search :" scaleShape="false">
 
                             <font>
 
@@ -201,15 +207,7 @@
 
                         </TextField>
 
-                        <ImageView fitHeight="53.0" fitWidth="31.0" layoutX="532.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
-
-                            <image>
-
-                                <Image url="@../../Images/icons8-refresh-64.png" />
-
-                            </image></ImageView>
-
-                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="967.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1109.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
 
                             <image>
 
@@ -219,7 +217,7 @@
 
                         </ImageView>
 
-                          <ImageView fitHeight="35.0" fitWidth="36.0" layoutX="916.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                          <ImageView fitHeight="35.0" fitWidth="36.0" layoutX="832.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
 
                               <image>
 
@@ -229,7 +227,7 @@
 
                           </ImageView>
       
-                      <Label layoutX="21.0" layoutY="8.0" text="Hello Admin ! ">
+                      <Label layoutX="21.0" layoutY="4.0" text="Hello Admin ! ">
       
                           <font>
       
@@ -238,6 +236,22 @@
                           </font>
       
                       </Label>
+                  <Label fx:id="prenom" contentDisplay="RIGHT" layoutX="917.0" layoutY="10.0" prefHeight="35.0" prefWidth="193.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="ChoiceBox" layoutX="384.0" layoutY="9.0" prefHeight="39.0" prefWidth="161.0" />
+                  <Button layoutX="1183.0" layoutY="9.0" onAction="#handleImageViewClick" prefHeight="0.0" prefWidth="42.0" style="-fx-background-color: #211e69;" stylesheets="@dashboardDesign.css" text="O" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="oncancel" layoutX="1241.0" layoutY="9.0" onAction="#oncancelpress" prefHeight="0.0" prefWidth="42.0" style="-fx-background-color: red;" stylesheets="@dashboardDesign.css" text="X" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
 
                     </children>
 
@@ -245,7 +259,7 @@
 
                 <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="474.0" layoutY="169.0" prefHeight="31.0" prefWidth="31.0" style="-fx-background-color: #EAEEF4;" />
 
-                <Pane fx:id="pane_132" layoutX="9.0" layoutY="104.0" prefHeight="423.0" prefWidth="1031.0" styleClass="root" stylesheets="@dashboardDesign.css">
+                <Pane fx:id="pane_132" layoutX="21.0" layoutY="94.0" prefHeight="488.0" prefWidth="1274.0" styleClass="root" stylesheets="@dashboardDesign.css">
 
                     <children>
 
@@ -258,16 +272,17 @@
                             </font>
 
                         </Label>
-                  <TableView fx:id="usersTable" layoutX="7.0" layoutY="6.0" prefHeight="469.0" prefWidth="1016.0">
+                  <TableView fx:id="usersTable" layoutX="4.0" layoutY="3.0" prefHeight="473.0" prefWidth="1258.0">
                     <columns>
-                      <TableColumn fx:id="culumnUserId" prefWidth="31.46661376953125" text="Id" />
-                      <TableColumn fx:id="culumnUsernom" prefWidth="101.86660385131836" text="Nom" />
-                        <TableColumn fx:id="culumnUserPrenom" prefWidth="110.13337707519531" text="Prenom" />
-                        <TableColumn fx:id="culumnUserEmail" prefWidth="180.0" text="Email" />
-                        <TableColumn fx:id="culumnUserPassword" minWidth="0.0" prefWidth="203.4666748046875" text="Password" />
-                        <TableColumn fx:id="culumnUserAdress" prefWidth="117.333251953125" text="Adress" />
-                        <TableColumn fx:id="culumnUserRoles" prefWidth="133.599853515625" text="Roles" />
-                        <TableColumn fx:id="culumnUserTel" prefWidth="136.00006103515625" text="Tel" />
+                      <TableColumn fx:id="culumnUserId" prefWidth="42.39999771118164" text="Id" />
+                      <TableColumn fx:id="culumnUsernom" prefWidth="115.99996948242188" text="Nom" />
+                        <TableColumn fx:id="culumnUserPrenom" prefWidth="132.80003356933594" text="Prenom" />
+                        <TableColumn fx:id="culumnUserEmail" prefWidth="224.79998779296875" text="Email" />
+                        <TableColumn fx:id="culumnUserPassword" minWidth="0.0" prefWidth="184.0" text="Password" />
+                        <TableColumn fx:id="culumnUserAdress" prefWidth="181.5999755859375" text="Adress" />
+                        <TableColumn fx:id="culumnUserRoles" prefWidth="132.80010986328125" text="Roles" />
+                        <TableColumn fx:id="culumnUserTel" prefWidth="133.5999755859375" text="Tel" />
+                        <TableColumn fx:id="culumnUserIsactive" prefWidth="117.066650390625" text="isactive" />
                     </columns>
                   </TableView>
 
@@ -275,7 +290,7 @@
 
                 </Pane>
 
-                <Label layoutX="25.0" layoutY="83.0" text="Liste des Utilisateurs">
+                <Label layoutX="18.0" layoutY="67.0" text="Liste des Utilisateurs">
 
                     <font>
 
@@ -284,38 +299,84 @@
                     </font>
 
                 </Label>
-            <Button layoutX="752.0" layoutY="695.0" prefHeight="52.0" prefWidth="217.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Modifier" textFill="WHITE">
+            <Button layoutX="461.0" layoutY="790.0" onAction="#btn_modifier" prefHeight="52.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Modifier" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button layoutX="752.0" layoutY="755.0" onAction="#suppuser" prefHeight="52.0" prefWidth="217.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Supprimer" textFill="WHITE">
+            <Button layoutX="459.0" layoutY="690.0" onAction="#suppuser" prefHeight="52.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Supprimer" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            
-            
-            <TextField id="iduser" layoutX="87.0" layoutY="603.0" prefHeight="32.0" prefWidth="245.0" promptText="id" />
-            <TextField id="nomuser" layoutX="86.0" layoutY="657.0" prefHeight="32.0" prefWidth="245.0" promptText="nom" />
-            <TextField id="prenomuser" layoutX="87.0" layoutY="714.0" prefHeight="32.0" prefWidth="245.0" promptText="prenom" />
-            <TextField id="roleuser" layoutX="87.0" layoutY="772.0" prefHeight="32.0" prefWidth="245.0" promptText="roles" />
-            <TextField id="emailuser" layoutX="444.0" layoutY="600.0" prefHeight="32.0" prefWidth="245.0" promptText="Email" />
-            <TextField id="passworduser" layoutX="446.0" layoutY="653.0" prefHeight="32.0" prefWidth="245.0" promptText="Password" />
-            <TextField id="adressuser" layoutX="447.0" layoutY="714.0" prefHeight="32.0" prefWidth="245.0" promptText="Adress" />
-            <TextField id="teluser" layoutX="443.0" layoutY="769.0" prefHeight="32.0" prefWidth="245.0" promptText="Tel" />
+            <TextField fx:id="tf_prenom" layoutX="237.0" layoutY="637.0" prefHeight="41.0" prefWidth="183.0" promptText="prenom" />
+            <TextField fx:id="tf_adresse" layoutX="35.0" layoutY="717.0" prefHeight="41.0" prefWidth="183.0" promptText="adress" />
+            <TextField fx:id="tf_roles" layoutX="34.0" layoutY="793.0" prefHeight="41.0" prefWidth="183.0" promptText="roles" />
+            <TextField fx:id="tf_email" layoutX="240.0" layoutY="793.0" prefHeight="41.0" prefWidth="183.0" promptText="email" />
+            <TextField fx:id="tf_nom" layoutX="34.0" layoutY="638.0" prefHeight="41.0" prefWidth="183.0" promptText="nom" />
+            <TextField fx:id="tf_tel" layoutX="239.0" layoutY="717.0" prefHeight="41.0" prefWidth="183.0" promptText="tel" />
+            <Label layoutX="530.0" layoutY="615.0" prefHeight="44.0" prefWidth="740.0" text="Selectionner l'Utilisateur que vous shouhaite de changer son état !">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="changerEtat" layoutX="1018.0" layoutY="690.0" onAction="#ActiverUser" prefHeight="52.0" prefWidth="266.0" style="-fx-background-color: #129624;" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Activer User" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Label layoutX="35.0" layoutY="613.0" text="NOM:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="238.0" layoutY="613.0" text="PRENOM:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="34.0" layoutY="693.0" text="ADRESSE:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="239.0" layoutY="693.0" text="TELEPHONE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="770.0" text="ROLES">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="242.0" layoutY="768.0" text="EMAIL">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="changerRoles" layoutX="738.0" layoutY="690.0" onAction="#changeToUSER" prefHeight="52.0" prefWidth="267.0" style="-fx-background-color: #129624;" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Changer To USER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="desactiver" layoutX="1019.0" layoutY="791.0" onAction="#DesactiverUser" prefHeight="52.0" prefWidth="266.0" style="-fx-background-color: #9e0f0f;" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Desactiver User" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="changerRoles1" layoutX="738.0" layoutY="790.0" onAction="#changeToORGANISATEUR" prefHeight="52.0" prefWidth="267.0" style="-fx-background-color: #9e0f0f;" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Changer To ORGANISATEUR" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="27.0" layoutY="847.0" onAction="#exportToCsv" prefHeight="52.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="exportToCSV" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
             </children>
 
         </Pane>
-      <Label text="Prénom">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label text="Prénom">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
     </children>
 </HBox>

@@ -11,25 +11,59 @@ package entities;
  */
 public class User {
     int id ;
-    String nom ,prenom,adress,email,password,roles;
+    String nom ,prenom,adress,email,password,roles,image,isactive;
     int tel;
-    
 
     public User() {
     }
 
-    public User(int id, String nom, String prenom, String adress, String email, String password, String roles, int tel) {
+    public User(int id, String nom, String prenom, String adress, String email, String password, String roles, int tel,String image,String isactive) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
         this.adress = adress;
         this.email = email;
         this.password = password;
+                this.password = password;
         this.roles = roles;
-        this.tel = tel;
-    }
 
-    public User(String nom, String prenom, String adress, String email, String password, String roles, int tel) {
+        
+       // this.roles = "[\"" + roles.toUpperCase() + "\"]";
+        this.tel = tel;
+        this.image=image;
+        this.isactive = isactive ;
+
+    }
+    
+        public User( String nom, String prenom, String adress, String email, int tel,String image) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adress = adress;
+        this.email = email;
+        this.tel = tel;
+                this.image = image;
+
+
+    }
+    
+    
+    
+    public User(int id, String nom, String prenom, String adress, String email, String password, String roles, int tel,String isactive) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adress = adress;
+        this.email = email;
+        this.password = password;
+                this.roles = roles;
+
+      //  this.roles = "[\"" + roles.toUpperCase() + "\"]";
+        this.tel = tel;
+        this.isactive = isactive ;
+
+    }
+    /*
+    public User(String nom, String prenom, String adress, String email, String password, String roles, int tel,String image) {
         this.nom = nom;
         this.prenom = prenom;
         this.adress = adress;
@@ -37,13 +71,43 @@ public class User {
         this.password = password;        
         this.roles = "[\"" + roles.toUpperCase() + "\"]";
         this.tel = tel;
+        this.image=image;
+
+    }
+*/
+        public User(String nom, String prenom, String adress, String email, String password, String roles, int tel,String isactive) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adress = adress;
+        this.email = email;
+        this.password = password;        
+                this.roles = roles;
+
+       // this.roles = "[\"" + roles.toUpperCase() + "\"]";
+        this.tel = tel;
+        this.isactive = isactive;
+
+
     }
 
-  
+    public String getIsactive() {
+        return isactive;
+    }
+
+    public void setIsactive(String isactive) {
+        this.isactive = isactive;
+    }
+      public String getImage() {
+        return image;
+    }
+    public void setImage(String image) {
+        this.image = image;
+    }
     
     public String getRoles() {
         return roles;
     }
+
     public void setRoles(String roles) {
         this.roles = roles;
     }
@@ -114,6 +178,8 @@ public class User {
 
 
     
-
+    // user actuellement connecter
+    
+            public static User user_connecter;
     
 }

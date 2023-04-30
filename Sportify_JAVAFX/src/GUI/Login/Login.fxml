@@ -17,9 +17,14 @@
    <left>
       <AnchorPane prefHeight="820.0" prefWidth="385.0" style="-fx-background-color: #2A303D;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="275.0" fitWidth="293.0" layoutX="30.0" layoutY="245.0" opacity="0.92" pickOnBounds="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);">
+            <ImageView fitHeight="317.0" fitWidth="329.0" layoutX="20.0" layoutY="256.0" opacity="0.92" pickOnBounds="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);">
                <image>
                   <Image url="@../../Images/login.png" /> 
+               </image>
+            </ImageView>
+            <ImageView fitHeight="102.0" fitWidth="199.0" layoutX="5.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/sportifyLogo.png" />
                </image>
             </ImageView>
          </children>
@@ -35,7 +40,7 @@
                <font>
                   <Font size="22.0" />
                </font></TextField>
-            <Button id="btnsignin" fx:id="connection" layoutX="277.0" layoutY="572.0" mnemonicParsing="false" onAction="#onLogin" prefHeight="55.0" prefWidth="300.0" style="-fx-background-color: #fcba01; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);" text="Connection" textFill="#2a303d">
+            <Button id="btnsignin" fx:id="connection" layoutX="262.0" layoutY="621.0" mnemonicParsing="false" onAction="#onLogin" prefHeight="55.0" prefWidth="300.0" style="-fx-background-color: #fcba01; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);" styleClass="envoyer_btn" stylesheets="@../Home/home.css" text="Connection" textFill="#2a303d">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -44,7 +49,7 @@
                <font>
                   <Font name="System Bold" size="20.0" />
                </font></Hyperlink>
-            <Text layoutX="335.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" x="30.0">
+            <Text layoutX="319.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" x="30.0">
                <font>
                   <Font name="Cambria Bold Italic" size="40.0" />
                </font>
@@ -63,16 +68,16 @@
                <font>
                   <Font size="22.0" />
                </font></PasswordField>
-            <Label layoutX="163.0" layoutY="681.0" text="Vous n'avez pas de compte ?">
+            <Label layoutX="163.0" layoutY="740.0" text="Vous n'avez pas de compte ?">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Hyperlink id="signuplink" fx:id="signuplink" layoutX="471.0" layoutY="676.0" onAction="#switchToSignUp" text="Inscrivez-Vous" textFill="#2a303d">
+            <Hyperlink id="signuplink" fx:id="signuplink" layoutX="471.0" layoutY="735.0" onAction="#switchToSignUp" text="Inscrivez-Vous" textFill="#2a303d">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font></Hyperlink>
-            <Label fx:id="oncanceled" alignment="CENTER" contentDisplay="CENTER" layoutX="214.0" layoutY="754.0" prefHeight="30.0" prefWidth="392.0" textFill="RED">
+            <Label fx:id="oncanceled" alignment="CENTER" contentDisplay="CENTER" layoutX="214.0" layoutY="684.0" prefHeight="43.0" prefWidth="406.0" textFill="RED">
                <font>
                   <Font name="Cambria Bold" size="16.0" />
                </font>
@@ -94,11 +99,11 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="tcaptcha" layoutX="201.0" layoutY="499.0" prefHeight="38.0" prefWidth="219.0" promptText="Captcha">
+            <TextField fx:id="tcaptcha" layoutX="201.0" layoutY="499.0" prefHeight="61.0" prefWidth="236.0" promptText="Captcha">
                <font>
                   <Font size="22.0" />
                </font></TextField>
-            <ImageView fx:id="icaptcha" fitHeight="53.0" fitWidth="212.0" layoutX="427.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="icaptcha" fitHeight="74.0" fitWidth="247.0" layoutX="439.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
    </center>

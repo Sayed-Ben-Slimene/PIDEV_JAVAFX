@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -13,19 +13,19 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="827.0" prefWidth="1320.0" styleClass="root" stylesheets="@showusers.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Dashboard.DashboardController">
+<HBox id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" styleClass="root" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Dashboard.DashboardController">
 
     <children>
 
-        <VBox prefHeight="781.0" prefWidth="281.0">
+        <VBox prefHeight="900.0" prefWidth="291.0">
 
             <children>
 
-                <AnchorPane fx:id="side_ankerpane" prefHeight="827.0" prefWidth="281.0" styleClass="side_ankerpane" stylesheets="@showusers.css">
+                <AnchorPane fx:id="side_ankerpane" prefHeight="900.0" prefWidth="298.0" styleClass="side_ankerpane" stylesheets="@dashboardDesign.css">
 
                     <children>
 
-                        <Pane fx:id="inner_pane" layoutX="17.0" layoutY="27.0" prefHeight="78.0" prefWidth="248.0" styleClass="inner_pane" stylesheets="@showusers.css">
+                        <Pane fx:id="inner_pane" layoutX="15.0" layoutY="27.0" prefHeight="78.0" prefWidth="257.0" styleClass="inner_pane" stylesheets="@dashboardDesign.css">
 
                             <children>
 
@@ -39,27 +39,13 @@
 
                                 </ImageView>
 
-                                <Pane fx:id="most_inner_pane" layoutX="199.0" layoutY="1.0" prefHeight="78.0" prefWidth="42.0" styleClass="most_inner_pane" stylesheets="@showusers.css" />
+                                <Pane fx:id="most_inner_pane" layoutX="199.0" layoutY="1.0" prefHeight="78.0" prefWidth="42.0" styleClass="most_inner_pane" stylesheets="@dashboardDesign.css" />
 
                             </children>
 
                         </Pane>
 
-                        <Button fx:id="btn_workbench" layoutX="17.0" layoutY="141.0" prefHeight="53.0" prefWidth="248.0" styleClass="btn_workbench" stylesheets="@showusers.css" text="Home" textFill="WHITE">
-
-                            <graphic>
-
-                                <ImageView fitHeight="40.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-
-                                    <image>
-
-                                        <Image url="@../../Images/Dashboard2.png" />
-
-                                    </image>
-
-                                </ImageView>
-
-                            </graphic>
+                        <Button fx:id="btn_workbench" layoutX="12.0" layoutY="141.0" prefHeight="54.0" prefWidth="266.0" styleClass="btn_workbench" stylesheets="@dashboardDesign.css" text="     Home" textFill="WHITE">
 
                             <font>
 
@@ -69,7 +55,7 @@
 
                         </Button>
 
-                        <Button fx:id="btn_workbench1" layoutX="21.0" layoutY="217.0" prefHeight="43.0" prefWidth="245.0" styleClass="btn_workbench11" stylesheets="@showusers.css" text="Users" textFill="#c6b6b6">
+                        <Button fx:id="btn_workbench1" layoutX="12.0" layoutY="217.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Users" textFill="#c6b6b6">
 
                             <font>
 
@@ -79,7 +65,7 @@
 
                         </Button>
 
-                        <Button fx:id="btn_workbench11" layoutX="6.0" layoutY="288.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@showusers.css" text=" Shop" textFill="#c6b6b6">
+                        <Button fx:id="btn_workbench11" layoutX="6.0" layoutY="288.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Shop" textFill="#c6b6b6">
 
                             <font>
 
@@ -89,7 +75,7 @@
 
                         </Button>
 
-                        <Button fx:id="btn_workbench12" layoutX="8.0" layoutY="359.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@showusers.css" text="  Events" textFill="#c6b6b6">
+                        <Button fx:id="btn_workbench12" layoutX="6.0" layoutY="359.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="  Events" textFill="#c6b6b6">
 
                             <font>
 
@@ -99,7 +85,7 @@
 
                         </Button>
 
-                        <Button fx:id="btn_workbench111" layoutX="5.0" layoutY="429.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@showusers.css" text="     Matchs" textFill="#c6b6b6">
+                        <Button fx:id="btn_workbench111" layoutX="6.0" layoutY="429.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="   Matchs" textFill="#c6b6b6">
 
                             <font>
 
@@ -109,7 +95,7 @@
 
                         </Button>
 
-                        <Button fx:id="btn_workbench1111" layoutX="9.0" layoutY="500.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@showusers.css" text="      Actualité" textFill="#c6b6b6">
+                        <Button fx:id="btn_workbench1111" layoutX="6.0" layoutY="500.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="      Actualité" textFill="#c6b6b6">
 
                             <font>
 
@@ -119,7 +105,7 @@
 
                         </Button>
 
-                        <ImageView fitHeight="229.0" fitWidth="225.0" layoutX="32.0" layoutY="588.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="262.0" fitWidth="260.0" layoutX="15.0" layoutY="601.0" pickOnBounds="true" preserveRatio="true">
 
                             <image>
 
@@ -129,51 +115,61 @@
 
                         </ImageView>
 
-                          <ImageView fitHeight="40.0" fitWidth="32.0" layoutX="70.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="40.0" fitWidth="32.0" layoutX="70.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+
+                            <image>
+
+                                <Image url="@../../Images/icons8-add-user-64.png" />
+
+                            </image>
+
+                        </ImageView>
+
+                        <ImageView fitHeight="40.0" fitWidth="32.0" layoutX="70.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+
+                            <image>
+
+                                <Image url="@../../Images/icons8-add-user-64.png" />
+
+                            </image>
+
+                        </ImageView>
+
+                        <ImageView fitHeight="40.0" fitWidth="32.0" layoutX="70.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
+
+                            <image>
+
+                                <Image url="@../../Images/icons8-add-user-64.png" />
+
+                            </image>
+
+                        </ImageView>
+
+                        <ImageView fitHeight="40.0" fitWidth="32.0" layoutX="70.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+
+                            <image>
+
+                                <Image url="@../../Images/icons8-add-user-64.png" />
+
+                            </image>
+
+                        </ImageView>
+
+                        <ImageView fitHeight="40.0" fitWidth="32.0" layoutX="70.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true">
+
+                            <image>
+
+                                <Image url="@../../Images/icons8-add-user-64.png" />
+
+                            </image>
+
+                        </ImageView>
+
+                          <ImageView fitHeight="40.0" fitWidth="32.0" layoutX="87.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
 
                               <image>
 
-                                  <Image url="@../../Images/icons8-add-user-64.png" />
-
-                              </image>
-
-                          </ImageView>
-
-                          <ImageView fitHeight="40.0" fitWidth="32.0" layoutX="70.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
-
-                              <image>
-
-                                  <Image url="@../../Images/icons8-add-user-64.png" />
-
-                              </image>
-
-                          </ImageView>
-
-                          <ImageView fitHeight="40.0" fitWidth="32.0" layoutX="70.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
-
-                              <image>
-
-                                  <Image url="@../../Images/icons8-add-user-64.png" />
-
-                              </image>
-
-                          </ImageView>
-
-                          <ImageView fitHeight="40.0" fitWidth="32.0" layoutX="70.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
-
-                              <image>
-
-                                  <Image url="@../../Images/icons8-add-user-64.png" />
-
-                              </image>
-
-                          </ImageView>
-
-                          <ImageView fitHeight="40.0" fitWidth="32.0" layoutX="70.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true">
-
-                              <image>
-
-                                  <Image url="@../../Images/icons8-add-user-64.png" />
+                                  <Image url="@../../Images/Dashboard2.png" />
 
                               </image>
 
@@ -187,15 +183,15 @@
 
         </VBox>
 
-        <Pane prefHeight="781.0" prefWidth="1040.0">
+        <Pane prefHeight="900.0" prefWidth="1301.0" stylesheets="@dashboardDesign.css">
 
             <children>
 
-                <Pane layoutY="14.0" prefHeight="78.0" prefWidth="1040.0" style="-fx-background-color: #EAEEF4;" styleClass="side_ankerpane" stylesheets="@showusers.css">
+                <Pane layoutY="7.0" prefHeight="70.0" prefWidth="1302.0" style="-fx-background-color: #EAEEF4;" styleClass="side_ankerpane" stylesheets="@dashboardDesign.css">
 
                     <children>
 
-                        <TextField fx:id="txt_serach" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="567.0" layoutY="22.0" maxWidth="305.0" minWidth="194.0" prefHeight="42.0" prefWidth="305.0" promptText="Search :" scaleShape="false">
+                        <TextField fx:id="txt_serach" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="632.0" layoutY="14.0" maxWidth="327.0" minWidth="194.0" prefHeight="42.0" prefWidth="327.0" promptText="Search :" scaleShape="false">
 
                             <font>
 
@@ -205,33 +201,15 @@
 
                         </TextField>
 
-                        <ImageView fitHeight="53.0" fitWidth="31.0" layoutX="532.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="53.0" fitWidth="31.0" layoutX="590.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
 
                             <image>
 
-                                <Image url="@../../Images/icons8-refresh-64%20(1).png" />
+                                <Image url="@../../Images/icons8-refresh-64.png" />
 
                             </image></ImageView>
 
-                        <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="864.0" layoutY="19.0" prefHeight="42.0" prefWidth="56.0" style="-fx-background-color: #EAEEF4;">
-
-                            <graphic>
-
-                                <ImageView fitHeight="35.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-
-                                    <image>
-
-                                        <Image url="@../../Images/icons8-admin-64.png" />
-
-                                    </image>
-
-                                </ImageView>
-
-                            </graphic>
-
-                        </Button>
-
-                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="955.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1230.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
 
                             <image>
 
@@ -241,331 +219,45 @@
 
                         </ImageView>
 
+                          <ImageView fitHeight="35.0" fitWidth="36.0" layoutX="976.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+
+                              <image>
+
+                                  <Image url="@../../Images/icons8-admin-64.png" />
+
+                              </image>
+
+                          </ImageView>
+      
+                      <Label layoutX="21.0" layoutY="8.0" text="Hello Admin ! ">
+      
+                          <font>
+      
+                              <Font name="Century Gothic Bold" size="34.0" />
+      
+                          </font>
+      
+                      </Label>
+                  <Label layoutX="1039.0" layoutY="22.0" prefHeight="25.0" prefWidth="94.0" text="Prénom">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="1143.0" layoutY="23.0" prefHeight="25.0" prefWidth="88.0" text="Prénom">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+
                     </children>
 
                 </Pane>
-
-                <Label layoutX="47.0" layoutY="128.0" text="Hello Admin ! ">
-
-                    <font>
-
-                        <Font name="Century Gothic Bold" size="34.0" />
-
-                    </font>
-
-                </Label>
-
-                <Label layoutX="47.0" layoutY="178.0" text="Never put of off till tommrow what can be done today !">
-
-                    <font>
-
-                        <Font name="Century Gothic" size="15.0" />
-
-                    </font>
-
-                </Label>
 
                 <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="474.0" layoutY="169.0" prefHeight="31.0" prefWidth="31.0" style="-fx-background-color: #EAEEF4;" />
 
-                <Pane fx:id="pane_1" layoutX="47.0" layoutY="252.0" prefHeight="234.0" prefWidth="146.0" styleClass="pane_1" stylesheets="@showusers.css">
+                <Pane fx:id="pane_132" layoutX="21.0" layoutY="104.0" prefHeight="666.0" prefWidth="1274.0" styleClass="root" stylesheets="@dashboardDesign.css">
 
                     <children>
-
-                        <Label layoutX="38.0" layoutY="175.0" text="Finish" textFill="#b5aaaa">
-
-                            <font>
-
-                                <Font name="Century Gothic" size="13.0" />
-
-                            </font>
-
-                        </Label>
-
-                        <Label layoutX="78.0" layoutY="175.0" text="100%" textFill="#ebeaea">
-
-                            <font>
-
-                                <Font name="Century Gothic" size="13.0" />
-
-                            </font>
-
-                        </Label>
-
-                        <ProgressBar layoutX="6.0" layoutY="200.0" opacity="0.54" prefHeight="16.0" prefWidth="134.0" progress="0.89" />
-
-                    </children>
-
-                </Pane>
-
-                <Label layoutX="52.0" layoutY="218.0" text="Today" textFill="#9a9292">
-
-                    <font>
-
-                        <Font name="Century Gothic Bold" size="15.0" />
-
-                    </font>
-
-                </Label>
-
-                <Pane fx:id="pane_11" layoutX="210.0" layoutY="252.0" prefHeight="234.0" prefWidth="146.0" stylesheets="@showusers.css">
-
-                    <children>
-
-                        <Label layoutX="38.0" layoutY="175.0" text="Finish" textFill="#b5aaaa">
-
-                            <font>
-
-                                <Font name="Century Gothic" size="13.0" />
-
-                            </font>
-
-                        </Label>
-
-                        <Label layoutX="78.0" layoutY="175.0" text="100%" textFill="#141313">
-
-                            <font>
-
-                                <Font name="Century Gothic" size="13.0" />
-
-                            </font>
-
-                        </Label>
-
-                        <ProgressBar fx:id="progress21" layoutX="7.0" layoutY="200.0" opacity="0.55" prefHeight="16.0" prefWidth="134.0" progress="0.87" styleClass="progress" stylesheets="@showusers.css" />
-
-                    </children>
-
-                    <styleClass>
-
-                        <String fx:value="pane_1" />
-
-                        <String fx:value="pane_11" />
-
-                    </styleClass>
-
-                </Pane>
-
-                <Pane fx:id="pane_12" layoutX="374.0" layoutY="252.0" prefHeight="234.0" prefWidth="146.0" styleClass="pane_11" stylesheets="@showusers.css">
-
-                    <children>
-
-                        <Label layoutX="38.0" layoutY="175.0" text="Finish" textFill="#b5aaaa">
-
-                            <font>
-
-                                <Font name="Century Gothic" size="13.0" />
-
-                            </font>
-
-                        </Label>
-
-                        <Label layoutX="78.0" layoutY="175.0" text="100%" textFill="#2c2b2b">
-
-                            <font>
-
-                                <Font name="Century Gothic" size="13.0" />
-
-                            </font>
-
-                        </Label>
-
-                        <ProgressBar fx:id="progress2" layoutX="5.0" layoutY="201.0" opacity="0.55" prefHeight="16.0" prefWidth="134.0" progress="0.87" styleClass="progress" stylesheets="@showusers.css" />
-
-                    </children>
-
-                </Pane>
-
-                <Pane fx:id="pane_111" layoutX="537.0" layoutY="252.0" prefHeight="234.0" prefWidth="146.0" styleClass="pane_111" stylesheets="@showusers.css" />
-
-                <Pane fx:id="pane_1111" layoutX="700.0" layoutY="252.0" prefHeight="234.0" prefWidth="314.0" styleClass="pane_1111" stylesheets="@showusers.css">
-
-                    <children>
-
-                        <Label layoutX="38.0" layoutY="175.0" text="Finish" textFill="#b5aaaa">
-
-                            <font>
-
-                                <Font name="Century Gothic" size="13.0" />
-
-                            </font>
-
-                        </Label>
-
-                        <Label layoutX="78.0" layoutY="175.0" text="100%" textFill="#ebeaea">
-
-                            <font>
-
-                                <Font name="Century Gothic" size="13.0" />
-
-                            </font>
-
-                        </Label>
-
-                        <ProgressBar fx:id="progress111" layoutX="5.0" layoutY="201.0" prefHeight="16.0" prefWidth="134.0" progress="0.87" styleClass="progress" stylesheets="@showusers.css" />
-
-                    </children>
-
-                </Pane>
-
-                <Label layoutX="694.0" layoutY="218.0" text="Automacally assigned" textFill="#9a9292">
-
-                    <font>
-
-                        <Font name="Century Gothic Bold" size="15.0" />
-
-                    </font>
-
-                </Label>
-
-                <Pane fx:id="inner_pane1" layoutX="921.0" layoutY="134.0" prefHeight="70.0" prefWidth="72.0" styleClass="inner_pane" stylesheets="@showusers.css" />
-
-                <Label layoutX="52.0" layoutY="509.0" text="Mockup" textFill="#9a9292">
-
-                    <font>
-
-                        <Font name="Century Gothic Bold" size="15.0" />
-
-                    </font>
-
-                </Label>
-
-                <Label layoutX="421.0" layoutY="519.0" text="Company" textFill="#9a9292">
-
-                    <font>
-
-                        <Font name="Century Gothic Bold" size="15.0" />
-
-                    </font>
-
-                </Label>
-
-                <Pane fx:id="pane_13" layoutX="47.0" layoutY="529.0" prefHeight="78.0" prefWidth="307.0" styleClass="pane_11" stylesheets="@showusers.css">
-
-                    <children>
-
-                        <Label layoutX="78.0" layoutY="19.0" text="AIR PLANE" textFill="#323131">
-
-                            <font>
-
-                                <Font name="Century Gothic Bold" size="20.0" />
-
-                            </font>
-
-                        </Label>
-
-                        <Label layoutX="78.0" layoutY="44.0" text="Wajid HucYan" textFill="#9a9696">
-
-                            <font>
-
-                                <Font name="Century Gothic" size="17.0" />
-
-                            </font>
-
-                        </Label>
-
-                        <ImageView fitHeight="56.0" fitWidth="50.0" layoutX="12.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
-
-                            <image>
-
-                                <Image url="@../../Images/icons8-add-user-64.png" />
-
-                            </image>
-
-                        </ImageView>
-
-                    </children>
-
-                </Pane>
-
-                <Pane fx:id="pane_131" layoutX="48.0" layoutY="627.0" prefHeight="78.0" prefWidth="307.0" styleClass="pane_11" stylesheets="@showusers.css">
-
-                    <children>
-
-                        <Label layoutX="78.0" layoutY="19.0" text="TELPHONE" textFill="#323131">
-
-                            <font>
-
-                                <Font name="Century Gothic Bold" size="20.0" />
-
-                            </font>
-
-                        </Label>
-
-                        <Label layoutX="78.0" layoutY="44.0" text="Salaar HucYan" textFill="#9a9696">
-
-                            <font>
-
-                                <Font name="Century Gothic" size="17.0" />
-
-                            </font>
-
-                        </Label>
-
-                        <ImageView fitHeight="56.0" fitWidth="50.0" layoutX="12.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
-
-                            <image>
-
-                                <Image url="@../../Images/icons8-add-user-64.png" />
-
-                            </image>
-
-                        </ImageView>
-
-                    </children>
-
-                </Pane>
-
-                <Pane fx:id="pane_1311" layoutX="50.0" layoutY="725.0" prefHeight="78.0" prefWidth="307.0" styleClass="pane_11" stylesheets="@showusers.css">
-
-                    <children>
-
-                        <Label layoutX="78.0" layoutY="19.0" text="BUS" textFill="#323131">
-
-                            <font>
-
-                                <Font name="Century Gothic Bold" size="20.0" />
-
-                            </font>
-
-                        </Label>
-
-                        <Label layoutX="78.0" layoutY="44.0" text="john Edward" textFill="#9a9696">
-
-                            <font>
-
-                                <Font name="Century Gothic" size="17.0" />
-
-                            </font>
-
-                        </Label>
-
-                        <ImageView fitHeight="56.0" fitWidth="50.0" layoutX="12.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
-
-                            <image>
-
-                                <Image url="@../../Images/icons8-add-user-64.png" />
-
-                            </image>
-
-                        </ImageView>
-
-                    </children>
-
-                </Pane>
-
-                <Pane fx:id="pane_132" layoutX="413.0" layoutY="538.0" prefHeight="262.0" prefWidth="596.0" styleClass="pane_11" stylesheets="@showusers.css">
-
-                    <children>
-
-                        <Label layoutX="32.0" layoutY="48.0" text="Ui Java Company  " textFill="#323131">
-
-                            <font>
-
-                                <Font name="Century Gothic Bold" size="20.0" />
-
-                            </font>
-
-                        </Label>
 
                         <Label layoutX="60.0" layoutY="106.0" textFill="#323131">
 
@@ -576,40 +268,42 @@
                             </font>
 
                         </Label>
-
-                        <Label layoutX="32.0" layoutY="87.0" text="Lorem Ipsum has been the industry's standard ">
-
-                            <font>
-
-                                <Font name="Century Gothic" size="15.0" />
-
-                            </font>
-
-                        </Label>
-
-                        <Label layoutX="32.0" layoutY="109.0" text="dummy text ever since the 1500s,">
-
-                            <font>
-
-                                <Font name="Century Gothic" size="15.0" />
-
-                            </font>
-
-                        </Label>
-
-                        <Button fx:id="btn_workbench11111" layoutX="32.0" layoutY="195.0" prefHeight="43.0" prefWidth="163.0" styleClass="btn_workbench11" stylesheets="@showusers.css" text="Unlock" textFill="WHITE">
-
-                            <font>
-
-                                <Font name="Century Gothic Bold" size="13.0" />
-
-                            </font>
-
-                        </Button>
+                  <TableView fx:id="usersTable" layoutX="6.0" layoutY="6.0" prefHeight="653.0" prefWidth="1258.0">
+                    <columns>
+                      <TableColumn fx:id="culumnUserId" prefWidth="64.26672744750977" text="Id" />
+                      <TableColumn fx:id="culumnUsernom" prefWidth="143.4666748046875" text="Nom" />
+                        <TableColumn fx:id="culumnUserPrenom" prefWidth="155.7333221435547" text="Prenom" />
+                        <TableColumn fx:id="culumnUserEmail" prefWidth="231.99993896484375" text="Email" />
+                        <TableColumn fx:id="culumnUserPassword" minWidth="0.0" prefWidth="228.80010986328125" text="Password" />
+                        <TableColumn fx:id="culumnUserAdress" prefWidth="177.06671142578125" text="Adress" />
+                        <TableColumn fx:id="culumnUserRoles" prefWidth="142.9334716796875" text="Roles" />
+                        <TableColumn fx:id="culumnUserTel" prefWidth="117.86669921875" text="Tel" />
+                    </columns>
+                  </TableView>
 
                     </children>
 
                 </Pane>
+
+                <Label layoutX="25.0" layoutY="81.0" text="Liste des Utilisateurs">
+
+                    <font>
+
+                        <Font size="19.0" />
+
+                    </font>
+
+                </Label>
+            <Button layoutX="1070.0" layoutY="779.0" prefHeight="52.0" prefWidth="217.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Modifier" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="1070.0" layoutY="839.0" onAction="#suppuser" prefHeight="52.0" prefWidth="217.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Supprimer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
             </children>
 
         </Pane>

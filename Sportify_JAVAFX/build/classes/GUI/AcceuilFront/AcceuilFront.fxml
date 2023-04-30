@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="820.0" prefWidth="1200.0" stylesheets="@../Home/home.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AcceuilFront.AcceuilFrontController">
+   <children>
+      <Pane layoutX="9.0" layoutY="643.0" prefHeight="170.0" prefWidth="1182.0" style="-fx-background-color: #004445#004445; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0)dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0) dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0)dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);">
+         <children>
+            <ImageView fitHeight="64.0" fitWidth="69.0" layoutX="21.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/icons8-place-marker-100.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="64.0" fitWidth="69.0" layoutX="21.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/icons8-email-64%20(1).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="64.0" fitWidth="69.0" layoutX="243.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/icons8-phone-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="64.0" fitWidth="69.0" layoutX="243.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/icons8-youtube-100.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="64.0" fitWidth="69.0" layoutX="490.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/icons8-facebook-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="64.0" fitWidth="69.0" layoutX="490.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/icons8-instagram-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="64.0" fitWidth="69.0" layoutX="762.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/icons8-twitter-100.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="64.0" fitWidth="69.0" layoutX="762.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/icons8-linkedin-64.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="9.0" layoutY="8.0" prefHeight="123.0" prefWidth="1182.0" style="-fx-background-color: #2A303D; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0)dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0) dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0)dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);">
+         <children>
+            <HBox alignment="CENTER" layoutX="48.0" layoutY="9.0" prefHeight="100.0" prefWidth="408.0">
+               <children>
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="138.0" style="-fx-background-color: #fcba01; -fx-border-color: #ffffff;" styleClass="envoyer_btn" text="Matchs" textFill="#2a303d">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="138.0" style="-fx-background-color: #fcba01; -fx-border-color: #ffffff;" styleClass="envoyer_btn" text="Actualié" textFill="#2a303d">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="138.0" style="-fx-background-color: #fcba01; -fx-border-color: #ffffff;" styleClass="envoyer_btn" text="Event" textFill="#2a303d">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <ImageView fitHeight="114.0" fitWidth="176.0" layoutX="506.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0)dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0) dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0)dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0) dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0)dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0) dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0)dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);" styleClass="img">
+               <image>
+                  <Image url="@../../Images/sportifyLogo.png" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" layoutX="726.0" layoutY="9.0" prefHeight="100.0" prefWidth="408.0">
+               <children>
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="138.0" style="-fx-background-color: #fcba01; -fx-border-color: #ffffff;" styleClass="envoyer_btn" text="Shop" textFill="#2a303d">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchToProfile" prefHeight="50.0" prefWidth="138.0" style="-fx-background-color: #fcba01; -fx-border-color: #ffffff;" styleClass="envoyer_btn" text="Profile" textFill="#2a303d">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="logout" alignment="CENTER" mnemonicParsing="false" onAction="#logout" prefHeight="50.0" prefWidth="138.0" style="-fx-background-color: #fcba01; -fx-border-color: #ffffff;" styleClass="envoyer_btn" stylesheets="@../Home/home.css" text="Logout" textFill="#2a303d">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Button>
+                  
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <VBox fx:id="vboxTeam" layoutX="14.0" layoutY="145.0" prefHeight="497.0" prefWidth="1174.0" />
+   </children>
+</AnchorPane>
