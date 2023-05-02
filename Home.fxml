@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.sportifyfx.HomeController">
+   <children>
+      <Pane layoutX="-6.0" layoutY="703.0" prefHeight="134.0" prefWidth="1328.0" style="-fx-background-color: #004445#004445; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0)dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0) dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0)dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);">
+         <children>
+            <ImageView fx:id="facebook" fitHeight="78.0" fitWidth="75.0" layoutX="57.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/icons8-facebook-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="instagram" fitHeight="103.0" fitWidth="78.0" layoutX="1144.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/icons8-instagram-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="linidin" fitHeight="78.0" fitWidth="81.0" layoutX="619.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/icons8-linkedin-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="twitter" fitHeight="86.0" fitWidth="94.0" layoutX="884.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/icons8-twitter-100.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="youtube" fitHeight="92.0" fitWidth="84.0" layoutX="322.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/icons8-youtube-100.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="-2.0" layoutY="-4.0" prefHeight="142.0" prefWidth="1321.0" style="-fx-background-color: #333333; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0)dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0) dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0)dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);">
+         <children>
+            <HBox alignment="CENTER" layoutX="12.0" layoutY="9.0" prefHeight="100.0" prefWidth="533.0">
+               <children>
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="138.0" style="-fx-background-color: #ffcc33; -fx-border-color: #ffffff;" text="Matchs" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="138.0" style="-fx-background-color: #ffcc33; -fx-border-color: #ffffff;" text="Actualié" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="154.0" style="-fx-background-color: #ffcc33; -fx-border-color: #ffffff;" text="Event" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <ImageView fx:id="sportifyImg" fitHeight="104.0" fitWidth="170.0" layoutX="571.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0)dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0) dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0)dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0) dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0)dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0) dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0)dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);">
+               <image>
+                  <Image url="@Images/sportifyLogo.png" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" layoutX="832.0" layoutY="11.0" prefHeight="100.0" prefWidth="408.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="138.0" style="-fx-background-color: #ffcc33; -fx-border-color: #ffffff;" text="Login" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="138.0" style="-fx-background-color: #ffcc33; -fx-border-color: #ffffff;" text="Shop" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="138.0" style="-fx-background-color: #ffcc33; -fx-border-color: #ffffff;" text="Register" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Button fx:id="btnAdmin" layoutX="792.0" layoutY="36.0" mnemonicParsing="false" onAction="#pageAdmin" prefHeight="14.0" prefWidth="14.0" style="-fx-background-color: #ffcc33; -fx-border-color: #ffffff;" text="ADMIN" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <ScrollPane layoutX="-7.0" layoutY="138.0" prefHeight="562.0" prefWidth="1328.0">
+         <content>
+            <Pane fx:id="back" prefHeight="1574.0" prefWidth="1312.0" style="-fx-background-image: url('Images/back.jpg'); " styleClass="back" stylesheets="@home.css">
+               <children>
+                  <HBox layoutX="680.0" layoutY="743.0" prefHeight="275.0" prefWidth="480.0">
+                     <children>
+                        <TableView fx:id="resultTable" prefHeight="298.0" prefWidth="480.0">
+                           <columns>
+                              <TableColumn fx:id="team1" prefWidth="147.20003080368042" text="Home Team" />
+                              <TableColumn fx:id="score1" minWidth="0.0" prefWidth="89.06669616699219" text="Goals" />
+                              <TableColumn fx:id="score2" prefWidth="79.73332214355469" text="Goals" />
+                              <TableColumn fx:id="team2" prefWidth="161.0" text="Away Team" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="680.0" layoutY="1216.0" prefHeight="275.0" prefWidth="500.0">
+                     <children>
+                        <TableView fx:id="resultTable2" onMouseClicked="#mouseClick" prefHeight="298.0" prefWidth="500.0">
+                           <columns>
+                              <TableColumn fx:id="team11" prefWidth="250.0" resizable="false" text="Home Team" />
+                              <TableColumn fx:id="team22" prefWidth="250.0" resizable="false" text="Away Team" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </HBox>
+                  <AnchorPane fx:id="main_form" layoutX="6.0" layoutY="1.0" prefHeight="556.0" prefWidth="1200.0">
+                     <children>
+                        <ImageView fx:id="Image1" fitHeight="550.0" fitWidth="1322.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@Images/image1.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="Image2" fitHeight="556.0" fitWidth="1308.0" layoutX="-1310.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@Images/image2.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="Image3" fitHeight="556.0" fitWidth="1308.0" layoutX="-1310.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@Images/image3.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="Image4" fitHeight="556.0" fitWidth="1308.0" layoutX="-1310.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@Images/image4.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="resultLabel" alignment="CENTER" layoutX="2.0" layoutY="27.0" lineSpacing="2.0" prefHeight="71.0" prefWidth="317.0" text="Sportify" textFill="#cdcd9a">
+                           <font>
+                              <Font name="Symbol" size="36.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="resultLabel1" alignment="CENTER" layoutX="-147.0" layoutY="98.0" lineSpacing="2.0" prefHeight="23.0" prefWidth="621.0" text="LA REFERENCE DE FOOTBALL" textFill="#a9ae00">
+                           <font>
+                              <Font name="Symbol" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <VBox fx:id="most_inner_pane" layoutX="70.0" layoutY="640.0" prefHeight="246.0" prefWidth="542.0" styleClass="most_inner_pane" stylesheets="@home.css">
+                     <children>
+                        <Label fx:id="resultLabel2311" alignment="CENTER" lineSpacing="2.0" prefHeight="71.0" prefWidth="317.0">
+                           <font>
+                              <Font name="Symbol" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="resultLabel2" alignment="CENTER" lineSpacing="2.0" prefHeight="71.0" prefWidth="317.0" text="About US">
+                           <font>
+                              <Font name="Symbol" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="resultLabel23" alignment="CENTER" lineSpacing="2.0" prefHeight="71.0" prefWidth="317.0">
+                           <font>
+                              <Font name="Symbol" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="resultLabel21" alignment="CENTER" lineSpacing="2.0" prefHeight="50.0" prefWidth="500.0" text="Le site officiel de l'instance dirigeante internationale du football avec des">
+                           <font>
+                              <Font name="Symbol" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="resultLabel211" alignment="CENTER" lineSpacing="2.0" prefHeight="50.0" prefWidth="500.0" text=" nouvelles, des événements, des résultats, des calendriers, des actualités..">
+                           <font>
+                              <Font name="Symbol" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="resultLabel231" alignment="CENTER" lineSpacing="2.0" prefHeight="71.0" prefWidth="317.0">
+                           <font>
+                              <Font name="Symbol" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Label fx:id="resultLabel22" alignment="CENTER" layoutX="800.0" layoutY="638.0" lineSpacing="2.0" prefHeight="71.0" prefWidth="317.0" text="Les Resultats" textFill="#a9ae00">
+                     <font>
+                        <Font name="Symbol" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="resultLabel221" alignment="CENTER" layoutX="800.0" layoutY="1100.0" lineSpacing="2.0" prefHeight="71.0" prefWidth="317.0" text="Les Match a jouer" textFill="#a9ae00">
+                     <font>
+                        <Font name="Symbol" size="36.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="157.0" layoutY="1094.0" prefHeight="296.0" prefWidth="440.0">
+                     <children>
+                        <ImageView fitHeight="353.0" fitWidth="568.0" layoutX="-12.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Images/img-00.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Button layoutX="317.0" layoutY="1437.0" mnemonicParsing="false" onAction="#addVote" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #cdcd9a; -fx-border-color: #ffffff;" text="VOTER " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="resultLabel11" alignment="CENTER" layoutX="308.0" layoutY="1495.0" lineSpacing="2.0" prefHeight="55.0" prefWidth="249.0" text="SI VOUS AVEZ CONFIANCE EN VOTRE ÉQUIPE" textFill="#a9ae00">
+                     <font>
+                        <Font name="Symbol" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField id="nomuser" fx:id="textscore1" layoutX="396.0" layoutY="1258.0" prefHeight="32.0" prefWidth="245.0" promptText="Goals" />
+                  <TextField id="nomuser" fx:id="textscore2" layoutX="396.0" layoutY="1318.0" prefHeight="32.0" prefWidth="245.0" promptText="Goals" />
+                  <TextField id="nomuser" fx:id="textTeam1" layoutX="104.0" layoutY="1258.0" prefHeight="32.0" prefWidth="245.0" promptText="Home Team" />
+                  <TextField id="nomuser" fx:id="textTeam2" layoutX="104.0" layoutY="1318.0" prefHeight="32.0" prefWidth="245.0" promptText="Away Team" />
+               </children>
+            </Pane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

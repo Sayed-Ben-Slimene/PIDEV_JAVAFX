@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="827.0" prefWidth="1320.0" styleClass="root" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.sportifyfx.MatchController">
+
+    <children>
+
+        <VBox prefHeight="781.0" prefWidth="281.0">
+
+            <children>
+
+                <AnchorPane fx:id="side_ankerpane" prefHeight="827.0" prefWidth="281.0" styleClass="side_ankerpane" stylesheets="@dashboardDesign.css">
+
+                    <children>
+
+                        <Pane fx:id="inner_pane" layoutX="17.0" layoutY="27.0" prefHeight="78.0" prefWidth="248.0" styleClass="inner_pane" stylesheets="@dashboardDesign.css">
+
+                            <children>
+
+                                <Pane fx:id="most_inner_pane" layoutX="199.0" layoutY="6.0" prefHeight="67.0" prefWidth="42.0" styleClass="most_inner_pane" stylesheets="@dashboardDesign.css">
+                           <children>
+                              <ImageView fitHeight="43.0" fitWidth="35.0" layoutX="3.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Images/icons8-settings-80.png" />
+                                 </image>
+                              </ImageView>
+                           </children></Pane>
+                        <ImageView fx:id="adminImg" fitHeight="52.0" fitWidth="57.0" layoutX="8.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Images/icons8-administrator-male-100.png" />
+                           </image>
+                        </ImageView>
+
+                            </children>
+
+                        </Pane>
+
+                        <Button fx:id="btn_workbench" layoutX="7.0" layoutY="141.0" onAction="#PageHome" prefHeight="54.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="                        Home" textFill="WHITE">
+
+                            <font>
+
+                                <Font name="System Bold" size="18.0" />
+
+                            </font>
+
+                        </Button>
+
+                        <Button fx:id="btn_match" layoutX="6.0" layoutY="217.0" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Match" textFill="#c6b6b6">
+
+                            <font>
+
+                                <Font name="System Bold" size="18.0" />
+
+                            </font>
+
+                        </Button>
+
+                        <Button fx:id="btn_Team" layoutX="6.0" layoutY="288.0" onAction="#PageTeams" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Teams" textFill="#c6b6b6">
+
+                            <font>
+
+                                <Font name="System Bold" size="18.0" />
+
+                            </font>
+
+                        </Button>
+
+                                    <Button fx:id="btn_umatch" layoutX="6.0" layoutY="359.0" onAction="#PageUMatch" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Unplayed Match" textFill="#c6b6b6">
+
+                                        <font>
+
+                                            <Font name="System Bold" size="18.0" />
+
+                                        </font>
+
+                                    </Button>
+                  <Button fx:id="btn_vote" layoutX="7.0" layoutY="423.0" onAction="#PageVote" prefHeight="43.0" prefWidth="266.0" styleClass="btn_workbench11" stylesheets="@dashboardDesign.css" text="Vote" textFill="#c6b6b6">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="52.0" fitWidth="129.0" layoutX="26.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/sportifyLogo.png" />
+                     </image>
+                  </ImageView>
+
+                    </children>
+
+                </AnchorPane>
+
+            </children>
+
+        </VBox>
+
+        <Pane prefHeight="827.0" prefWidth="1039.0" stylesheets="@dashboardDesign.css">
+
+            <children>
+
+                <Pane fx:id="pane_132" layoutX="9.0" layoutY="104.0" prefHeight="423.0" prefWidth="1031.0" styleClass="root">
+
+                    <children>
+                  <TableView fx:id="MatchTable" layoutX="7.0" layoutY="6.0" onMouseClicked="#mouseClick" prefHeight="412.0" prefWidth="1016.0">
+                    <columns>
+                      <TableColumn fx:id="culumnMatchId" prefWidth="77.59994697570801" text="id" />
+                      <TableColumn fx:id="culumnTeam1" prefWidth="181.60002899169922" text="team1" />
+                        <TableColumn fx:id="culumnScore1" minWidth="0.0" prefWidth="245.86669921875" text="score1" />
+                        <TableColumn fx:id="culumnScore2" minWidth="0.0" prefWidth="260.2666320800781" text="score2" />
+                        <TableColumn fx:id="culumnTeam2" minWidth="0.0" prefWidth="262.1333923339844" text="team2" />
+                    </columns>
+                  </TableView>
+
+                                                                    </children>
+
+                                                                </Pane>
+
+                                                                <Label layoutX="22.0" layoutY="31.0" text="Liste des Matches">
+
+                                                                    <font>
+
+                                                                        <Font size="19.0" />
+
+                                                                    </font>
+
+                                                                </Label>
+            <Button fx:id="btadd" layoutX="756.0" layoutY="556.0" onAction="#addMatch" prefHeight="52.0" prefWidth="217.0" styleClass="btn_workbench11" text="Ajouter" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btupdate" layoutX="756.0" layoutY="616.0" onAction="#updateMatch" prefHeight="52.0" prefWidth="217.0" styleClass="btn_workbench11" text="Modifier" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btdelete" layoutX="756.0" layoutY="676.0" onAction="#deleteMatch" prefHeight="52.0" prefWidth="217.0" styleClass="btn_workbench11" text="Supprimer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <TextField id="nomuser" fx:id="textscore1" layoutX="364.0" layoutY="596.0" prefHeight="32.0" prefWidth="245.0" promptText="Goals" />
+            <TextField id="nomuser" fx:id="textscore2" layoutX="364.0" layoutY="656.0" prefHeight="32.0" prefWidth="245.0" promptText="Goals" />
+            <TextField id="nomuser" fx:id="textTeam1" layoutX="72.0" layoutY="596.0" prefHeight="32.0" prefWidth="245.0" promptText="Home Team" />
+            <TextField id="nomuser" fx:id="textTeam2" layoutX="72.0" layoutY="656.0" prefHeight="32.0" prefWidth="245.0" promptText="Away Team" />
+            
+                                                            </children>
+
+                                                        </Pane>
+    </children>
+</HBox>
